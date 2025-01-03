@@ -1,0 +1,10 @@
+[t29]
+FileName1=t14.htm
+URL1=https://www.advantageonlineshopping.com/app/views/home-page.html
+Total=1
+SnapshotXmlFile=snapshot_29.xml
+RequestHeaderFile=t29_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t29_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

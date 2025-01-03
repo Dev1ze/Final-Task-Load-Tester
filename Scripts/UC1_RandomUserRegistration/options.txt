@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IP:\Programs\Itogovoe\Scripts\Test
+-IP:\Programs\LoadRunner\include
+-ep:\programs\itogovoe\scripts\test\\logfile.log
+p:\programs\itogovoe\scripts\test\\combined_Test.c
+p:\programs\itogovoe\scripts\test\\pre_cci.c
