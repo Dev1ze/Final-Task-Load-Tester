@@ -1,0 +1,45 @@
+# Ignoring compiled files and logs
+*.class
+*.jar
+*.exe
+*.dll
+*.log
+*.tmp
+*.bak
+
+# VuGen script files
+*.usr
+*.idx
+*.ci
+
+# Ignore specific VuGen output files
+output/*
+*.log
+*.dat
+*.gz
+*.tsv
+*.ini
+*.xml
+*.cmd
+
+# Controller scenario files
+*.lrr
+*.lra
+*.prm
+*.cfg
+
+# Analysis results
+Results/*
+*.html
+*.csv
+*.db
+*.tsv
+*.json
+
+# Ignore any backup or temp files
+*.bak
+*.tmp
+*.~*
+
+# Node_modules or other dependency directories
+node_modules/
