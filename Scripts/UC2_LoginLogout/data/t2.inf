@@ -1,0 +1,13 @@
+[t2]
+FileName1=t1.htm
+URL1=https://www.advantageonlineshopping.com/
+Total=2
+SnapshotXmlFile=snapshot_2.xml
+RequestHeaderFile=t2_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t2_ResponseHeader.txt
+FileName2=t2_require.html
+URL2=https://www.advantageonlineshopping.com/vendor/requirejs/require.js
+ContentType=application/javascript
+[ProtocolInfo]
+ProtocolId=QTWeb

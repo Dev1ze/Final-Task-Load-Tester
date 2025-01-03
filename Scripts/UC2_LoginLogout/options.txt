@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IP:\Programs\Itogovoe\Scripts\UC2_LoginLogout
+-IP:\Programs\LoadRunner\include
+-ep:\programs\itogovoe\scripts\uc2_loginlogout\\logfile.log
+p:\programs\itogovoe\scripts\uc2_loginlogout\\combined_UC2_LoginLogout.c
+p:\programs\itogovoe\scripts\uc2_loginlogout\\pre_cci.c
