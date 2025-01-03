@@ -1,5 +1,6 @@
 Action()
 {
+	lr_start_transaction("UC2_LoginLogout");
 
 	//web_websocket_send("ID=0", "Buffer={\"messageType\":\"hello\",\"broadcasts\":{\"remote-settings/monitor_changes\":\"\\\"1735902616993\\\"\"},\"use_webpush\":true}", "IsBinary=0", LAST); /*Connection ID 0 received buffer WebSocketReceive0*/
 
@@ -325,6 +326,9 @@ Action()
 		LAST);
 
 	lr_end_transaction("Logout",LR_AUTO);
+
+	
+	lr_end_transaction("UC2_LoginLogout", LR_AUTO);
 
 	return 0;
 }

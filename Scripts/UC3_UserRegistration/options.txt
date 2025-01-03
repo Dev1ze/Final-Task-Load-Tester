@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IP:\Programs\Itogovoe\Scripts\UC3_UserRegistration
+-IP:\Programs\LoadRunner\include
+-ep:\programs\itogovoe\scripts\uc3_userregistration\\logfile.log
+p:\programs\itogovoe\scripts\uc3_userregistration\\combined_UC3_UserRegistration.c
+p:\programs\itogovoe\scripts\uc3_userregistration\\pre_cci.c
