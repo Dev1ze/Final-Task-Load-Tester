@@ -28,6 +28,7 @@ output/*
 *.prm
 *.cfg
 
+
 # Analysis results
 Results/*
 *.html
@@ -43,3 +44,7 @@ Results/*
 
 # Node_modules or other dependency directories
 node_modules/
+
+
+
+pre_cci.c
