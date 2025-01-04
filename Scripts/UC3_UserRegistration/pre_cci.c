@@ -2576,8 +2576,9 @@ void
 
 # 7 "globals.h" 2
 
-# 1 "lrw_custom_body.h" 1
+# 1 "P:\\Programs\\LoadRunner\\include/lrw_custom_body.h" 1
  
+
 
 
 
@@ -2847,7 +2848,6 @@ vuser_init()
 # 1 "Action.c" 1
 Action()
 {
-
 	char userNameBuffer[100];
 	char passwordBuffer[100];
 	char firtNameBuffer[100];
@@ -2875,50 +2875,34 @@ Action()
 	
 	while(iteration < countLines) 
 	{
-		strcpy(userNameBuffer, lr_eval_string("{userName}"));
+		strcpy(userNameBuffer, lr_eval_string(""));
 		lr_save_string(userNameBuffer, "userNameBuffer");
-		strcpy(passwordBuffer, lr_eval_string("{password}"));
+		strcpy(passwordBuffer, lr_eval_string(""));
 		lr_save_string(passwordBuffer, "passwordBuffer");
-		strcpy(firtNameBuffer, lr_eval_string("{firstName}"));
+		strcpy(firtNameBuffer, lr_eval_string(""));
 		lr_save_string(firtNameBuffer, "firtNameBuffer");
-		strcpy(lastNameBuffer, lr_eval_string("{lastName}"));
+		strcpy(lastNameBuffer, lr_eval_string(""));
 		lr_save_string(lastNameBuffer, "lastNameBuffer");
-		strcpy(address1Buffer, lr_eval_string("{address1}"));
+		strcpy(address1Buffer, lr_eval_string(""));
 		lr_save_string(address1Buffer, "address1Buffer");
-		strcpy(address2Buffer, lr_eval_string("{address2}"));
+		strcpy(address2Buffer, lr_eval_string(""));
 		lr_save_string(address2Buffer, "address2Buffer");
-		strcpy(codeBuffer, lr_eval_string("{code}"));
+		strcpy(codeBuffer, lr_eval_string(""));
 		lr_save_string(codeBuffer, "codeBuffer");
-		strcpy(numberBuffer, lr_eval_string("{number}"));
+		strcpy(numberBuffer, lr_eval_string(""));
 		lr_save_string(numberBuffer, "numberBuffer");
-		strcpy(emailBuffer, lr_eval_string("{email}"));
+		strcpy(emailBuffer, lr_eval_string(""));
 		lr_save_string(emailBuffer, "emailBuffer");
 		
-		
-		
-		
-		web_set_sockets_option("SSL_VERSION", "AUTO");
-		web_add_header("X-HTTP-Method-Override", "POST");
-		web_add_header("Sec-Fetch-Dest", "empty");
-		web_add_header("Sec-Fetch-Mode", "no-cors");
-		web_add_header("Sec-Fetch-Site", "none");
-		web_add_header("Priority", "u=4");
-		web_url("threatListUpdates_fetch", 
-			"URL=https://safebrowsing.googleapis.com/v4/threatListUpdates_fetch?$ct=application/x-protobuf&key=AIzaSyC7jsptDS3am4tPx4r3nxis7IMjBc5Dovo&$httpMethod=POST&$req=ChUKE25hdmNsaWVudC1hdXRvLWZmb3gaJwgFEAEaGwoNCAUQBhgBIgMwMDEwARDO9xkaAhgHluib-CICIAIoARonCAEQARobCg0IARAGGAEiAzAwMTABEIThDxoCGAcZ158TIgIgAigBGicIAxABGhsKDQgDEAYYASIDMDAxMAEQp9gPGgIYB9zlJdkiAiACKAEaJwgHEAEaGwoNCAcQBhgBIgMwMDEwARCFpxAaAhgHXLGvryICIAIoARolCAkQARoZCg0ICRAGGAEiAzAwMTABECMaAhgH9wNdlCICIAIoAQ==", 
-			"TargetFrame=", 
-			"Resource=1", 
-			"RecContentType=application/x-protobuf", 
-			"Referer=", 
-			"Snapshot=t1.inf", 
-			"LAST");
 		web_websocket_send("ID=0", 
-			"Buffer={\"messageType\":\"hello\",\"broadcasts\":{\"remote-settings/monitor_changes\":\"\\\"1735931141663\\\"\"},\"use_webpush\":true}", 
-			"IsBinary=0", 
-			"LAST");
-	
+		"Buffer={\"messageType\":\"hello\",\"broadcasts\":{\"remote-settings/monitor_changes\":\"\\\"1735931141663\\\"\"},\"use_webpush\":true}", 
+		"IsBinary=0", 
+		"LAST");
+
 		 
-	
 		lr_start_transaction("OpenLandingPage");
+	
+		web_set_sockets_option("SSL_VERSION", "AUTO");
 		web_add_cookie("_ga_TBPYED8WSW=GS1.1.1735930644.6.1.1735931988.0.0.0; DOMAIN=www.advantageonlineshopping.com");
 		web_add_cookie("_ga=GA1.2.2102063955.1735813296; DOMAIN=www.advantageonlineshopping.com");
 		web_add_cookie("_gid=GA1.2.392134552.1735813298; DOMAIN=www.advantageonlineshopping.com");
@@ -2935,7 +2919,7 @@ Action()
 			"TargetFrame=", 
 			"Resource=0", 
 			"Referer=", 
-			"Snapshot=t2.inf", 
+			"Snapshot=t1.inf", 
 			"Mode=HTML", 
 			"LAST");
 		web_add_header("Sec-Fetch-Dest", "script");
@@ -2947,7 +2931,7 @@ Action()
 			"TargetFrame=", 
 			"Resource=1", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t3.inf", 
+			"Snapshot=t6.inf", 
 			"LAST");
 		web_add_header("Sec-Fetch-Dest", "font");
 		web_add_header("Sec-Fetch-Mode", "cors");
@@ -2957,7 +2941,7 @@ Action()
 			"TargetFrame=", 
 			"Resource=1", 
 			"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-			"Snapshot=t4.inf", 
+			"Snapshot=t10.inf", 
 			"LAST");
 		web_add_header("Sec-Fetch-Dest", "script");
 		web_add_header("Sec-Fetch-Mode", "no-cors");
@@ -2967,7 +2951,7 @@ Action()
 			"TargetFrame=", 
 			"Resource=1", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t5.inf", 
+			"Snapshot=t11.inf", 
 			"LAST");
 		web_add_header("Sec-Fetch-Dest", "image");
 		web_add_header("Sec-Fetch-Mode", "no-cors");
@@ -2979,7 +2963,7 @@ Action()
 			"Resource=1", 
 			"RecContentType=image/x-icon", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t6.inf", 
+			"Snapshot=t12.inf", 
 			"LAST");
 		web_add_header("Sec-Fetch-Dest", "empty");
 		web_add_header("Sec-Fetch-Mode", "cors");
@@ -2989,7 +2973,7 @@ Action()
 			"TargetFrame=", 
 			"Resource=1", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t7.inf", 
+			"Snapshot=t13.inf", 
 			"LAST");
 		web_add_header("Sec-Fetch-Dest", "font");
 		web_add_header("Sec-Fetch-Mode", "cors");
@@ -2999,7 +2983,7 @@ Action()
 			"TargetFrame=", 
 			"Resource=1", 
 			"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-			"Snapshot=t8.inf", 
+			"Snapshot=t19.inf", 
 			"LAST");
 		web_add_header("Sec-Fetch-Dest", "font");
 		web_add_header("Sec-Fetch-Mode", "cors");
@@ -3009,7 +2993,7 @@ Action()
 			"TargetFrame=", 
 			"Resource=1", 
 			"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-			"Snapshot=t9.inf", 
+			"Snapshot=t20.inf", 
 			"LAST");
 		web_concurrent_end(0);
 		web_add_auto_header("Sec-Fetch-Dest", "empty");
@@ -3021,7 +3005,7 @@ Action()
 			"Resource=0", 
 			"RecContentType=application/json", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t10.inf", 
+			"Snapshot=t21.inf", 
 			"Mode=HTML", 
 			"LAST");
 		web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735930674.8.1.1735932096.60.0.0; DOMAIN=www.advantageonlineshopping.com");
@@ -3035,7 +3019,7 @@ Action()
 			"Resource=0", 
 			"RecContentType=text/xml", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t11.inf", 
+			"Snapshot=t22.inf", 
 			"Mode=HTML", 
 			"EncType=text/xml; charset=UTF-8", 
 			"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><GetAccountConfigurationRequest xmlns=\"com.advantage.online.store.accountservice\"></GetAccountConfigurationRequest></soap:Body></soap:Envelope>", 
@@ -3046,7 +3030,7 @@ Action()
 			"Resource=0", 
 			"RecContentType=application/json", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t12.inf", 
+			"Snapshot=t23.inf", 
 			"Mode=HTML", 
 			"LAST");
 		web_url("search", 
@@ -3055,7 +3039,7 @@ Action()
 			"Resource=0", 
 			"RecContentType=application/json", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t13.inf", 
+			"Snapshot=t24.inf", 
 			"Mode=HTML", 
 			"LAST");
 		web_url("popularProducts.json", 
@@ -3063,14 +3047,14 @@ Action()
 			"TargetFrame=", 
 			"Resource=1", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t14.inf", 
+			"Snapshot=t25.inf", 
 			"LAST");
 		web_url("home-page.html", 
 			"URL=https://www.advantageonlineshopping.com/app/views/home-page.html", 
 			"TargetFrame=", 
 			"Resource=0", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t15.inf", 
+			"Snapshot=t26.inf", 
 			"Mode=HTML", 
 			"LAST");
 		web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735930674.8.1.1735932098.58.0.0; DOMAIN=www.advantageonlineshopping.com");
@@ -3080,38 +3064,39 @@ Action()
 			"TargetFrame=", 
 			"Resource=1", 
 			"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-			"Snapshot=t16.inf", 
+			"Snapshot=t27.inf", 
 			"LAST");
+	
 		web_url("Roboto-Thin-webfont.woff", 
 			"URL=https://www.advantageonlineshopping.com/css/fonts/roboto_thin_macroman/Roboto-Thin-webfont.woff", 
 			"TargetFrame=", 
 			"Resource=1", 
 			"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-			"Snapshot=t17.inf", 
+			"Snapshot=t28.inf", 
 			"LAST");
 		web_concurrent_end(0);
 	
 		lr_end_transaction("OpenLandingPage",2);
-		
-		
-		
-		
 	
-		lr_start_transaction("OpenRegistrationPage");
-	
+		
+		
+		
+		
+		
+		lr_start_transaction("OpenRegistrationpage");
+		
 		web_add_header("Priority", "u=0");
 		web_url("register-page.html", 
 			"URL=https://www.advantageonlineshopping.com/app/user/views/register-page.html", 
 			"TargetFrame=", 
 			"Resource=0", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t18.inf", 
+			"Snapshot=t29.inf", 
 			"Mode=HTML", 
 			"LAST");
 		web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735930674.8.1.1735932119.37.0.0; DOMAIN=www.advantageonlineshopping.com");
 		web_add_header("SOAPAction", "com.advantage.online.store.accountserviceGetCountriesRequest");
-		web_add_auto_header("Origin", 
-			"https://www.advantageonlineshopping.com");
+		web_add_auto_header("Origin", "https://www.advantageonlineshopping.com");
 		web_add_auto_header("X-Requested-With", "XMLHttpRequest");
 		web_custom_request("GetCountriesRequest", 
 			"URL=https://www.advantageonlineshopping.com/accountservice/ws/GetCountriesRequest", 
@@ -3120,19 +3105,20 @@ Action()
 			"Resource=0", 
 			"RecContentType=text/xml", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t19.inf", 
+			"Snapshot=t30.inf", 
 			"Mode=HTML", 
 			"EncType=text/xml; charset=UTF-8", 
 			"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><GetCountriesRequest xmlns=\"com.advantage.online.store.accountservice\"></GetCountriesRequest></soap:Body></soap:Envelope>", 
 			"LAST");
-		lr_end_transaction("OpenRegistrationPage",2);
+	
+		lr_end_transaction("OpenRegistrationpage",2);
 		
 		
 		
 		
 	
 		lr_start_transaction("UserRegistered");
-	
+		
 		web_add_header("SOAPAction", "com.advantage.online.store.accountserviceAccountCreateRequest");
 		web_add_header("Priority", "u=0");
 		 
@@ -3150,28 +3136,29 @@ Action()
 			"Resource=0", 
 			"RecContentType=text/xml", 
 			"Referer=https://www.advantageonlineshopping.com/", 
-			"Snapshot=t20.inf", 
+			"Snapshot=t31.inf", 
 			"Mode=HTML", 
 			"EncType=text/xml; charset=UTF-8", 
-			"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountCreateRequest xmlns=\"com.advantage.online.store.accountservice\"><accountType>USER</accountType><address>rahm</address><allowOffersPromotion>true</allowOffersPromotion><cityName>penza</cityName><countryId>Russia,ru</countryId><email>dsfsffds@mail.ru</email>"
+			"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountCreateRequest xmlns=\"com.advantage.online.store.accountservice\">" 
+			"<accountType>USER</accountType>" 
+			"<address>{street}</address>" 
+			"<allowOffersPromotion>true</allowOffersPromotion>" 
+			"<cityName>{city}</cityName>" 
+			"<countryId>Russia,ru</countryId>" 
+			"<email>{email}</email>"
 			"<firstName>{firstName}</firstName>" 
 			"<lastName>{lastName}</lastName>" 
 			"<loginName>{userName}</loginName>" 
 			"<password>{password}</password>" 
-			"<phoneNumber>{number}</phoneNumber>" 
-			"<stateProvince>{address1}</stateProvince>" 
+			"<phoneNumber>{number}</phoneNumber>"	
+			"<stateProvince>{state}</stateProvince>" 
 			"<zipcode>{code}</zipcode>" 
 			"</AccountCreateRequest></soap:Body></soap:Envelope>",
 			"LAST");
-	
-		lr_end_transaction("UserRegistered",2);
-		
+		lr_end_transaction("UserRegistered", 2);
 		iteration++;
-		
 	}
-	
-	
-	
+
 
 	return 0;
 }

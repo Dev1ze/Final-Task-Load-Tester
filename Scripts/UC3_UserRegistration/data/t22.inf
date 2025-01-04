@@ -1,11 +1,11 @@
 [t22]
-FileName1=t22_345072304.json
-URL1=https://www.advantageonlineshopping.com/order/api/v1/carts/345072304
+FileName1=t22.xml
+URL1=https://www.advantageonlineshopping.com/accountservice/ws/GetAccountConfigurationRequest
 Total=1
-ContentType=application/json
-SnapshotXmlFile=snapshot_22.xml
 RequestHeaderFile=t22_RequestHeader.txt
-RequestBodyFile=NONE
+RequestBodyFile=t22_RequestBody.txt
 ResponseHeaderFile=t22_ResponseHeader.txt
+ContentType=text/xml
+SnapshotXmlFile=snapshot_10.xml
 [ProtocolInfo]
 ProtocolId=QTWeb

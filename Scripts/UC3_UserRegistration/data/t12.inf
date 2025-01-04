@@ -1,9 +1,8 @@
 [t12]
-FileName1=t12_categories.json
-URL1=https://www.advantageonlineshopping.com/catalog/api/v1/categories
+FileName1=t1.html
+URL1=https://www.advantageonlineshopping.com/
 Total=1
-ContentType=application/json
-SnapshotXmlFile=snapshot_12.xml
+SnapshotXmlFile=snapshot_5.xml
 RequestHeaderFile=t12_RequestHeader.txt
 RequestBodyFile=NONE
 ResponseHeaderFile=t12_ResponseHeader.txt

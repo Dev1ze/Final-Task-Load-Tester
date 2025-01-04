@@ -1,0 +1,13 @@
+[t25]
+FileName1=t25.htm
+URL1=https://www.advantageonlineshopping.com/
+Total=2
+RequestHeaderFile=t25_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t25_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_20.xml
+FileName2=t25_main.min.css
+URL2=https://www.advantageonlineshopping.com/css/main.min.css
+[ProtocolInfo]
+ProtocolId=QTWeb

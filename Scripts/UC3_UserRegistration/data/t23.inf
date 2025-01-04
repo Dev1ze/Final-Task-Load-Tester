@@ -1,11 +1,11 @@
 [t23]
-FileName1=t23.xml
-URL1=https://www.advantageonlineshopping.com/accountservice/ws/AccountLogoutRequest
+FileName1=t23_categories.json
+URL1=https://www.advantageonlineshopping.com/catalog/api/v1/categories
 Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_11.xml
 RequestHeaderFile=t23_RequestHeader.txt
-RequestBodyFile=t23_RequestBody.txt
+RequestBodyFile=NONE
 ResponseHeaderFile=t23_ResponseHeader.txt
-ContentType=text/xml
-SnapshotXmlFile=snapshot_23.xml
 [ProtocolInfo]
 ProtocolId=QTWeb

@@ -1,36 +1,6 @@
 Action()
 {
 
-	web_set_sockets_option("SSL_VERSION", "AUTO");
-
-	web_set_user("artem33", 
-		lr_unmask("67783937e84975f808af"), 
-		"www.advantageonlineshopping.com:443");
-
-	web_add_header("X-HTTP-Method-Override", 
-		"POST");
-
-	web_add_header("Sec-Fetch-Dest", 
-		"empty");
-
-	web_add_header("Sec-Fetch-Mode", 
-		"no-cors");
-
-	web_add_header("Sec-Fetch-Site", 
-		"none");
-
-	web_add_header("Priority", 
-		"u=4");
-
-	web_url("threatListUpdates_fetch", 
-		"URL=https://safebrowsing.googleapis.com/v4/threatListUpdates_fetch?$ct=application/x-protobuf&key=AIzaSyC7jsptDS3am4tPx4r3nxis7IMjBc5Dovo&$httpMethod=POST&$req=ChUKE25hdmNsaWVudC1hdXRvLWZmb3gaJwgFEAEaGwoNCAUQBhgBIgMwMDEwARDO9xkaAhgHluib-CICIAIoARonCAEQARobCg0IARAGGAEiAzAwMTABEIThDxoCGAcZ158TIgIgAigBGicIAxABGhsKDQgDEAYYASIDMDAxMAEQp9gPGgIYB9zlJdkiAiACKAEaJwgHEAEaGwoNCAcQBhgBIgMwMDEwARCFpxAaAhgHXLGvryICIAIoARolCAkQARoZCg0ICRAGGAEiAzAwMTABECMaAhgH9wNdlCICIAIoAQ==", 
-		"TargetFrame=", 
-		"Resource=1", 
-		"RecContentType=application/x-protobuf", 
-		"Referer=", 
-		"Snapshot=t1.inf", 
-		LAST);
-
 	web_websocket_send("ID=0", 
 		"Buffer={\"messageType\":\"hello\",\"broadcasts\":{\"remote-settings/monitor_changes\":\"\\\"1735931141663\\\"\"},\"use_webpush\":true}", 
 		"IsBinary=0", 
@@ -39,6 +9,12 @@ Action()
 	/*Connection ID 0 received buffer WebSocketReceive0*/
 
 	lr_start_transaction("home page");
+
+	web_set_sockets_option("SSL_VERSION", "AUTO");
+
+	web_set_user("artem33", 
+		lr_unmask("67792ece135b4a582b5b"), 
+		"www.advantageonlineshopping.com:443");
 
 	web_add_cookie("_ga_TBPYED8WSW=GS1.1.1735930644.6.1.1735931988.0.0.0; DOMAIN=www.advantageonlineshopping.com");
 
@@ -68,12 +44,14 @@ Action()
 	web_add_header("Upgrade-Insecure-Requests", 
 		"1");
 
+	lr_think_time(38);
+
 	web_url("www.advantageonlineshopping.com", 
 		"URL=https://www.advantageonlineshopping.com/", 
 		"TargetFrame=", 
 		"Resource=0", 
 		"Referer=", 
-		"Snapshot=t2.inf", 
+		"Snapshot=t1.inf", 
 		"Mode=HTML", 
 		LAST);
 
@@ -93,7 +71,7 @@ Action()
 		"TargetFrame=", 
 		"Resource=1", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t3.inf", 
+		"Snapshot=t6.inf", 
 		LAST);
 
 	web_add_header("Sec-Fetch-Dest", 
@@ -110,7 +88,7 @@ Action()
 		"TargetFrame=", 
 		"Resource=1", 
 		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-		"Snapshot=t4.inf", 
+		"Snapshot=t10.inf", 
 		LAST);
 
 	web_add_header("Sec-Fetch-Dest", 
@@ -127,7 +105,7 @@ Action()
 		"TargetFrame=", 
 		"Resource=1", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t5.inf", 
+		"Snapshot=t11.inf", 
 		LAST);
 
 	web_add_header("Sec-Fetch-Dest", 
@@ -148,7 +126,7 @@ Action()
 		"Resource=1", 
 		"RecContentType=image/x-icon", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t6.inf", 
+		"Snapshot=t12.inf", 
 		LAST);
 
 	web_add_header("Sec-Fetch-Dest", 
@@ -165,7 +143,7 @@ Action()
 		"TargetFrame=", 
 		"Resource=1", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t7.inf", 
+		"Snapshot=t13.inf", 
 		LAST);
 
 	web_add_header("Sec-Fetch-Dest", 
@@ -182,7 +160,7 @@ Action()
 		"TargetFrame=", 
 		"Resource=1", 
 		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-		"Snapshot=t8.inf", 
+		"Snapshot=t19.inf", 
 		LAST);
 
 	web_add_header("Sec-Fetch-Dest", 
@@ -199,7 +177,7 @@ Action()
 		"TargetFrame=", 
 		"Resource=1", 
 		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-		"Snapshot=t9.inf", 
+		"Snapshot=t20.inf", 
 		LAST);
 
 	web_concurrent_end(NULL);
@@ -219,7 +197,7 @@ Action()
 		"Resource=0", 
 		"RecContentType=application/json", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t10.inf", 
+		"Snapshot=t21.inf", 
 		"Mode=HTML", 
 		LAST);
 
@@ -241,7 +219,7 @@ Action()
 		"Resource=0", 
 		"RecContentType=text/xml", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t11.inf", 
+		"Snapshot=t22.inf", 
 		"Mode=HTML", 
 		"EncType=text/xml; charset=UTF-8", 
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><GetAccountConfigurationRequest xmlns=\"com.advantage.online.store.accountservice\"></GetAccountConfigurationRequest></soap:Body></soap:Envelope>", 
@@ -253,7 +231,7 @@ Action()
 		"Resource=0", 
 		"RecContentType=application/json", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t12.inf", 
+		"Snapshot=t23.inf", 
 		"Mode=HTML", 
 		LAST);
 
@@ -263,7 +241,7 @@ Action()
 		"Resource=0", 
 		"RecContentType=application/json", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t13.inf", 
+		"Snapshot=t24.inf", 
 		"Mode=HTML", 
 		LAST);
 
@@ -272,7 +250,7 @@ Action()
 		"TargetFrame=", 
 		"Resource=1", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t14.inf", 
+		"Snapshot=t25.inf", 
 		LAST);
 
 	web_url("home-page.html", 
@@ -280,7 +258,7 @@ Action()
 		"TargetFrame=", 
 		"Resource=0", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t15.inf", 
+		"Snapshot=t26.inf", 
 		"Mode=HTML", 
 		LAST);
 
@@ -293,7 +271,7 @@ Action()
 		"TargetFrame=", 
 		"Resource=1", 
 		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-		"Snapshot=t16.inf", 
+		"Snapshot=t27.inf", 
 		LAST);
 
 	web_url("Roboto-Thin-webfont.woff", 
@@ -301,7 +279,7 @@ Action()
 		"TargetFrame=", 
 		"Resource=1", 
 		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-		"Snapshot=t17.inf", 
+		"Snapshot=t28.inf", 
 		LAST);
 
 	web_concurrent_end(NULL);
@@ -320,7 +298,7 @@ Action()
 		"TargetFrame=", 
 		"Resource=0", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t18.inf", 
+		"Snapshot=t29.inf", 
 		"Mode=HTML", 
 		LAST);
 
@@ -342,7 +320,7 @@ Action()
 		"Resource=0", 
 		"RecContentType=text/xml", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t19.inf", 
+		"Snapshot=t30.inf", 
 		"Mode=HTML", 
 		"EncType=text/xml; charset=UTF-8", 
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><GetCountriesRequest xmlns=\"com.advantage.online.store.accountservice\"></GetCountriesRequest></soap:Body></soap:Envelope>", 
@@ -367,7 +345,7 @@ Action()
 		"Resource=0", 
 		"RecContentType=text/xml", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t20.inf", 
+		"Snapshot=t31.inf", 
 		"Mode=HTML", 
 		"EncType=text/xml; charset=UTF-8", 
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountCreateRequest xmlns=\"com.advantage.online.store.accountservice\"><accountType>USER</accountType><address>rahm</address><allowOffersPromotion>true</allowOffersPromotion><cityName>penza</cityName><countryId>Russia,ru</countryId><email>dsfsffds@mail.ru</email>"
@@ -386,7 +364,7 @@ Action()
 		"Resource=0", 
 		"RecContentType=text/xml", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t21.inf", 
+		"Snapshot=t32.inf", 
 		"Mode=HTML", 
 		"EncType=text/xml; charset=UTF-8", 
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLoginRequest xmlns=\"com.advantage.online.store.accountservice\"><email>dsfsffds@mail.ru</email><loginPassword>AAaa11</loginPassword><loginUser>artem33</loginUser></AccountLoginRequest></soap:Body></soap:Envelope>", 
@@ -404,7 +382,7 @@ Action()
 		"Resource=0", 
 		"RecContentType=application/json", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t22.inf", 
+		"Snapshot=t33.inf", 
 		"Mode=HTML", 
 		LAST);
 
@@ -433,7 +411,7 @@ Action()
 		"Resource=0", 
 		"RecContentType=text/xml", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t23.inf", 
+		"Snapshot=t34.inf", 
 		"Mode=HTML", 
 		"EncType=text/xml; charset=UTF-8", 
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLogoutRequest xmlns=\"com.advantage.online.store.accountservice\"><loginUser>345072304</loginUser><base64Token>Basic YXJ0ZW0zMzpBQWFhMTE=</base64Token></AccountLogoutRequest></soap:Body></soap:Envelope>", 

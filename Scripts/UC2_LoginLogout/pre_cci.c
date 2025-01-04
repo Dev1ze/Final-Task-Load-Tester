@@ -2614,17 +2614,22 @@ vuser_init()
 # 1 "Action.c" 1
 Action()
 {
+	char body[1024] = "";
+	char temp[256];
+	int i,productCount;
+	
+	lr_start_transaction("UC2_LoginLogout");
 
-	 
+	web_websocket_send("ID=0", "Buffer={\"messageType\":\"hello\",\"broadcasts\":{\"remote-settings/monitor_changes\":\"\\\"1735902616993\\\"\"},\"use_webpush\":true}", "IsBinary=0", "LAST");  
 
 	lr_start_transaction("OpenLandingPage");
 
 	web_set_sockets_option("SSL_VERSION", "AUTO");
-	 
-	 
-	 
-	 
-	 
+	web_add_cookie("_ga_TBPYED8WSW=GS1.1.1735831776.3.1.1735831986.0.0.0; DOMAIN=www.advantageonlineshopping.com");
+	web_add_cookie("_ga=GA1.2.2102063955.1735813296; DOMAIN=www.advantageonlineshopping.com");
+	web_add_cookie("_gid=GA1.2.392134552.1735813298; DOMAIN=www.advantageonlineshopping.com");
+	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735909643.6.1.1735909660.43.0.0; DOMAIN=www.advantageonlineshopping.com");
+	web_add_cookie("userCart=%7B%22userId%22%3A-1%2C%22productsInCart%22%3A%5B%7B%22productId%22%3A27%2C%22imageUrl%22%3A%225200%22%2C%22productName%22%3A%22HP%20Z3600%20Wireless%20Mouse%22%2C%22color%22%3A%7B%22code%22%3A%22414141%22%2C%22name%22%3A%22BLACK%22%2C%22inStock%22%3A10%2C%22%24%24hashKey%22%3A%22object%3A1189%22%7D%2C%22quantity%22%3A1%2C%22price%22%3A15.99%2C%22hasWarranty%22%3Afalse%7D%5D%7D; DOMAIN=www.advantageonlineshopping.com");
 	web_add_auto_header("Sec-Fetch-Dest", "document");
 	web_add_auto_header("Sec-Fetch-Mode", "navigate");
 	web_add_auto_header("Sec-Fetch-Site", "none");
@@ -2673,7 +2678,7 @@ Action()
 		"Snapshot=t5.inf", 
 		"LAST");
 	web_concurrent_end(0);
-	 
+	web_add_cookie("_gat=1; DOMAIN=www.advantageonlineshopping.com");
 	web_add_auto_header("Sec-Fetch-Dest", "empty");
 	web_add_auto_header("Sec-Fetch-Mode", "cors");
 	web_add_auto_header("Sec-Fetch-Site", "same-origin");
@@ -2727,7 +2732,7 @@ Action()
 		"Referer=https://www.advantageonlineshopping.com/", 
 		"Snapshot=t10.inf", 
 		"LAST");
-	 
+	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735909643.6.1.1735910416.60.0.0; DOMAIN=www.advantageonlineshopping.com");
 	web_url("categories", 
 		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories", 
 		"TargetFrame=", 
@@ -2764,7 +2769,7 @@ Action()
 		"Snapshot=t14.inf", 
 		"Mode=HTML", 
 		"LAST");
-	 
+	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735909643.6.1.1735910418.58.0.0; DOMAIN=www.advantageonlineshopping.com");
 	web_add_header("Priority", "u=4, i");
 	web_concurrent_start(0);
 	web_url("arrow_right.png", 
@@ -2841,6 +2846,8 @@ Action()
 	lr_end_transaction("OpenLandingPage",2);
 
 	
+	lr_think_time(5);
+	
 	
 	lr_start_transaction("Login");
 
@@ -2878,14 +2885,34 @@ Action()
 		"Mode=HTML", 
 		"EncType=text/xml; charset=UTF-8", 
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLoginRequest xmlns=\"com.advantage.online.store.accountservice\">" 
-		"<email>swdqedq@mail.ru</email>" 
-		"<loginPassword>AAaa11</loginPassword>" 
-		"<loginUser>artem1234</loginUser>" 
+		"<email>{email}</email>" 
+		"<loginPassword>{password}</loginPassword>" 
+		"<loginUser>{userName}</loginUser>" 
 		"</AccountLoginRequest></soap:Body></soap:Envelope>",
 		"LAST");
 	web_set_sockets_option("INITIAL_AUTH", "BASIC");
 	web_add_header("Authorization", "Basic {CorrelationParameter}");
-	 
+	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735909643.6.1.1735910466.10.0.0; DOMAIN=www.advantageonlineshopping.com");
+	web_reg_save_param_json(
+	    "ParamName=productId",
+	    "QueryString=$.productsInCart[*].productId",
+	    "SelectAll=Yes",
+	    "NotFound=Warning",
+	    "LAST");
+	web_reg_save_param_json(
+	    "ParamName=hexColor",
+	    "QueryString=$.productsInCart[*].color.code",
+	    "SelectAll=Yes",
+	    "NotFound=Warning",
+	    "LAST");
+	
+	web_reg_save_param_json(
+	    "ParamName=quantity",
+	    "QueryString=$.productsInCart[*].quantity",
+	    "SelectAll=Yes",
+	    "NotFound=Warning",
+	    "LAST");
+	
 	web_url("{loginUser}",
 		"URL=https://www.advantageonlineshopping.com/order/api/v1/carts/{loginUser}",
 		"TargetFrame=",
@@ -2895,7 +2922,25 @@ Action()
 		"Snapshot=t24.inf",
 		"Mode=HTML",
 		"LAST");
-
+	productCount = lr_paramarr_len("productId");
+	
+	
+	for (i = 1; i <= productCount; i++) 
+	{
+		sprintf(temp, "{\"hexColor\":\"%s\",\"productId\":%s,\"quantity\":%s}",
+            lr_paramarr_idx("hexColor", i),
+            lr_paramarr_idx("productId", i),
+            lr_paramarr_idx("quantity", i));
+		
+		if (i > 1) 
+		{
+        	strcat(body, ",");
+    	}
+		strcat(body, temp);
+	}
+	lr_output_message("userName - %s", body);
+	lr_save_string(body, "body");
+		
 	web_add_auto_header("Origin", "https://www.advantageonlineshopping.com");
 	web_add_header("Authorization", "Basic {CorrelationParameter}");
 	web_add_header("Accept", "application/json, text/plain, */*");
@@ -2909,12 +2954,13 @@ Action()
 		"Referer=https://www.advantageonlineshopping.com/",
 		"Snapshot=t25.inf",
 		"Mode=HTML",
-		"Body=[{\"hexColor\":\"414141\",\"productId\":27,\"quantity\":1}]",
+		"Body=[{body}]",
 		"LAST");
 	
 	lr_end_transaction("Login",2);
 
 	
+	lr_think_time(5);
 	
 	
 	lr_start_transaction("Logout");
@@ -2936,6 +2982,9 @@ Action()
 		"LAST");
 
 	lr_end_transaction("Logout",2);
+
+	
+	lr_end_transaction("UC2_LoginLogout", 2);
 
 	return 0;
 }
