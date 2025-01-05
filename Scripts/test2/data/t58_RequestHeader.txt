@@ -1,0 +1,13 @@
+GET /css/fonts/roboto_thin_macroman/Roboto-Thin-webfont.woff HTTP/1.1
+Host: www.advantageonlineshopping.com
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:132.0) Gecko/20100101 Firefox/132.0
+Accept: application/font-woff2;q=1.0,application/font-woff;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: identity
+Connection: keep-alive
+Referer: https://www.advantageonlineshopping.com/css/main.min.css
+Cookie: _ga_TBPYED8WSW=GS1.1.1736065316.10.0.1736065316.0.0.0; _ga=GA1.2.2102063955.1735813296; _gid=GA1.2.392134552.1735813298; _ga_56EMNRF2S2=GS1.2.1736065316.10.1.1736065319.57.0.0; userCart=%7B%22userId%22%3A-1%2C%22productsInCart%22%3A%5B%5D%7D; _gat=1
+Sec-Fetch-Dest: font
+Sec-Fetch-Mode: cors
+Sec-Fetch-Site: same-origin
+
