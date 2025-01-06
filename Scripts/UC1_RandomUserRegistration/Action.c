@@ -158,6 +158,9 @@ Action()
 		"EncType=text/xml; charset=UTF-8", 
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><GetAccountConfigurationRequest xmlns=\"com.advantage.online.store.accountservice\"></GetAccountConfigurationRequest></soap:Body></soap:Envelope>", 
 		LAST);
+	
+	web_reg_find("Text=\"categoryId\":1,\"categoryName\":\"LAPTOPS\"", LAST); // Проверка на успешный вход на страницу
+	
 	web_url("categories", 
 		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories", 
 		"TargetFrame=", 
@@ -212,12 +215,17 @@ Action()
 	lr_end_transaction("OpenLandingPage",LR_AUTO);
 	
 	
+	
 	lr_think_time(5);
+	
 	
 
 	lr_start_transaction("OpenRegistrationPage");
 
 	web_add_header("Priority", "u=0");
+	
+	web_reg_find("Text=CREATE_ACCOUNT", LAST); // Проверка на открытие страницы создания аккаунта
+	
 	web_url("register-page.html", 
 		"URL=https://www.advantageonlineshopping.com/app/user/views/register-page.html", 
 		"TargetFrame=", 
@@ -246,8 +254,10 @@ Action()
 	lr_end_transaction("OpenRegistrationPage",LR_AUTO);
 	
 	
+	
 	lr_think_time(5);
 
+	
 	
 	lr_start_transaction("UserRegistered");
 	
@@ -261,6 +271,8 @@ Action()
 		"Scope=Body",
 		"IgnoreRedirections=No",
 		LAST);
+	
+	web_reg_find("Text=<ns2:reason>New user created successfully.</ns2:reason>", LAST); // Проверка на успешную регистрацию
 
 	web_custom_request("AccountCreateRequest", 
 		"URL=https://www.advantageonlineshopping.com/accountservice/ws/AccountCreateRequest", 
@@ -335,6 +347,9 @@ Action()
 	web_add_header("Priority", "u=0");
 	web_add_header("SOAPAction", "com.advantage.online.store.accountserviceAccountLogoutRequest");
 	web_add_header("X-Requested-With", "XMLHttpRequest");
+	
+	web_reg_find("Text=<ns2:reason>Logout Successful</ns2:reason>", LAST); // Проверка на успешную авторизацию
+	
 	web_custom_request("AccountLogoutRequest",
 		"URL=https://www.advantageonlineshopping.com/accountservice/ws/AccountLogoutRequest",
 		"Method=POST",
