@@ -17,7 +17,7 @@ Action()
 		LAST);
 
 	lr_start_transaction("OpenLandingPage");
-
+	
 	web_set_sockets_option("SSL_VERSION", "AUTO");
 	web_set_user("artem1234", lr_unmask("677a419475df61538e99"), "www.advantageonlineshopping.com:443");
 	web_add_cookie("_ga_TBPYED8WSW=GS1.1.1735985229.9.0.1735985229.0.0.0; DOMAIN=www.advantageonlineshopping.com");
@@ -109,6 +109,9 @@ Action()
 		"EncType=text/xml; charset=UTF-8", 
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><GetAccountConfigurationRequest xmlns=\"com.advantage.online.store.accountservice\"></GetAccountConfigurationRequest></soap:Body></soap:Envelope>", 
 		LAST);
+	
+	web_reg_find("Text=\"categoryId\":1,\"categoryName\":\"LAPTOPS\"", LAST); // Проверка на успешный вход на страницу
+	
 	web_url("categories", 
 		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories", 
 		"TargetFrame=", 
@@ -222,6 +225,9 @@ Action()
 		"Scope=Body",
 		"IgnoreRedirections=No",
 		LAST);
+	
+	web_reg_find("Text=<ns2:reason>Login Successful</ns2:reason>", LAST); // Проверка на успешную авторизацию
+	
 	web_custom_request("AccountLoginRequest", 
 		"URL=https://www.advantageonlineshopping.com/accountservice/ws/AccountLoginRequest", 
 		"Method=POST", 
@@ -320,7 +326,7 @@ Action()
 	
 	
 	lr_start_transaction("ChooseCategory");
-	
+	web_reg_find("Text=\"categoryId\":{category},\"", LAST); // Проверка на соответствие сгенерированной id категории с переходом на категорию
 	web_reg_save_param_json(
 		"ParamName=productId",
 		"QueryString=$..productId",
@@ -436,6 +442,7 @@ Action()
 	
 	lr_start_transaction("ChooseProduct");
 	
+	web_reg_find("Text=\"productId\":{rndProductId},\"categoryId\":{category}", LAST); // Проверка на наличие рандомного продукта в ответе от сервера
 	web_reg_save_param_json(
 		"ParamName=colorCode",
 		"QueryString=$..code",
@@ -453,7 +460,7 @@ Action()
 		"Mode=HTML", 
 		LAST);
 	web_url("all_data", 
-		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/all_data", //Все продукты во всех категорияъ
+		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/all_data", //Все продукты во всех категориях
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
@@ -500,6 +507,9 @@ Action()
 	
 
 	lr_start_transaction("AddToCart");
+	
+	web_reg_find("Text=\"productId\":{rndProductId}", LAST); // Проверка на наличие id продукта в ответе запроса добавление в корзину
+	
 	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736065316.10.1.1736065395.60.0.0; DOMAIN=www.advantageonlineshopping.com");
 	web_add_header("Origin", "https://www.advantageonlineshopping.com");
 	web_add_header("Priority", "u=0");
