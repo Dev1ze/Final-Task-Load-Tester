@@ -6,11 +6,11 @@ SaveSnapshotResources=1
 FileName11=t1_0_js.UNK
 FileName10=t1_1_Down_arrow.UNK
 RequestHeaderFile=t6_RequestHeader.txt
-RawStepStartTime=1736014312153
+RawStepStartTime=1736182540595
 ContentType=application/json
 RawStepName=search
 ResponseHeaderFile=t6_ResponseHeader.txt
-RawStepEndTime=1736014312460
+RawStepEndTime=1736182540943
 SnapshotXmlFile=snapshot_12.xml
 Total=11
 URL1=https://www.advantageonlineshopping.com/catalog/api/v1/deals/search?dealOfTheDay=true

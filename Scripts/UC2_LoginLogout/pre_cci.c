@@ -2616,7 +2616,7 @@ Action()
 {
 	char body[1024] = "";
 	char temp[256];
-	int i,productCount;
+	int i, productCount;
 	
 	lr_start_transaction("UC2_LoginLogout");
 
@@ -2733,6 +2733,9 @@ Action()
 		"Snapshot=t10.inf", 
 		"LAST");
 	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735909643.6.1.1735910416.60.0.0; DOMAIN=www.advantageonlineshopping.com");
+	
+	web_reg_find("Text=\"categoryId\":1,\"categoryName\":\"LAPTOPS\"", "LAST");  
+	
 	web_url("categories", 
 		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories", 
 		"TargetFrame=", 
@@ -2874,6 +2877,8 @@ Action()
 		"IgnoreRedirections=No",
 		"LAST");
 
+	web_reg_find("Text=<ns2:reason>Login Successful</ns2:reason>", "LAST");  
+	
 	web_custom_request("AccountLoginRequest", 
 		"URL=https://www.advantageonlineshopping.com/accountservice/ws/AccountLoginRequest", 
 		"Method=POST", 
@@ -2924,7 +2929,6 @@ Action()
 		"LAST");
 	productCount = lr_paramarr_len("productId");
 	
-	
 	for (i = 1; i <= productCount; i++) 
 	{
 		sprintf(temp, "{\"hexColor\":\"%s\",\"productId\":%s,\"quantity\":%s}",
@@ -2968,6 +2972,9 @@ Action()
 	web_add_header("Priority", "u=0");
 	web_add_header("SOAPAction", "com.advantage.online.store.accountserviceAccountLogoutRequest");
 	web_add_header("X-Requested-With", "XMLHttpRequest");
+	
+	web_reg_find("Text=<ns2:reason>Logout Successful</ns2:reason>", "LAST");  
+	
 	web_custom_request("AccountLogoutRequest",
 		"URL=https://www.advantageonlineshopping.com/accountservice/ws/AccountLogoutRequest",
 		"Method=POST",
