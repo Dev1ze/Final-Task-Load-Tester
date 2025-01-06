@@ -5,14 +5,16 @@ Action()
 	char rndProductId[256];
 	char rndColorId[256];
 	char categoryIdx[256];
-	// Инициализация генератора случайных чисел
-    srand(time(NULL));
+	char body[1024] = "";
+	char temp[256];
+    srand(time(NULL)); // Инициализация генератора случайных чисел
+    
+    lr_start_transaction("UC4_AddToCart");
+
 	web_websocket_send("ID=0", 
 		"Buffer={\"messageType\":\"hello\",\"broadcasts\":{\"remote-settings/monitor_changes\":\"\\\"1735940792211\\\"\"},\"use_webpush\":true}", 
 		"IsBinary=0", 
 		LAST);
-
-	/*Connection ID 0 received buffer WebSocketReceive0*/
 
 	lr_start_transaction("OpenLandingPage");
 
@@ -230,11 +232,15 @@ Action()
 		"Snapshot=t59.inf", 
 		"Mode=HTML", 
 		"EncType=text/xml; charset=UTF-8", 
-		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLoginRequest xmlns=\"com.advantage.online.store.accountservice\"><email></email><loginPassword>AAaa11</loginPassword><loginUser>artem1234</loginUser></AccountLoginRequest></soap:Body></soap:Envelope>", 
+		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLoginRequest xmlns=\"com.advantage.online.store.accountservice\">" 
+		"<email>{email}</email>" 
+		"<loginPassword>{password}</loginPassword>" 
+		"<loginUser>{userName}</loginUser>" 
+		"</AccountLoginRequest></soap:Body></soap:Envelope>",
 		LAST);
 	web_set_sockets_option("INITIAL_AUTH", "BASIC");
-	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736065316.10.1.1736065340.36.0.0; DOMAIN=www.advantageonlineshopping.com");
 	web_add_header("Authorization", "Basic {CorrelationParameter}");
+	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736065316.10.1.1736065340.36.0.0; DOMAIN=www.advantageonlineshopping.com");
 	/*Correlation comment - Do not change!  Original value='005D9FE091A6779EAD527891ECD939A3' Name ='sessionId' Type ='Manual'*/
 	web_reg_save_param_regexp(
 		"ParamName=sessionId",
@@ -243,6 +249,24 @@ Action()
 		"Scope=Cookies",
 		"IgnoreRedirections=No",
 		LAST);
+	web_reg_save_param_json(
+	    "ParamName=productId",
+	    "QueryString=$.productsInCart[*].productId",
+	    "SelectAll=Yes",
+	    "NotFound=Warning",
+	    LAST);
+	web_reg_save_param_json(
+	    "ParamName=hexColor",
+	    "QueryString=$.productsInCart[*].color.code",
+	    "SelectAll=Yes",
+	    "NotFound=Warning",
+	    LAST);
+	web_reg_save_param_json(
+	    "ParamName=quantity",
+	    "QueryString=$.productsInCart[*].quantity",
+	    "SelectAll=Yes",
+	    "NotFound=Warning",
+	    LAST);
 	web_url("{UserID}",
 		"URL=https://www.advantageonlineshopping.com/order/api/v1/carts/{UserID}",
 		"TargetFrame=",
@@ -252,6 +276,25 @@ Action()
 		"Snapshot=t60.inf",
 		"Mode=HTML",
 		LAST);
+	
+	productCount = lr_paramarr_len("productId");
+	
+	for (i = 1; i <= productCount; i++) 
+	{
+		sprintf(temp, "{\"hexColor\":\"%s\",\"productId\":%s,\"quantity\":%s}",
+            lr_paramarr_idx("hexColor", i),
+            lr_paramarr_idx("productId", i),
+            lr_paramarr_idx("quantity", i));
+		
+		if (i > 1) 
+		{
+        	strcat(body, ",");
+    	}
+		strcat(body, temp);
+	}
+	lr_output_message("userName - %s", body);
+	lr_save_string(body, "body");
+	
 	web_add_header("Origin", "https://www.advantageonlineshopping.com");
 	web_add_header("Authorization", "Basic {CorrelationParameter}");
 	web_add_header("Content-Type", "application/json;charset=utf-8");
@@ -265,7 +308,7 @@ Action()
 		"Referer=https://www.advantageonlineshopping.com/",
 		"Snapshot=t61.inf",
 		"Mode=HTML",
-		"Body=[{\"hexColor\":\"414141\",\"productId\":18,\"quantity\":1},{\"hexColor\":\"414141\",\"productId\":27,\"quantity\":1}]",
+		"Body=[{body}]",
 		LAST);
 
 	lr_end_transaction("Login",LR_AUTO);
@@ -276,8 +319,7 @@ Action()
 	
 	
 	
-	lr_start_transaction("Categories");
-	
+	lr_start_transaction("ChooseCategory");
 	
 	web_reg_save_param_json(
 		"ParamName=productId",
@@ -285,7 +327,6 @@ Action()
 		"SelectAll=Yes",
 	    "NotFound=Warning",
 	    LAST);
-	
 	web_add_header("Priority", "u=0");
 	web_url("products", 
 		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/{category}/products", //Продукты в категории X
@@ -371,7 +412,6 @@ Action()
 		"Snapshot=t70.inf", 
 		LAST);
 	web_concurrent_end(NULL);
-
 	lr_output_message("Категории - %s", lr_eval_string("{category}"));
 	lr_save_string(rndProductId, "rndProductId");
 	productCount = lr_paramarr_len("productId");
@@ -381,13 +421,12 @@ Action()
 	sprintf(rndProductId, lr_paramarr_idx("productId", rndIndex));
 	lr_output_message("Рандомный продукт - %s", rndProductId);
 	lr_save_string(rndProductId, "rndProductId");
-	
 	for(i = 1; i <= productCount; i++)
 	{
-		lr_output_message("userName - %s", lr_paramarr_idx("productId",i));
+		lr_output_message("Продукт - %s", lr_paramarr_idx("productId",i));
 	}
 
-	lr_end_transaction("Categories",LR_AUTO);
+	lr_end_transaction("ChooseCategory",LR_AUTO);
 
 	
 	
@@ -440,7 +479,6 @@ Action()
 		"Snapshot=t74.inf", 
 		"Mode=HTML", 
 		LAST);
-	
 	colorCount = lr_paramarr_len("colorCode");
 	lr_output_message("Количество цветов у продукта - %d", colorCount);
 	rndIndex = (rand() % (colorCount - 1 + 1)) + 1;
@@ -448,10 +486,9 @@ Action()
 	sprintf(rndColorId, lr_paramarr_idx("colorCode", rndIndex));
 	lr_output_message("Рандомный цвет - %s", rndColorId);
 	lr_save_string(rndColorId, "rndColorId");
-	
 	for(i = 1; i <= colorCount; i++)
 	{
-		lr_output_message("userName - %s", lr_paramarr_idx("colorCode",i));
+		lr_output_message("Цвет - %s", lr_paramarr_idx("colorCode",i));
 	}
 	
 	lr_end_transaction("ChooseProduct",LR_AUTO);
@@ -481,6 +518,9 @@ Action()
 		LAST);
 
 	lr_end_transaction("AddToCart",LR_AUTO);
+	
+	lr_end_transaction("UC4_AddToCart", LR_AUTO);
+
 
 	return 0;
 }

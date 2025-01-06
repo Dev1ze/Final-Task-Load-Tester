@@ -1,5 +1,5 @@
-[t23]
-RequestBodyFile=t23_RequestBody.txt
+[t24]
+RequestBodyFile=t24_RequestBody.txt
 URL10=https://www.advantageonlineshopping.com/css/images/arrow_right.png
 URL11=https://www.advantageonlineshopping.com/css/fonts/roboto_bold_macroman/Roboto-Bold-webfont.woff
 URL12=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=tablets
@@ -20,26 +20,26 @@ FileName11=t8_13_Roboto-Bold-webfont.UNK
 FileName10=t8_14_arrow_right.png
 FileName13=t7_11_.html
 FileName12=t8_12_fetchImage.jpg
-RequestHeaderFile=t23_RequestHeader.txt
+RequestHeaderFile=t24_RequestHeader.txt
 FileName15=t7_9_Special-offer.html
-RawStepStartTime=1736174097218
+RawStepStartTime=1736174097951
 FileName14=t7_10_chat_logo.png
 FileName17=t2_7_Roboto-Light-webfont.UNK
 FileName16=t2_8_main.UNK
 FileName19=t2_5_Roboto-Regular-webfont.UNK
 FileName18=t2_6_Roboto-Medium-webfont.UNK
 ContentType=application/json
-RawStepName=all_data
-ResponseHeaderFile=t23_ResponseHeader.txt
-RawStepEndTime=1736174097915
-SnapshotXmlFile=snapshot_31.xml
+RawStepName=products_2
+ResponseHeaderFile=t24_ResponseHeader.txt
+RawStepEndTime=1736174098428
+SnapshotXmlFile=snapshot_32.xml
 Total=24
-URL1=https://www.advantageonlineshopping.com/catalog/api/v1/categories/all_data
+URL1=https://www.advantageonlineshopping.com/catalog/api/v1/categories/5/products
 URL2=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5300
 URL3=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5400
 URL4=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5600
 URL5=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5900
-FileName1=t23.json
+FileName1=t24.json
 URL6=https://www.advantageonlineshopping.com/css/images/Filter.png
 URL7=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5100
 FileName3=t21_21_fetchImage.jpg
@@ -57,4 +57,4 @@ FileName20=t2_4_services.UNK
 FileName23=t1_1_Down_arrow.UNK
 FileName22=t1_2_require.UNK
 FileName24=t1_0_js.UNK
-StepName=Url: all_data
+StepName=Url: products_2

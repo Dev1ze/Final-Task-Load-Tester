@@ -1,10 +1,11 @@
 HTTP/2.0 200
 Status: 200
 server: nginx/1.18.0 (Ubuntu)
-date: Sun, 05 Jan 2025 21:39:57 GMT
+date: Mon, 06 Jan 2025 14:34:48 GMT
 content-type: application/json
 expires: 0
 cache-control: no-store
+set-cookie: JSESSIONID=A15D945AAD385EC95DD29C999E4F44EC; Path=/order; HttpOnly
 x-content-type-options: nosniff
 x-xss-protection: 1; mode=block
 x-frame-options: DENY

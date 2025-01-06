@@ -2,8 +2,8 @@
 -DCCI
 -D_IDA_XL
 -DWINNT
--IP:\Programs\Itogovoe\Scripts\test2
+-IP:\Programs\Itogovoe\Scripts\UC4_AddToCart
 -IP:\Programs\LoadRunner\include
--ep:\programs\itogovoe\scripts\test2\\logfile.log
-p:\programs\itogovoe\scripts\test2\\combined_test2.c
-p:\programs\itogovoe\scripts\test2\\pre_cci.c
+-ep:\programs\itogovoe\scripts\uc4_addtocart\\logfile.log
+p:\programs\itogovoe\scripts\uc4_addtocart\\combined_UC4_AddToCart.c
+p:\programs\itogovoe\scripts\uc4_addtocart\\pre_cci.c
