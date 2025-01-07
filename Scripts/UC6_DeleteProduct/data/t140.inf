@@ -1,0 +1,10 @@
+[t140]
+FileName1=t136.htm
+URL1=https://www.advantageonlineshopping.com/
+Total=1
+SnapshotXmlFile=snapshot_140.xml
+RequestHeaderFile=t140_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t140_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

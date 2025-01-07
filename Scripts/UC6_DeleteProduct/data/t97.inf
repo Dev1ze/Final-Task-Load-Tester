@@ -1,0 +1,15 @@
+[t97]
+FileName1=t97.htm
+URL1=https://www.advantageonlineshopping.com/
+Total=3
+RequestHeaderFile=t97_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t97_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_97.xml
+FileName2=t97_main.min.css
+URL2=https://www.advantageonlineshopping.com/css/main.min.css
+FileName3=t97_require.html
+URL3=https://www.advantageonlineshopping.com/vendor/requirejs/require.js
+[ProtocolInfo]
+ProtocolId=QTWeb

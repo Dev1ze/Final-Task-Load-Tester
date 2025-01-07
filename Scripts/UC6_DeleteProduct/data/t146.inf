@@ -1,0 +1,5 @@
+[t146]
+FileName1=t145_search.json
+URL1=https://www.advantageonlineshopping.com/catalog/api/v1/deals/search?dealOfTheDay=true
+Total=1
+SnapshotXmlFile=snapshot_146.xml
