@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IP:\Programs\Itogovoe\Scripts\UC5_BuyingProduct
+-IP:\Programs\LoadRunner\include
+-ep:\programs\itogovoe\scripts\uc5_buyingproduct\\logfile.log
+p:\programs\itogovoe\scripts\uc5_buyingproduct\\combined_UC5_BuyingProduct.c
+p:\programs\itogovoe\scripts\uc5_buyingproduct\\pre_cci.c

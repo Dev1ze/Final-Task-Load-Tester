@@ -19,7 +19,6 @@ Action()
 	lr_start_transaction("OpenLandingPage");
 	
 	web_set_sockets_option("SSL_VERSION", "AUTO");
-	web_set_user("artem1234", lr_unmask("677a419475df61538e99"), "www.advantageonlineshopping.com:443");
 	web_add_cookie("_ga_TBPYED8WSW=GS1.1.1735985229.9.0.1735985229.0.0.0; DOMAIN=www.advantageonlineshopping.com");
 	web_add_cookie("_ga=GA1.2.2102063955.1735813296; DOMAIN=www.advantageonlineshopping.com");
 	web_add_cookie("_gid=GA1.2.392134552.1735813298; DOMAIN=www.advantageonlineshopping.com");

@@ -3,8 +3,9 @@
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-char WebSocketReceive0[] = "{\"messageType\":\"hello\",\"uaid\":\"35f9674d0e144fdf8251cb4e043eb763\",\"statu"
-                        "s\":200,\"use_webpush\":true,\"broadcasts\":{}}";
-long WebSocketReceiveLen0   = sizeof(WebSocketReceive0) - 1;	// (record-time: 113 bytes)
+char WebSocketReceive0[] = "{\"messageType\":\"hello\",\"uaid\":\"26accbc8c7bb4b82b43e120911c0100a\",\"statu"
+                        "s\":200,\"use_webpush\":true,\"broadcasts\":{\"remote-settings/monitor_changes\""
+                        ":\"\\\"1736208065177\\\"\"}}";
+long WebSocketReceiveLen0   = sizeof(WebSocketReceive0) - 1;	// (record-time: 166 bytes)
 
 #endif

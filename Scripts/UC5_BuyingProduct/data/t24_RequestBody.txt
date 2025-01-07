@@ -1,0 +1,4 @@
+"{\"seaddress\":{\"addressLine1\":\"Rahman\",\"addressLine2\":\"\",\"city\":\"Penza\",\"country"
+"\":\"uz\",\"postalCode\":440066,\"state\":\"Penza obl\"},\"secustomerName\":\"Artem Kleym\",\""
+"secustomerPhone\":34376557,\"senumberOfProducts\":3,\"setransactionType\":\"SHIPPING_COST\",\""
+"sessionId\":\"D79C220D89ED4631DDB325298BE58ED8\"}"

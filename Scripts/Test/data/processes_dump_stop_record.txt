@@ -5,14 +5,11 @@ Failed to get information of process Id: 180
 Failed to get information of process Id: 604
 Failed to get information of process Id: 840
 Failed to get information of process Id: 928
-Failed to get information of process Id: 936
 Failed to get information of process Id: 1000
 Failed to get information of process Id: 496
 Failed to get information of process Id: 656
-Failed to get information of process Id: 844
 Failed to get information of process Id: 1160
 Failed to get information of process Id: 1188
-Failed to get information of process Id: 1196
 Failed to get information of process Id: 1288
 Failed to get information of process Id: 1340
 Failed to get information of process Id: 1464
@@ -20,7 +17,6 @@ Failed to get information of process Id: 1512
 Failed to get information of process Id: 1532
 Failed to get information of process Id: 1596
 Failed to get information of process Id: 1644
-Failed to get information of process Id: 1696
 Failed to get information of process Id: 1716
 Failed to get information of process Id: 1864
 Failed to get information of process Id: 1896
@@ -55,7 +51,6 @@ Failed to get information of process Id: 3428
 Failed to get information of process Id: 3436
 Failed to get information of process Id: 3508
 Failed to get information of process Id: 3640
-Failed to get information of process Id: 3712
 Failed to get information of process Id: 3820
 Failed to get information of process Id: 3396
 Failed to get information of process Id: 4168
@@ -78,7 +73,6 @@ Failed to get information of process Id: 4624
 Failed to get information of process Id: 4640
 Failed to get information of process Id: 4668
 Failed to get information of process Id: 4704
-Failed to get information of process Id: 4836
 Failed to get information of process Id: 4904
 Failed to get information of process Id: 4912
 Failed to get information of process Id: 5024
@@ -120,191 +114,166 @@ Failed to get information of process Id: 8524
 Failed to get information of process Id: 8568
 Failed to get information of process Id: 8644
 Failed to get information of process Id: 9092
-Failed to get information of process Id: 9172
-Failed to get information of process Id: 9208
-Failed to get information of process Id: 2572
-Failed to get information of process Id: 6656
-Failed to get information of process Id: 8912
-Failed to get information of process Id: 8956
 Failed to get information of process Id: 4932
 Failed to get information of process Id: 8044
 Failed to get information of process Id: 8004
-Failed to get information of process Id: 9272
 Failed to get information of process Id: 9460
 Failed to get information of process Id: 9468
-Failed to get information of process Id: 9516
-Failed to get information of process Id: 9928
 Failed to get information of process Id: 1428
 Failed to get information of process Id: 3360
 Failed to get information of process Id: 10412
 Failed to get information of process Id: 10540
 Failed to get information of process Id: 10672
-Failed to get information of process Id: 10996
-Failed to get information of process Id: 11148
 Failed to get information of process Id: 11240
 Failed to get information of process Id: 836
-Failed to get information of process Id: 11368
-Failed to get information of process Id: 11624
 Failed to get information of process Id: 11752
-Failed to get information of process Id: 11804
-Failed to get information of process Id: 12104
-Failed to get information of process Id: 12372
 Failed to get information of process Id: 13584
-Failed to get information of process Id: 13644
-Failed to get information of process Id: 14180
-Failed to get information of process Id: 14296
 Failed to get information of process Id: 13820
-Failed to get information of process Id: 7276
-Failed to get information of process Id: 5992
-Failed to get information of process Id: 3124
-PROCESS 0x3638      nvidia web helper.exe
-Failed to get information of process Id: 14136
-Failed to get information of process Id: 15252
-Failed to get information of process Id: 13788
 Failed to get information of process Id: 6276
-Failed to get information of process Id: 11604
 Failed to get information of process Id: 8996
-Failed to get information of process Id: 12296
-Failed to get information of process Id: 14580
-Failed to get information of process Id: 14612
-Failed to get information of process Id: 14632
-Failed to get information of process Id: 14228
-Failed to get information of process Id: 14268
-Failed to get information of process Id: 15052
-Failed to get information of process Id: 15604
-Failed to get information of process Id: 15652
 Failed to get information of process Id: 15800
-PROCESS 0x3ea0      magentproc.exe
-Failed to get information of process Id: 16072
-Failed to get information of process Id: 17508
-PROCESS 0x4478      jusched.exe
 Failed to get information of process Id: 18152
-Failed to get information of process Id: 13492
-Failed to get information of process Id: 14032
 Failed to get information of process Id: 12672
-Failed to get information of process Id: 5868
 Failed to get information of process Id: 20928
-Failed to get information of process Id: 2928
-Failed to get information of process Id: 1740
-Failed to get information of process Id: 23376
 Failed to get information of process Id: 12056
 Failed to get information of process Id: 22872
 Failed to get information of process Id: 22888
-PROCESS 0x94c       ksdeui.exe
-Failed to get information of process Id: 20632
-Failed to get information of process Id: 2332
-Failed to get information of process Id: 11036
-Failed to get information of process Id: 10600
-Failed to get information of process Id: 2508
-Failed to get information of process Id: 10844
-Failed to get information of process Id: 16496
-Failed to get information of process Id: 11168
 Failed to get information of process Id: 18172
 Failed to get information of process Id: 22192
-Failed to get information of process Id: 25004
-Failed to get information of process Id: 25256
-PROCESS 0x5cbc      httpd.exe
-PROCESS 0x19e4      httpd.exe
-Failed to get information of process Id: 22880
-Failed to get information of process Id: 19660
 Failed to get information of process Id: 6632
-Failed to get information of process Id: 26200
-Failed to get information of process Id: 20204
-Failed to get information of process Id: 4872
-Failed to get information of process Id: 2992
-Failed to get information of process Id: 23512
-Failed to get information of process Id: 23576
-Failed to get information of process Id: 24228
-Failed to get information of process Id: 6072
-Failed to get information of process Id: 19460
 Failed to get information of process Id: 23680
-PROCESS 0x6a2c      steam.exe
-Failed to get information of process Id: 19040
-Failed to get information of process Id: 25496
-Failed to get information of process Id: 24980
-Failed to get information of process Id: 23480
-Failed to get information of process Id: 22084
-Failed to get information of process Id: 28088
-Failed to get information of process Id: 12656
-Failed to get information of process Id: 21860
-Failed to get information of process Id: 20388
-Failed to get information of process Id: 17688
-Failed to get information of process Id: 2884
-Failed to get information of process Id: 1444
-Failed to get information of process Id: 27908
-Failed to get information of process Id: 28588
 Failed to get information of process Id: 20484
-Failed to get information of process Id: 27376
-Failed to get information of process Id: 7404
-Failed to get information of process Id: 16528
-Failed to get information of process Id: 17452
-Failed to get information of process Id: 8308
-Failed to get information of process Id: 17344
-Failed to get information of process Id: 20448
 Failed to get information of process Id: 8588
-Failed to get information of process Id: 23844
-Failed to get information of process Id: 17628
-Failed to get information of process Id: 17800
-Failed to get information of process Id: 23220
-Failed to get information of process Id: 23320
-Failed to get information of process Id: 28372
-Failed to get information of process Id: 22392
-Failed to get information of process Id: 21624
-Failed to get information of process Id: 18084
-Failed to get information of process Id: 21944
-Failed to get information of process Id: 23600
-Failed to get information of process Id: 21956
-Failed to get information of process Id: 1204
-Failed to get information of process Id: 26900
-Failed to get information of process Id: 17984
-Failed to get information of process Id: 19916
-Failed to get information of process Id: 27340
-Failed to get information of process Id: 17392
-Failed to get information of process Id: 16444
-Failed to get information of process Id: 18176
-Failed to get information of process Id: 21824
-Failed to get information of process Id: 15064
-Failed to get information of process Id: 19900
-Failed to get information of process Id: 27148
-Failed to get information of process Id: 15528
-Failed to get information of process Id: 23032
-Failed to get information of process Id: 19100
-PROCESS 0x1d28      vugen.exe
-PROCESS 0x2380      eowp.exe
-Failed to get information of process Id: 20692
-PROCESS 0x4cbc      eowp.exe
-Failed to get information of process Id: 13560
-PROCESS 0x350c      eowp.exe
-Failed to get information of process Id: 11644
-Failed to get information of process Id: 4828
-Failed to get information of process Id: 27776
-Failed to get information of process Id: 21332
-PROCESS 0x1d08      eowp.exe
-PROCESS 0xbcc       wmplayer.exe
-Failed to get information of process Id: 26768
-Failed to get information of process Id: 26256
-Failed to get information of process Id: 1388
-Failed to get information of process Id: 19584
-Failed to get information of process Id: 2648
-Failed to get information of process Id: 17744
-Failed to get information of process Id: 18340
-Failed to get information of process Id: 6164
-Failed to get information of process Id: 29356
-Failed to get information of process Id: 29420
+Failed to get information of process Id: 2556
+Failed to get information of process Id: 1128
+Failed to get information of process Id: 1688
+Failed to get information of process Id: 14264
+Failed to get information of process Id: 26440
+Failed to get information of process Id: 29304
+Failed to get information of process Id: 13688
 Failed to get information of process Id: 9220
-Failed to get information of process Id: 20156
-Failed to get information of process Id: 21328
-Failed to get information of process Id: 29392
-Failed to get information of process Id: 4440
-Failed to get information of process Id: 11664
-Failed to get information of process Id: 2208
-Failed to get information of process Id: 1856
-Failed to get information of process Id: 28540
-Failed to get information of process Id: 19364
-Failed to get information of process Id: 10572
-Failed to get information of process Id: 28484
-PROCESS 0x29ec      dllhost.exe
-PROCESS 0x6a38      firefoxportable.exe
+Failed to get information of process Id: 30984
+Failed to get information of process Id: 29032
+Failed to get information of process Id: 2936
+Failed to get information of process Id: 30168
+Failed to get information of process Id: 20500
+Failed to get information of process Id: 24056
+Failed to get information of process Id: 12516
+Failed to get information of process Id: 18852
+Failed to get information of process Id: 17816
+Failed to get information of process Id: 23472
+Failed to get information of process Id: 27488
+Failed to get information of process Id: 32708
+Failed to get information of process Id: 8520
+Failed to get information of process Id: 9740
+Failed to get information of process Id: 24456
+Failed to get information of process Id: 18472
+Failed to get information of process Id: 25168
+Failed to get information of process Id: 12184
+Failed to get information of process Id: 27108
+PROCESS 0x66dc      ksdeui.exe
+PROCESS 0x5a8       nvidia web helper.exe
+Failed to get information of process Id: 13740
+Failed to get information of process Id: 7796
+Failed to get information of process Id: 19036
+Failed to get information of process Id: 11048
+Failed to get information of process Id: 32376
+Failed to get information of process Id: 21696
+Failed to get information of process Id: 18308
+Failed to get information of process Id: 17968
+Failed to get information of process Id: 15056
+PROCESS 0x3048      magentproc.exe
+Failed to get information of process Id: 8088
+Failed to get information of process Id: 20392
+Failed to get information of process Id: 25260
+Failed to get information of process Id: 6964
+Failed to get information of process Id: 19024
+Failed to get information of process Id: 15432
+Failed to get information of process Id: 20688
+Failed to get information of process Id: 9156
+Failed to get information of process Id: 15248
+PROCESS 0x256c      jusched.exe
+Failed to get information of process Id: 17244
+Failed to get information of process Id: 16228
+Failed to get information of process Id: 15752
+Failed to get information of process Id: 16392
+Failed to get information of process Id: 17808
+PROCESS 0x2ec8      jucheck.exe
+Failed to get information of process Id: 2628
+Failed to get information of process Id: 7132
+Failed to get information of process Id: 15488
+Failed to get information of process Id: 17924
+Failed to get information of process Id: 17512
+Failed to get information of process Id: 5872
+Failed to get information of process Id: 31600
+Failed to get information of process Id: 23176
+Failed to get information of process Id: 15584
+Failed to get information of process Id: 12264
+Failed to get information of process Id: 12372
+Failed to get information of process Id: 31812
+Failed to get information of process Id: 23160
+Failed to get information of process Id: 17936
+Failed to get information of process Id: 30828
+Failed to get information of process Id: 26864
+Failed to get information of process Id: 13104
+Failed to get information of process Id: 16848
+Failed to get information of process Id: 16168
+Failed to get information of process Id: 26820
+Failed to get information of process Id: 14128
+Failed to get information of process Id: 30712
+Failed to get information of process Id: 5260
+Failed to get information of process Id: 3524
+Failed to get information of process Id: 21280
+Failed to get information of process Id: 31132
+Failed to get information of process Id: 22916
+PROCESS 0x6874      vugen.exe
+PROCESS 0x6b38      eowp.exe
+Failed to get information of process Id: 20396
+PROCESS 0x371c      eowp.exe
+Failed to get information of process Id: 4008
+PROCESS 0x3e54      eowp.exe
+Failed to get information of process Id: 7968
+Failed to get information of process Id: 27988
+Failed to get information of process Id: 7196
+Failed to get information of process Id: 24116
+Failed to get information of process Id: 25200
+Failed to get information of process Id: 30372
+Failed to get information of process Id: 23724
+Failed to get information of process Id: 15692
+Failed to get information of process Id: 5632
+Failed to get information of process Id: 26264
+Failed to get information of process Id: 28544
+Failed to get information of process Id: 20280
+Failed to get information of process Id: 30260
+Failed to get information of process Id: 23180
+Failed to get information of process Id: 14060
+Failed to get information of process Id: 26028
+Failed to get information of process Id: 13272
+Failed to get information of process Id: 31120
+Failed to get information of process Id: 26108
+Failed to get information of process Id: 28200
+Failed to get information of process Id: 27024
+Failed to get information of process Id: 30584
+Failed to get information of process Id: 31056
+Failed to get information of process Id: 21220
+Failed to get information of process Id: 19092
+Failed to get information of process Id: 19624
+Failed to get information of process Id: 22972
+Failed to get information of process Id: 852
+Failed to get information of process Id: 22372
+Failed to get information of process Id: 7976
+Failed to get information of process Id: 12216
+Failed to get information of process Id: 24036
+Failed to get information of process Id: 9440
+Failed to get information of process Id: 20356
+PROCESS 0x68e8      vugen.exe
+PROCESS 0x2834      eowp.exe
+Failed to get information of process Id: 15544
+PROCESS 0x4ce8      eowp.exe
+Failed to get information of process Id: 22416
+Failed to get information of process Id: 28748
+Failed to get information of process Id: 30244
+PROCESS 0x6d6c      firefoxportable.exe
 		2.7.7.0                       C:\Users\iron-\Downloads\FirefoxPortable\FirefoxPortable.exe
 		10.0.19041.4842 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\ntdll.dll
 		10.0.19041.5072 (WinBuild.160101.0800)C:\WINDOWS\System32\KERNEL32.DLL
@@ -331,26 +300,24 @@ PROCESS 0x6a38      firefoxportable.exe
 		10.0.19041.3636 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\VERSION.dll
 		2020.0.0.267                  P:\Programs\LoadRunner\bin\mosifs32.dll
 		2020.0.0.267                  P:\Programs\LoadRunner\bin\PathResolver.dll
-		2020.0.0.267                  P:\Programs\LoadRunner\bin\runtime_code_injection_lib.dll
-		10.0.19041.4522 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USERENV.dll
 		2020.0.0.267                  P:\Programs\LoadRunner\bin\wrapicu.dll
+		10.0.19041.4522 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\USERENV.dll
 		2020.0.0.267                  P:\Programs\LoadRunner\bin\thrdutil.dll
 		10.0.19041.4522 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
 		14.42.34433.0                 C:\WINDOWS\SYSTEM32\VCRUNTIME140.dll
-		14.42.34433.0                 C:\WINDOWS\SYSTEM32\MSVCP140.dll
 		55, 1, 0, 0                   P:\Programs\LoadRunner\bin\icuuc55.dll
 		55, 1, 0, 0                   P:\Programs\LoadRunner\bin\icudt55.dll
+		2020.0.0.267                  P:\Programs\LoadRunner\bin\runtime_code_injection_lib.dll
+		14.42.34433.0                 C:\WINDOWS\SYSTEM32\MSVCP140.dll
 		2020.0.0.793                  P:\Programs\LoadRunner\bin\api_sock_proxy.dll
 		10.0.19041.4522 (WinBuild.160101.0800)C:\WINDOWS\System32\WS2_32.dll
 		                              P:\Programs\LoadRunner\bin\pcre-8.42.dll
-		2020.0.0.793                  P:\Programs\LoadRunner\bin\VnpLog.dll
 		2020.0.0.793                  P:\Programs\LoadRunner\bin\MicSocket.dll
 		2020.0.0.267                  P:\Programs\LoadRunner\bin\ipng_utils.dll
-		2020.0.0.793                  P:\Programs\LoadRunner\bin\VnpUtils.dll
-		1.1.1b                        P:\Programs\LoadRunner\bin\libssl-lt-1_1.dll
 		1.1.1b                        P:\Programs\LoadRunner\bin\libcrypto-lt-1_1.dll
-		2020.0.0.267                  P:\Programs\LoadRunner\bin\lrun50.dll
+		1.1.1b                        P:\Programs\LoadRunner\bin\libssl-lt-1_1.dll
 		10.0.19041.4522 (WinBuild.160101.0800)C:\WINDOWS\System32\CRYPT32.dll
+		2020.0.0.267                  P:\Programs\LoadRunner\bin\lrun50.dll
 		10.0.19041.4522 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\WSOCK32.dll
 		2020.0.0.267                  P:\Programs\LoadRunner\bin\trans.dll
 		2020.0.0.267                  P:\Programs\LoadRunner\bin\msg_handler.dll
@@ -375,6 +342,8 @@ PROCESS 0x6a38      firefoxportable.exe
 		2020.0.0.267                  P:\Programs\LoadRunner\bin\jrequestor_srv.dll
 		2020.0.0.267                  P:\Programs\LoadRunner\bin\dc_requests.dll
 		10.0.19041.4355 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\dbgcore.DLL
+		2020.0.0.793                  P:\Programs\LoadRunner\bin\VnpLog.dll
+		2020.0.0.793                  P:\Programs\LoadRunner\bin\VnpUtils.dll
 		2020.0.0.793                  P:\Programs\LoadRunner\bin\api_http_filter.dll
 		10.0.19041.3636 (WinBuild.160101.0800)C:\WINDOWS\System32\OLEAUT32.dll
 		2020.0.0.793                  P:\Programs\LoadRunner\bin\WebHTTP2Util.dll
@@ -398,8 +367,8 @@ PROCESS 0x6a38      firefoxportable.exe
 		10.0.19041.4522 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\windows.storage.dll
 		10.0.19041.4522 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\Wldp.dll
 		10.0.19041.4355 (WinBuild.160101.0800)C:\WINDOWS\SYSTEM32\profapi.dll
-		                              C:\Users\iron-\AppData\Local\Temp\nskED2C.tmp\System.dll
-		                              C:\Users\iron-\AppData\Local\Temp\nskED2C.tmp\registry.dll
+		                              C:\Users\iron-\AppData\Local\Temp\nsl12BD.tmp\System.dll
+		                              C:\Users\iron-\AppData\Local\Temp\nsl12BD.tmp\registry.dll
 		10.0.19041.4842 (WinBuild.160101.0800)C:\Windows\System32\Windows.StateRepositoryPS.dll
 		10.0.19041.1 (WinBuild.160101.0800)C:\Windows\System32\Windows.FileExplorer.Common.dll
 		11.00.19041.4522 (WinBuild.160101.0800)C:\Windows\System32\iertutil.dll
@@ -416,14 +385,15 @@ PROCESS 0x6a38      firefoxportable.exe
 		10.0.19041.4522 (WinBuild.160101.0800)C:\WINDOWS\System32\ntlanman.dll
 		10.0.19041.3636 (WinBuild.160101.0800)C:\WINDOWS\System32\davclnt.dll
 		10.0.19041.3636 (WinBuild.160101.0800)C:\WINDOWS\System32\DAVHLPR.dll
-Failed to get information of process Id: 26192
-Failed to get information of process Id: 9860
-Failed to get information of process Id: 26064
-Failed to get information of process Id: 17272
-Failed to get information of process Id: 13056
-Failed to get information of process Id: 9060
-Failed to get information of process Id: 28268
-Failed to get information of process Id: 16948
-Failed to get information of process Id: 27048
-Failed to get information of process Id: 24500
-Failed to get information of process Id: 13284
+Failed to get information of process Id: 4964
+Failed to get information of process Id: 10236
+Failed to get information of process Id: 27408
+Failed to get information of process Id: 27928
+Failed to get information of process Id: 21952
+Failed to get information of process Id: 30844
+Failed to get information of process Id: 24480
+Failed to get information of process Id: 6512
+Failed to get information of process Id: 3476
+Failed to get information of process Id: 28652
+Failed to get information of process Id: 28412
+Failed to get information of process Id: 15020

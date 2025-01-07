@@ -1,0 +1,2 @@
+"[{\"hexColor\":\"DD3A5B\",\"productId\":11,\"quantity\":1},{\"hexColor\":\"414141\",\"productI"
+"d\":18,\"quantity\":1},{\"hexColor\":\"414141\",\"productId\":27,\"quantity\":1}]"

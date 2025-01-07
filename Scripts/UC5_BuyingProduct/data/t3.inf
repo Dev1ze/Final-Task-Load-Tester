@@ -1,0 +1,8 @@
+[t3]
+FileName1=t1.htm
+URL1=https://www.advantageonlineshopping.com/
+Total=2
+SnapshotXmlFile=snapshot_3.xml
+FileName2=t3_favicon.ico
+URL2=https://www.advantageonlineshopping.com/css/images/favicon.ico
+ContentType=image/x-icon
