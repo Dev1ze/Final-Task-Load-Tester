@@ -32,8 +32,7 @@ Action()
 	web_revert_auto_header("Priority");
 	web_add_header("Sec-Fetch-User", "?1");
 	web_add_header("Upgrade-Insecure-Requests", "1");
-
-/*Correlation comment - Do not change!  Original value='4886' Name ='CardNumber' Type ='Manual'*/
+	/*Correlation comment - Do not change!  Original value='4886' Name ='CardNumber' Type ='Manual'*/
 	web_reg_save_param_regexp(
 		"ParamName=CardNumber",
 		"RegExp=content:\"(.*?)\";bottom:10px",
@@ -42,7 +41,6 @@ Action()
 		"IgnoreRedirections=No",
 		"RequestUrl=*/main.min.css*",
 		LAST);
-
 	web_url("www.advantageonlineshopping.com", 
 		"URL=https://www.advantageonlineshopping.com/", 
 		"TargetFrame=", 
@@ -530,7 +528,7 @@ Action()
 
 	lr_start_transaction("AddToCart");
 	
-	//web_reg_find("Text=\"productId\":{rndProductId}", LAST); // Проверка на наличие id продукта в ответе запроса добавление в корзину
+	web_reg_find("Text=\"productId\":{rndProductId}", LAST); // Проверка на наличие id продукта в ответе запроса добавление в корзину
 	web_reg_save_param_json(
 		"ParamName=UpdatedProductId",
 		"QueryString=$..productId",
@@ -612,6 +610,8 @@ Action()
 	
 	lr_start_transaction("OpenCart");
 
+	web_reg_find("Text=\"productId\":{rndProductId}", LAST); // Проверка на наличие id продукта в корзине
+	
 	web_add_header("Priority", "u=0");
 	web_add_header("Authorization", "Basic {CorrelationParameter}");
 	web_add_header("Accept", "application/json, text/plain, */*");
@@ -643,6 +643,22 @@ Action()
 	
 	lr_start_transaction("CheckoutUserData");
 	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736195426.13.1.1736195483.3.0.0; DOMAIN=www.advantageonlineshopping.com");
+	
+	web_reg_find("Text=<ns2:id>{UserID}</ns2:id>"
+	             "<ns2:lastName>{lastName}</ns2:lastName>"
+	             "<ns2:firstName>{firstName}</ns2:firstName>"
+	             "<ns2:loginName>{userName}</ns2:loginName>"
+	             "<ns2:accountType>20</ns2:accountType>"
+        		 "<ns2:countryId>236</ns2:countryId>"
+       			 "<ns2:countryName>Uzbekistan</ns2:countryName>"
+        		 "<ns2:countryIsoName>uz</ns2:countryIsoName>"
+       			 "<ns2:stateProvince>{state}</ns2:stateProvince>"
+       			 "<ns2:cityName>{city}</ns2:cityName>"
+       			 "<ns2:address>{street}</ns2:address>"
+       			 "<ns2:zipcode>{code}</ns2:zipcode>"
+      		     "<ns2:phoneNumber>{number}</ns2:phoneNumber>"
+       			 "<ns2:email>{email}</ns2:email>", LAST);  //Проверка на правильность указаных платежных данных
+	
 	web_add_header("SOAPAction", "com.advantage.online.store.accountserviceGetAccountByIdRequest");
 	web_add_auto_header("Origin", "https://www.advantageonlineshopping.com");
 	web_add_header("Priority", "u=0");
@@ -771,6 +787,9 @@ Action()
 		"EncType=text/xml; charset=UTF-8",
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><UpdateSafePayMethodRequest xmlns=\"com.advantage.online.store.accountservice\"><userId>{UserID}</userId><safePayUsername>gfrtregf</safePayUsername><safePayPassword>A43245345hfg</safePayPassword><referenceId>1234567890</referenceId><base64Token>Basic YXJ0ZW0xMjM0OkFBYWExMQ==</base64Token></UpdateSafePayMethodRequest></soap:Body></soap:Envelope>",
 		LAST);
+	
+	web_reg_find("Text=success\":true,\"code\":\"Ok\",\"reason\":\"order completed successfully", LAST);
+	
 	web_revert_auto_header("X-Requested-With");
 	web_add_auto_header("Origin", "https://www.advantageonlineshopping.com");
 	web_add_header("Authorization", "Basic {CorrelationParameter}");
