@@ -1,0 +1,10 @@
+[t56]
+FileName1=t53.htm
+URL1=https://www.advantageonlineshopping.com/app/views/home-page.html
+Total=1
+SnapshotXmlFile=snapshot_51.xml
+RequestHeaderFile=t56_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t56_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

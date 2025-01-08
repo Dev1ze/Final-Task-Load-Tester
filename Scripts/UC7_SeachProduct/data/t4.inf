@@ -1,0 +1,13 @@
+[t4]
+FileName1=t1.htm
+URL1=https://www.advantageonlineshopping.com/
+Total=2
+SnapshotXmlFile=snapshot_3.xml
+RequestHeaderFile=t4_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t4_ResponseHeader.txt
+FileName2=t4_favicon.ico
+URL2=https://www.advantageonlineshopping.com/css/images/favicon.ico
+ContentType=image/x-icon
+[ProtocolInfo]
+ProtocolId=QTWeb

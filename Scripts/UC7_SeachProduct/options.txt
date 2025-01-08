@@ -1,0 +1,9 @@
+-+
+-DCCI
+-D_IDA_XL
+-DWINNT
+-IP:\Programs\Itogovoe\Scripts\UC7_SeachProduct
+-IP:\Programs\LoadRunner\include
+-ep:\programs\itogovoe\scripts\uc7_seachproduct\\logfile.log
+p:\programs\itogovoe\scripts\uc7_seachproduct\\combined_UC7_SeachProduct.c
+p:\programs\itogovoe\scripts\uc7_seachproduct\\pre_cci.c

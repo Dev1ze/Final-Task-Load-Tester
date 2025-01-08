@@ -6,10 +6,7 @@ Action()
 	char rndColorId[256];
 	int productCount, i, rndIndex;
 	srand(time(NULL)); // »нициализаци€ генератора случайных чисел
-	
-	
-	
-	
+
 	web_websocket_send("ID=0", "Buffer={\"messageType\":\"hello\",\"broadcasts\":{\"remote-settings/monitor_changes\":\"\\\"1736208065177\\\"\"},\"use_webpush\":true}", "IsBinary=0", LAST);
 	/*Connection ID 0 received buffer WebSocketReceive0*/
 
