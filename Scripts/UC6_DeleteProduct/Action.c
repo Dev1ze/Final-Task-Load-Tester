@@ -6,8 +6,11 @@ Action()
 	char rndColorId[256];
 	int productCount, i, rndIndex;
 	srand(time(NULL)); // Инициализация генератора случайных чисел
+	
+	
+	
+	
 	web_websocket_send("ID=0", "Buffer={\"messageType\":\"hello\",\"broadcasts\":{\"remote-settings/monitor_changes\":\"\\\"1736208065177\\\"\"},\"use_webpush\":true}", "IsBinary=0", LAST);
-
 	/*Connection ID 0 received buffer WebSocketReceive0*/
 
 	lr_start_transaction("OpenLandingPage");
@@ -102,6 +105,9 @@ Action()
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><GetAccountConfigurationRequest xmlns=\"com.advantage.online.store.accountservice\"></GetAccountConfigurationRequest></soap:Body></soap:Envelope>", 
 		LAST);
 	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736253081.15.0.1736253081.60.0.0; DOMAIN=www.advantageonlineshopping.com");
+	
+	web_reg_find("Text=\"categoryId\":1,\"categoryName\":\"LAPTOPS\"", LAST); // Проверка на успешный вход на страницу
+	
 	web_url("categories", 
 		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories", 
 		"TargetFrame=", 
@@ -183,6 +189,9 @@ Action()
 		"Scope=Body",
 		"IgnoreRedirections=No",
 		LAST);
+	
+	web_reg_find("Text=<ns2:reason>Login Successful</ns2:reason>", LAST); // Проверка на успешную авторизацию
+	
 	web_custom_request("AccountLoginRequest", 
 		"URL=https://www.advantageonlineshopping.com/accountservice/ws/AccountLoginRequest", 
 		"Method=POST", 
@@ -274,12 +283,23 @@ Action()
 	
 	lr_start_transaction("OpenCart");
 	
+	rndIndex = (rand() % (productCount - 1 + 1)) + 1;
+	lr_output_message("Рандомный индекс - %d", rndIndex);
+	sprintf(rndProductId, lr_paramarr_idx("productId", rndIndex));
+	sprintf(rndColorId, lr_paramarr_idx("hexColor", rndIndex));
+	lr_save_string(rndProductId, "rndProductId");
+	lr_save_string(rndColorId, "rndColorId");
+	lr_output_message("Рандомный продукт - %s", rndProductId);
+	lr_output_message("Его цвет - %s", rndColorId);
+	
 	web_reg_save_param_json(
 	    "ParamName=hexColor",
 	    "QueryString=$.productsInCart[*].color.code",
 	    "SelectAll=Yes",
 	    "NotFound=Warning",
 	    LAST);
+	
+	web_reg_find("Text=productId\":{rndProductId}", LAST); // Проверка на существование продукта в корзине
 	
 	web_add_header("Priority", "u=0");
 	web_add_header("Authorization", "Basic {CorrelationParameter}");
@@ -311,21 +331,15 @@ Action()
 
 	lr_start_transaction("DeleteProduct");
 	
-	rndIndex = (rand() % (productCount - 1 + 1)) + 1;
-	lr_output_message("Рандомный индекс - %d", rndIndex);
-	sprintf(rndProductId, lr_paramarr_idx("productId", rndIndex));
-	sprintf(rndColorId, lr_paramarr_idx("hexColor", rndIndex));
-	lr_save_string(rndProductId, "rndProductId");
-	lr_save_string(rndColorId, "rndColorId");
-	lr_output_message("Рандомный продукт - %s", rndProductId);
-	lr_output_message("Его цвет - %s", rndColorId);
-	
 	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736253081.15.1.1736253139.2.0.0; DOMAIN=www.advantageonlineshopping.com");
+	
+	web_reg_find("Text=productId\":\"{rndProductId}\"","Fail=Found", LAST); // Проверка на отсутствие продукта в корзине
+	
 	web_add_auto_header("Origin", "https://www.advantageonlineshopping.com");
 	web_add_auto_header("Priority", "u=0");
 	web_add_header("Authorization", "Basic {CorrelationParameter}");
 	web_add_header("Accept", "application/json, text/plain, */*");
-	web_custom_request("DD3A5B",
+	web_custom_request("{rndColorId}",
 		"URL=https://www.advantageonlineshopping.com/order/api/v1/carts/{UserID}/product/{rndProductId}/color/{rndColorId}",
 		"Method=DELETE",
 		"TargetFrame=",
@@ -345,6 +359,8 @@ Action()
 	
 	
 	lr_start_transaction("Logout");
+	
+	web_reg_find("Text=<ns2:reason>Logout Successful</ns2:reason>", LAST); // Проверка на успешный выход из аккаунта
 
 	web_add_header("SOAPAction", "com.advantage.online.store.accountserviceAccountLogoutRequest");
 	web_add_header("X-Requested-With", "XMLHttpRequest");

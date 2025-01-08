@@ -1,1 +1,2 @@
-"[{"hexColor":"3683D1","productId":31,"quantity":1}]"
+"[{"hexColor":"414141","productId":18,"quantity":1},{"hexColor":"414141","productId":17,"quanti"
+"ty":1}]"
