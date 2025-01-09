@@ -6,6 +6,8 @@ Action()
 	char rndColorId[256];
 	int productCount, i, rndIndex;
 	srand(time(NULL)); // »нициализаци€ генератора случайных чисел
+	
+	lr_start_transaction("UC6_DeleteProduct");
 
 	web_websocket_send("ID=0", "Buffer={\"messageType\":\"hello\",\"broadcasts\":{\"remote-settings/monitor_changes\":\"\\\"1736208065177\\\"\"},\"use_webpush\":true}", "IsBinary=0", LAST);
 	/*Connection ID 0 received buffer WebSocketReceive0*/
@@ -375,6 +377,9 @@ Action()
 		LAST);
 
 	lr_end_transaction("Logout",LR_AUTO);
+	
+	lr_end_transaction("UC6_DeleteProduct", LR_AUTO);
+
 
 	return 0;
 }

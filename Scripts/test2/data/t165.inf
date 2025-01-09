@@ -1,0 +1,11 @@
+[t165]
+FileName1=t165_all_data.json
+URL1=https://www.advantageonlineshopping.com/catalog/api/v1/categories/all_data
+Total=1
+ContentType=application/json
+SnapshotXmlFile=snapshot_160.xml
+RequestHeaderFile=t165_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t165_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb

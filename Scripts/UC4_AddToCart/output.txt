@@ -1,4 +1,4 @@
-Virtual User Script started at: 06.01.2025 19:00:17
+Virtual User Script started at: 09.01.2025 21:49:43
 Starting action vuser_init.
 Web Turbo Replay of LoadRunner 2020.0.0 for Windows 10; build 793 (ноя 27 2019 19:51:20)  	[MsgId: MMSG-26983]
 Run mode: HTML  	[MsgId: MMSG-26993]
@@ -16,306 +16,349 @@ Action.c(14): web_websocket_send highest severity level was "warning"  	[MsgId: 
 Action.c(19): Notify: Transaction "OpenLandingPage" started.
 Action.c(21): web_set_sockets_option started  	[MsgId: MMSG-26355]
 Action.c(21): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
-Action.c(22): web_set_user started  	[MsgId: MMSG-26355]
-Action.c(22): web_set_user was successful  	[MsgId: MMSG-26392]
+Action.c(22): web_add_cookie started  	[MsgId: MMSG-26355]
+Action.c(22): web_add_cookie was successful  	[MsgId: MMSG-26392]
 Action.c(23): web_add_cookie started  	[MsgId: MMSG-26355]
 Action.c(23): web_add_cookie was successful  	[MsgId: MMSG-26392]
 Action.c(24): web_add_cookie started  	[MsgId: MMSG-26355]
 Action.c(24): web_add_cookie was successful  	[MsgId: MMSG-26392]
 Action.c(25): web_add_cookie started  	[MsgId: MMSG-26355]
 Action.c(25): web_add_cookie was successful  	[MsgId: MMSG-26392]
-Action.c(26): web_add_cookie started  	[MsgId: MMSG-26355]
-Action.c(26): web_add_cookie was successful  	[MsgId: MMSG-26392]
-Action.c(27): web_add_auto_header("Sec-Fetch-Dest") started  	[MsgId: MMSG-26355]
-Action.c(27): web_add_auto_header("Sec-Fetch-Dest") was successful  	[MsgId: MMSG-26392]
-Action.c(28): web_add_auto_header("Sec-Fetch-Mode") started  	[MsgId: MMSG-26355]
-Action.c(28): web_add_auto_header("Sec-Fetch-Mode") was successful  	[MsgId: MMSG-26392]
-Action.c(29): web_add_auto_header("Sec-Fetch-Site") started  	[MsgId: MMSG-26355]
-Action.c(29): web_add_auto_header("Sec-Fetch-Site") was successful  	[MsgId: MMSG-26392]
-Action.c(30): web_add_auto_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(30): web_add_auto_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(31): web_remove_auto_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(31): Previous automatically added web header for "Priority" removed  	[MsgId: MMSG-26587]
-Action.c(31): web_remove/revert_auto_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(32): web_add_header("Sec-Fetch-User") started  	[MsgId: MMSG-26355]
-Action.c(32): web_add_header("Sec-Fetch-User") was successful  	[MsgId: MMSG-26392]
-Action.c(33): web_add_header("Upgrade-Insecure-Requests") started  	[MsgId: MMSG-26355]
-Action.c(33): web_add_header("Upgrade-Insecure-Requests") was successful  	[MsgId: MMSG-26392]
-Action.c(34): web_url("www.advantageonlineshopping.com") started  	[MsgId: MMSG-26355]
-Action.c(34): Found resource "https://www.advantageonlineshopping.com/css/main.min.css" in HTML "https://www.advantageonlineshopping.com/"  	[MsgId: MMSG-26659]
-Action.c(34): Found resource "https://www.googletagmanager.com/gtag/js?id=G-TBPYED8WSW" in HTML "https://www.advantageonlineshopping.com/"  	[MsgId: MMSG-26659]
-Action.c(34): Found resource "https://www.advantageonlineshopping.com/css/images/Down_arrow.svg" in HTML "https://www.advantageonlineshopping.com/"  	[MsgId: MMSG-26659]
-Action.c(34): Found resource "https://www.advantageonlineshopping.com/vendor/requirejs/require.js" in HTML "https://www.advantageonlineshopping.com/"  	[MsgId: MMSG-26659]
-Action.c(34): Warning -27794: Could not resolve address of host www.googletagmanager.com  	[MsgId: MWAR-27794]
-Action.c(34): web_url("www.advantageonlineshopping.com") highest severity level was "warning", 54800 body bytes, 1628 header bytes  	[MsgId: MMSG-26388]
-Action.c(43): web_concurrent_start started  	[MsgId: MMSG-26355]
-Action.c(43): web_concurrent_start was successful  	[MsgId: MMSG-26392]
-Action.c(44): web_url("Roboto-Regular-webfont.woff") started  	[MsgId: MMSG-26355]
-Action.c(44): Registering web_url("Roboto-Regular-webfont.woff") was successful  	[MsgId: MMSG-26390]
-Action.c(52): web_url("main.min.js") started  	[MsgId: MMSG-26355]
-Action.c(52): Registering web_url("main.min.js") was successful  	[MsgId: MMSG-26390]
-Action.c(59): web_url("services.properties") started  	[MsgId: MMSG-26355]
-Action.c(59): Registering web_url("services.properties") was successful  	[MsgId: MMSG-26390]
-Action.c(66): web_url("Roboto-Light-webfont.woff") started  	[MsgId: MMSG-26355]
-Action.c(66): Registering web_url("Roboto-Light-webfont.woff") was successful  	[MsgId: MMSG-26390]
-Action.c(74): web_url("Roboto-Medium-webfont.woff") started  	[MsgId: MMSG-26355]
-Action.c(74): Registering web_url("Roboto-Medium-webfont.woff") was successful  	[MsgId: MMSG-26390]
-Action.c(82): web_concurrent_end started  	[MsgId: MMSG-26355]
-Action.c(82): web_concurrent_end was successful, 344321 body bytes, 1929 header bytes  	[MsgId: MMSG-26386]
-Action.c(83): web_add_cookie started  	[MsgId: MMSG-26355]
-Action.c(83): web_add_cookie was successful  	[MsgId: MMSG-26392]
-Action.c(84): web_add_auto_header("Sec-Fetch-Dest") started  	[MsgId: MMSG-26355]
-Action.c(84): web_add_auto_header("Sec-Fetch-Dest") was successful  	[MsgId: MMSG-26392]
-Action.c(85): web_add_auto_header("Sec-Fetch-Mode") started  	[MsgId: MMSG-26355]
-Action.c(85): web_add_auto_header("Sec-Fetch-Mode") was successful  	[MsgId: MMSG-26392]
-Action.c(86): web_add_auto_header("Sec-Fetch-Site") started  	[MsgId: MMSG-26355]
-Action.c(86): web_add_auto_header("Sec-Fetch-Site") was successful  	[MsgId: MMSG-26392]
-Action.c(87): web_url("ALL") started  	[MsgId: MMSG-26355]
-Action.c(87): web_url("ALL") was successful, 6541 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
-Action.c(96): web_add_cookie started  	[MsgId: MMSG-26355]
-Action.c(96): web_add_cookie was successful  	[MsgId: MMSG-26392]
-Action.c(97): web_add_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(97): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(98): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
-Action.c(98): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
-Action.c(99): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(99): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(100): web_custom_request("GetAccountConfigurationRequest") started  	[MsgId: MMSG-26355]
-Action.c(100): web_custom_request("GetAccountConfigurationRequest") was successful, 823 body bytes, 735 header bytes  	[MsgId: MMSG-26386]
-Action.c(113): web_reg_find started  	[MsgId: MMSG-26355]
-Action.c(113): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
-Action.c(115): web_url("categories") started  	[MsgId: MMSG-26355]
-Action.c(115): Registered web_reg_find successful for "Text="categoryId":1,"categoryName":"LAPTOPS"" (count=1)  	[MsgId: MMSG-26364]
-Action.c(115): web_url("categories") was successful, 4754 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
-Action.c(124): web_url("search") started  	[MsgId: MMSG-26355]
-Action.c(124): web_url("search") was successful, 351 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
-Action.c(133): web_url("popularProducts.json") started  	[MsgId: MMSG-26355]
-Action.c(133): web_url("popularProducts.json") was successful, 500 body bytes, 413 header bytes  	[MsgId: MMSG-26386]
-Action.c(142): web_url("home-page.html") started  	[MsgId: MMSG-26355]
-Action.c(142): Found resource "https://www.advantageonlineshopping.com/app/views/css/images/Special-offer.jpg" in HTML "https://www.advantageonlineshopping.com/app/views/home-page.html"  	[MsgId: MMSG-26659]
-Action.c(142): Found resource "https://www.advantageonlineshopping.com/css/images/chat_logo.png" in HTML "https://www.advantageonlineshopping.com/app/views/home-page.html"  	[MsgId: MMSG-26659]
-Action.c(142): Found resource "https://www.advantageonlineshopping.com/app/views/" in HTML "https://www.advantageonlineshopping.com/app/views/home-page.html"  	[MsgId: MMSG-26659]
-Action.c(142): Warning -26627: HTTP Status-Code=404 (Not Found) for "https://www.advantageonlineshopping.com/app/views/css/images/Special-offer.jpg"  	[MsgId: MWAR-26627]
-Action.c(142): Warning -26627: HTTP Status-Code=404 (Not Found) for "https://www.advantageonlineshopping.com/app/views/"  	[MsgId: MWAR-26627]
-Action.c(142): web_url("home-page.html") highest severity level was "warning", 6213 body bytes, 1435 header bytes  	[MsgId: MMSG-26388]
-Action.c(151): web_add_cookie started  	[MsgId: MMSG-26355]
-Action.c(151): web_add_cookie was successful  	[MsgId: MMSG-26392]
-Action.c(152): web_add_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(152): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(153): web_concurrent_start started  	[MsgId: MMSG-26355]
-Action.c(153): web_concurrent_start was successful  	[MsgId: MMSG-26392]
-Action.c(154): web_url("arrow_right.png") started  	[MsgId: MMSG-26355]
-Action.c(154): Registering web_url("arrow_right.png") was successful  	[MsgId: MMSG-26390]
-Action.c(162): web_add_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(162): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(163): web_url("fetchImage") started  	[MsgId: MMSG-26355]
-Action.c(163): Registering web_url("fetchImage") was successful  	[MsgId: MMSG-26390]
-Action.c(171): web_add_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(171): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(172): web_url("fetchImage_2") started  	[MsgId: MMSG-26355]
-Action.c(172): Registering web_url("fetchImage_2") was successful  	[MsgId: MMSG-26390]
-Action.c(180): web_url("Roboto-Bold-webfont.woff") started  	[MsgId: MMSG-26355]
-Action.c(180): Registering web_url("Roboto-Bold-webfont.woff") was successful  	[MsgId: MMSG-26390]
-Action.c(188): web_url("Roboto-Thin-webfont.woff") started  	[MsgId: MMSG-26355]
-Action.c(188): Registering web_url("Roboto-Thin-webfont.woff") was successful  	[MsgId: MMSG-26390]
-Action.c(196): web_concurrent_end started  	[MsgId: MMSG-26355]
-Action.c(196): web_concurrent_end was successful, 343356 body bytes, 1877 header bytes  	[MsgId: MMSG-26386]
-Action.c(198): Notify: Transaction "OpenLandingPage" ended with a "Pass" status (Duration: 17,5037 Wasted Time: 0,1100).
-Action.c(206): Notify: Transaction "Login" started.
-Action.c(208): web_add_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(208): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(209): web_add_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(209): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(210): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
-Action.c(210): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
-Action.c(211): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
-Action.c(211): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
-Action.c(213): web_reg_save_param_xpath started  	[MsgId: MMSG-26355]
-Action.c(213): Registering web_reg_save_param_xpath was successful  	[MsgId: MMSG-26390]
-Action.c(221): web_reg_save_param_xpath started  	[MsgId: MMSG-26355]
-Action.c(221): Registering web_reg_save_param_xpath was successful  	[MsgId: MMSG-26390]
-Action.c(229): web_reg_find started  	[MsgId: MMSG-26355]
-Action.c(229): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
-Action.c(231): web_custom_request("AccountLoginRequest") started  	[MsgId: MMSG-26355]
-Action.c(231): Registered web_reg_find successful for "Text=<ns2:reason>Login Successful</ns2:reason>" (count=1)  	[MsgId: MMSG-26364]
-Action.c(231): web_custom_request("AccountLoginRequest") was successful, 804 body bytes, 735 header bytes  	[MsgId: MMSG-26386]
-Action.c(247): web_set_sockets_option started  	[MsgId: MMSG-26355]
-Action.c(247): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
-Action.c(248): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
-Action.c(248): Warning -26594: The header being added may cause unpredictable results if applied to ALL the URLs generated on behalf of the next script function. It will apply to the primary URL only.  	[MsgId: MWAR-26594]
-Action.c(248): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
-Action.c(249): web_add_cookie started  	[MsgId: MMSG-26355]
-Action.c(249): web_add_cookie was successful  	[MsgId: MMSG-26392]
-Action.c(251): web_reg_save_param_regexp started  	[MsgId: MMSG-26355]
-Action.c(251): Registering web_reg_save_param_regexp was successful  	[MsgId: MMSG-26390]
-Action.c(258): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(258): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(264): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(264): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(270): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(270): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(276): web_url("{UserID}") started  	[MsgId: MMSG-26355]
-Action.c(276): web_url("{UserID}") was successful, 294 body bytes, 455 header bytes  	[MsgId: MMSG-26386]
-Action.c(301): userName - {"hexColor":"C3C3C3","productId":18,"quantity":1},{"hexColor":"C3C3C3","productId":24,"quantity":1},{"hexColor":"DD3A5B","productId":24,"quantity":1}
-Action.c(304): web_add_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(304): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(305): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(26): web_add_auto_header("Sec-Fetch-Dest") started  	[MsgId: MMSG-26355]
+Action.c(26): web_add_auto_header("Sec-Fetch-Dest") was successful  	[MsgId: MMSG-26392]
+Action.c(27): web_add_auto_header("Sec-Fetch-Mode") started  	[MsgId: MMSG-26355]
+Action.c(27): web_add_auto_header("Sec-Fetch-Mode") was successful  	[MsgId: MMSG-26392]
+Action.c(28): web_add_auto_header("Sec-Fetch-Site") started  	[MsgId: MMSG-26355]
+Action.c(28): web_add_auto_header("Sec-Fetch-Site") was successful  	[MsgId: MMSG-26392]
+Action.c(29): web_add_auto_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(29): web_add_auto_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(30): web_remove_auto_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(30): Previous automatically added web header for "Priority" removed  	[MsgId: MMSG-26587]
+Action.c(30): web_remove/revert_auto_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(31): web_add_header("Sec-Fetch-User") started  	[MsgId: MMSG-26355]
+Action.c(31): web_add_header("Sec-Fetch-User") was successful  	[MsgId: MMSG-26392]
+Action.c(32): web_add_header("Upgrade-Insecure-Requests") started  	[MsgId: MMSG-26355]
+Action.c(32): web_add_header("Upgrade-Insecure-Requests") was successful  	[MsgId: MMSG-26392]
+Action.c(33): web_url("www.advantageonlineshopping.com") started  	[MsgId: MMSG-26355]
+Action.c(33): Found resource "https://www.advantageonlineshopping.com/css/main.min.css" in HTML "https://www.advantageonlineshopping.com/"  	[MsgId: MMSG-26659]
+Action.c(33): Found resource "https://www.googletagmanager.com/gtag/js?id=G-TBPYED8WSW" in HTML "https://www.advantageonlineshopping.com/"  	[MsgId: MMSG-26659]
+Action.c(33): Found resource "https://www.advantageonlineshopping.com/css/images/Down_arrow.svg" in HTML "https://www.advantageonlineshopping.com/"  	[MsgId: MMSG-26659]
+Action.c(33): Found resource "https://www.advantageonlineshopping.com/vendor/requirejs/require.js" in HTML "https://www.advantageonlineshopping.com/"  	[MsgId: MMSG-26659]
+Action.c(33): web_url("www.advantageonlineshopping.com") was successful, 164577 body bytes, 2619 header bytes  	[MsgId: MMSG-26386]
+Action.c(42): web_concurrent_start started  	[MsgId: MMSG-26355]
+Action.c(42): web_concurrent_start was successful  	[MsgId: MMSG-26392]
+Action.c(43): web_url("Roboto-Regular-webfont.woff") started  	[MsgId: MMSG-26355]
+Action.c(43): Registering web_url("Roboto-Regular-webfont.woff") was successful  	[MsgId: MMSG-26390]
+Action.c(51): web_url("main.min.js") started  	[MsgId: MMSG-26355]
+Action.c(51): Registering web_url("main.min.js") was successful  	[MsgId: MMSG-26390]
+Action.c(58): web_url("services.properties") started  	[MsgId: MMSG-26355]
+Action.c(58): Registering web_url("services.properties") was successful  	[MsgId: MMSG-26390]
+Action.c(65): web_url("Roboto-Light-webfont.woff") started  	[MsgId: MMSG-26355]
+Action.c(65): Registering web_url("Roboto-Light-webfont.woff") was successful  	[MsgId: MMSG-26390]
+Action.c(73): web_url("Roboto-Medium-webfont.woff") started  	[MsgId: MMSG-26355]
+Action.c(73): Registering web_url("Roboto-Medium-webfont.woff") was successful  	[MsgId: MMSG-26390]
+Action.c(81): web_concurrent_end started  	[MsgId: MMSG-26355]
+Action.c(81): web_concurrent_end was successful, 344321 body bytes, 1929 header bytes  	[MsgId: MMSG-26386]
+Action.c(82): web_add_cookie started  	[MsgId: MMSG-26355]
+Action.c(82): web_add_cookie was successful  	[MsgId: MMSG-26392]
+Action.c(83): web_add_auto_header("Sec-Fetch-Dest") started  	[MsgId: MMSG-26355]
+Action.c(83): web_add_auto_header("Sec-Fetch-Dest") was successful  	[MsgId: MMSG-26392]
+Action.c(84): web_add_auto_header("Sec-Fetch-Mode") started  	[MsgId: MMSG-26355]
+Action.c(84): web_add_auto_header("Sec-Fetch-Mode") was successful  	[MsgId: MMSG-26392]
+Action.c(85): web_add_auto_header("Sec-Fetch-Site") started  	[MsgId: MMSG-26355]
+Action.c(85): web_add_auto_header("Sec-Fetch-Site") was successful  	[MsgId: MMSG-26392]
+Action.c(86): web_url("ALL") started  	[MsgId: MMSG-26355]
+Action.c(86): web_url("ALL") was successful, 6541 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(95): web_add_cookie started  	[MsgId: MMSG-26355]
+Action.c(95): web_add_cookie was successful  	[MsgId: MMSG-26392]
+Action.c(96): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(96): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(97): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
+Action.c(97): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
+Action.c(98): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+Action.c(98): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+Action.c(99): web_custom_request("GetAccountConfigurationRequest") started  	[MsgId: MMSG-26355]
+Action.c(99): web_custom_request("GetAccountConfigurationRequest") was successful, 823 body bytes, 735 header bytes  	[MsgId: MMSG-26386]
+Action.c(112): web_reg_find started  	[MsgId: MMSG-26355]
+Action.c(112): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
+Action.c(114): web_url("categories") started  	[MsgId: MMSG-26355]
+Action.c(114): Registered web_reg_find successful for "Text="categoryId":1,"categoryName":"LAPTOPS"" (count=1)  	[MsgId: MMSG-26364]
+Action.c(114): web_url("categories") was successful, 5334 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(123): web_url("search") started  	[MsgId: MMSG-26355]
+Action.c(123): web_url("search") was successful, 351 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(132): web_url("popularProducts.json") started  	[MsgId: MMSG-26355]
+Action.c(132): web_url("popularProducts.json") was successful, 500 body bytes, 413 header bytes  	[MsgId: MMSG-26386]
+Action.c(141): web_url("home-page.html") started  	[MsgId: MMSG-26355]
+Action.c(141): Found resource "https://www.advantageonlineshopping.com/app/views/css/images/Special-offer.jpg" in HTML "https://www.advantageonlineshopping.com/app/views/home-page.html"  	[MsgId: MMSG-26659]
+Action.c(141): Found resource "https://www.advantageonlineshopping.com/css/images/chat_logo.png" in HTML "https://www.advantageonlineshopping.com/app/views/home-page.html"  	[MsgId: MMSG-26659]
+Action.c(141): Found resource "https://www.advantageonlineshopping.com/app/views/" in HTML "https://www.advantageonlineshopping.com/app/views/home-page.html"  	[MsgId: MMSG-26659]
+Action.c(141): Warning -26627: HTTP Status-Code=404 (Not Found) for "https://www.advantageonlineshopping.com/app/views/css/images/Special-offer.jpg"  	[MsgId: MWAR-26627]
+Action.c(141): Warning -26627: HTTP Status-Code=404 (Not Found) for "https://www.advantageonlineshopping.com/app/views/"  	[MsgId: MWAR-26627]
+Action.c(141): web_url("home-page.html") highest severity level was "warning", 6213 body bytes, 1435 header bytes  	[MsgId: MMSG-26388]
+Action.c(150): web_add_cookie started  	[MsgId: MMSG-26355]
+Action.c(150): web_add_cookie was successful  	[MsgId: MMSG-26392]
+Action.c(151): web_add_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(151): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(152): web_concurrent_start started  	[MsgId: MMSG-26355]
+Action.c(152): web_concurrent_start was successful  	[MsgId: MMSG-26392]
+Action.c(153): web_url("arrow_right.png") started  	[MsgId: MMSG-26355]
+Action.c(153): Registering web_url("arrow_right.png") was successful  	[MsgId: MMSG-26390]
+Action.c(161): web_add_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(161): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(162): web_url("fetchImage") started  	[MsgId: MMSG-26355]
+Action.c(162): Registering web_url("fetchImage") was successful  	[MsgId: MMSG-26390]
+Action.c(170): web_add_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(170): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(171): web_url("fetchImage_2") started  	[MsgId: MMSG-26355]
+Action.c(171): Registering web_url("fetchImage_2") was successful  	[MsgId: MMSG-26390]
+Action.c(179): web_url("Roboto-Bold-webfont.woff") started  	[MsgId: MMSG-26355]
+Action.c(179): Registering web_url("Roboto-Bold-webfont.woff") was successful  	[MsgId: MMSG-26390]
+Action.c(187): web_url("Roboto-Thin-webfont.woff") started  	[MsgId: MMSG-26355]
+Action.c(187): Registering web_url("Roboto-Thin-webfont.woff") was successful  	[MsgId: MMSG-26390]
+Action.c(195): web_concurrent_end started  	[MsgId: MMSG-26355]
+Action.c(195): web_concurrent_end was successful, 343356 body bytes, 1877 header bytes  	[MsgId: MMSG-26386]
+Action.c(197): Notify: Transaction "OpenLandingPage" ended with a "Pass" status (Duration: 6,6949 Wasted Time: 0,1148).
+Action.c(205): Notify: Transaction "Login" started.
+Action.c(207): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(207): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(208): web_add_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(208): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(209): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
+Action.c(209): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
+Action.c(210): web_add_header("X-Requested-With") started  	[MsgId: MMSG-26355]
+Action.c(210): web_add_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
+Action.c(212): web_reg_save_param_xpath started  	[MsgId: MMSG-26355]
+Action.c(212): Registering web_reg_save_param_xpath was successful  	[MsgId: MMSG-26390]
+Action.c(220): web_reg_save_param_xpath started  	[MsgId: MMSG-26355]
+Action.c(220): Registering web_reg_save_param_xpath was successful  	[MsgId: MMSG-26390]
+Action.c(228): web_reg_find started  	[MsgId: MMSG-26355]
+Action.c(228): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
+Action.c(230): web_custom_request("AccountLoginRequest") started  	[MsgId: MMSG-26355]
+Action.c(230): Registered web_reg_find successful for "Text=<ns2:reason>Login Successful</ns2:reason>" (count=1)  	[MsgId: MMSG-26364]
+Action.c(230): web_custom_request("AccountLoginRequest") was successful, 805 body bytes, 735 header bytes  	[MsgId: MMSG-26386]
+Action.c(246): web_set_sockets_option started  	[MsgId: MMSG-26355]
+Action.c(246): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
+Action.c(247): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(247): Warning -26594: The header being added may cause unpredictable results if applied to ALL the URLs generated on behalf of the next script function. It will apply to the primary URL only.  	[MsgId: MWAR-26594]
+Action.c(247): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(248): web_add_cookie started  	[MsgId: MMSG-26355]
+Action.c(248): web_add_cookie was successful  	[MsgId: MMSG-26392]
+Action.c(250): web_reg_save_param_regexp started  	[MsgId: MMSG-26355]
+Action.c(250): Registering web_reg_save_param_regexp was successful  	[MsgId: MMSG-26390]
+Action.c(257): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(257): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(263): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(263): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(269): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(269): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(275): web_url("{UserID}") started  	[MsgId: MMSG-26355]
+Action.c(275): Warning -35060: No matches were found for the specified query: "$.productsInCart[*].productId"  	[MsgId: MWAR-35060]
+Action.c(275): Warning -35060: No matches were found for the specified query: "$.productsInCart[*].color.code"  	[MsgId: MWAR-35060]
+Action.c(275): Warning -35060: No matches were found for the specified query: "$.productsInCart[*].quantity"  	[MsgId: MWAR-35060]
+Action.c(275): web_url("{UserID}") highest severity level was "warning", 111 body bytes, 455 header bytes  	[MsgId: MMSG-26388]
+Action.c(300): userName - 
+Action.c(303): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(303): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(304): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(304): Warning -26594: The header being added may cause unpredictable results if applied to ALL the URLs generated on behalf of the next script function. It will apply to the primary URL only.  	[MsgId: MWAR-26594]
+Action.c(304): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(305): web_add_header("Content-Type") started  	[MsgId: MMSG-26355]
 Action.c(305): Warning -26594: The header being added may cause unpredictable results if applied to ALL the URLs generated on behalf of the next script function. It will apply to the primary URL only.  	[MsgId: MWAR-26594]
-Action.c(305): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
-Action.c(306): web_add_header("Content-Type") started  	[MsgId: MMSG-26355]
-Action.c(306): Warning -26594: The header being added may cause unpredictable results if applied to ALL the URLs generated on behalf of the next script function. It will apply to the primary URL only.  	[MsgId: MWAR-26594]
-Action.c(306): web_add_header("Content-Type") highest severity level was "warning"  	[MsgId: MMSG-26391]
-Action.c(307): web_add_header("Accept") started  	[MsgId: MMSG-26355]
-Action.c(307): web_add_header("Accept") was successful  	[MsgId: MMSG-26392]
-Action.c(308): web_custom_request("{UserID}") started  	[MsgId: MMSG-26355]
-Action.c(308): web_custom_request("{UserID}") was successful, 100 body bytes, 492 header bytes  	[MsgId: MMSG-26386]
-Action.c(320): Notify: Transaction "Login" ended with a "Pass" status (Duration: 4,2999 Wasted Time: 0,0137).
-Action.c(328): Notify: Transaction "ChooseCategory" started.
-Action.c(329): web_reg_find started  	[MsgId: MMSG-26355]
-Action.c(329): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
-Action.c(330): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(330): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(336): web_add_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(336): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(337): web_url("products") started  	[MsgId: MMSG-26355]
-Action.c(337): Registered web_reg_find successful for "Text="categoryId":2,"" (count=45)  	[MsgId: MMSG-26364]
-Action.c(337): web_url("products") was successful, 1799 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
-Action.c(346): web_url("attributes") started  	[MsgId: MMSG-26355]
-Action.c(346): web_url("attributes") was successful, 552 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
-Action.c(355): web_url("category-page.html") started  	[MsgId: MMSG-26355]
-Action.c(355): web_url("category-page.html") was successful, 741 body bytes, 361 header bytes  	[MsgId: MMSG-26386]
-Action.c(364): web_add_cookie started  	[MsgId: MMSG-26355]
-Action.c(364): web_add_cookie was successful  	[MsgId: MMSG-26392]
-Action.c(365): web_add_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(365): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(366): web_concurrent_start started  	[MsgId: MMSG-26355]
-Action.c(366): web_concurrent_start was successful  	[MsgId: MMSG-26392]
-Action.c(367): web_url("Filter.png") started  	[MsgId: MMSG-26355]
-Action.c(367): Registering web_url("Filter.png") was successful  	[MsgId: MMSG-26390]
-Action.c(375): web_add_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(375): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(376): web_url("fetchImage_3") started  	[MsgId: MMSG-26355]
-Action.c(376): Registering web_url("fetchImage_3") was successful  	[MsgId: MMSG-26390]
-Action.c(384): web_add_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(384): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(385): web_url("fetchImage_4") started  	[MsgId: MMSG-26355]
-Action.c(385): Registering web_url("fetchImage_4") was successful  	[MsgId: MMSG-26390]
-Action.c(393): web_add_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(393): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(394): web_url("fetchImage_5") started  	[MsgId: MMSG-26355]
-Action.c(394): Registering web_url("fetchImage_5") was successful  	[MsgId: MMSG-26390]
-Action.c(402): web_add_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(402): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(403): web_url("fetchImage_6") started  	[MsgId: MMSG-26355]
-Action.c(403): Registering web_url("fetchImage_6") was successful  	[MsgId: MMSG-26390]
-Action.c(411): web_add_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(411): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(412): web_url("fetchImage_7") started  	[MsgId: MMSG-26355]
-Action.c(412): Registering web_url("fetchImage_7") was successful  	[MsgId: MMSG-26390]
-Action.c(420): web_concurrent_end started  	[MsgId: MMSG-26355]
-Action.c(420): web_concurrent_end was successful, 106354 body bytes, 2206 header bytes  	[MsgId: MMSG-26386]
-Action.c(421): Категории - 2
-Action.c(424): Количество продуктов в категории - 44
-Action.c(426): Рандомный индекс - 43
-Action.c(428): Рандомный продукт - 12
-Action.c(432): Продукт - 15
-Action.c(432): Продукт - 13
-Action.c(432): Продукт - 74
-Action.c(432): Продукт - 72
-Action.c(432): Продукт - 73
-Action.c(432): Продукт - 35
-Action.c(432): Продукт - 36
-Action.c(432): Продукт - 37
-Action.c(432): Продукт - 38
-Action.c(432): Продукт - 39
-Action.c(432): Продукт - 40
-Action.c(432): Продукт - 41
-Action.c(432): Продукт - 42
-Action.c(432): Продукт - 43
-Action.c(432): Продукт - 44
-Action.c(432): Продукт - 45
-Action.c(432): Продукт - 46
-Action.c(432): Продукт - 47
-Action.c(432): Продукт - 48
-Action.c(432): Продукт - 49
-Action.c(432): Продукт - 50
-Action.c(432): Продукт - 51
-Action.c(432): Продукт - 52
-Action.c(432): Продукт - 53
-Action.c(432): Продукт - 54
-Action.c(432): Продукт - 55
-Action.c(432): Продукт - 56
-Action.c(432): Продукт - 57
-Action.c(432): Продукт - 58
-Action.c(432): Продукт - 59
-Action.c(432): Продукт - 60
-Action.c(432): Продукт - 61
-Action.c(432): Продукт - 62
-Action.c(432): Продукт - 63
-Action.c(432): Продукт - 64
-Action.c(432): Продукт - 65
-Action.c(432): Продукт - 66
-Action.c(432): Продукт - 67
-Action.c(432): Продукт - 68
-Action.c(432): Продукт - 69
-Action.c(432): Продукт - 70
-Action.c(432): Продукт - 71
-Action.c(432): Продукт - 12
-Action.c(432): Продукт - 14
-Action.c(435): Notify: Transaction "ChooseCategory" ended with a "Pass" status (Duration: 5,9660 Wasted Time: 0,0114).
-Action.c(443): Notify: Transaction "ChooseProduct" started.
-Action.c(445): web_reg_find started  	[MsgId: MMSG-26355]
-Action.c(445): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
-Action.c(446): web_reg_save_param_json started  	[MsgId: MMSG-26355]
-Action.c(446): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
-Action.c(452): web_add_auto_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(452): web_add_auto_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(453): web_url("{rndProductId}") started  	[MsgId: MMSG-26355]
-Action.c(453): Registered web_reg_find successful for "Text="productId":12,"categoryId":2" (count=1)  	[MsgId: MMSG-26364]
-Action.c(453): web_url("{rndProductId}") was successful, 652 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
-Action.c(462): web_url("all_data") started  	[MsgId: MMSG-26355]
-Action.c(462): web_url("all_data") was successful, 9422 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
-Action.c(471): web_remove_auto_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(471): Previous automatically added web header for "Priority" removed  	[MsgId: MMSG-26587]
-Action.c(471): web_remove/revert_auto_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(472): web_url("products_2") started  	[MsgId: MMSG-26355]
-Action.c(472): web_url("products_2") was successful, 2378 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
-Action.c(481): web_url("product-page.html") started  	[MsgId: MMSG-26355]
-Action.c(481): Found resource "https://www.advantageonlineshopping.com/css/images/review_right.png" in HTML "https://www.advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
-Action.c(481): Found resource "https://www.advantageonlineshopping.com/css/images/reviewUser.png" in HTML "https://www.advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
-Action.c(481): Found resource "https://www.advantageonlineshopping.com/css/images/review_Left_disabled.png" in HTML "https://www.advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
-Action.c(481): web_url("product-page.html") was successful, 6064 body bytes, 1564 header bytes  	[MsgId: MMSG-26386]
-Action.c(490): Количество цветов у продукта - 8
-Action.c(492): Рандомный индекс - 7
-Action.c(494): Рандомный цвет - FFFFFF
-Action.c(498): Цвет - 414141
-Action.c(498): Цвет - 3683D1
-Action.c(498): Цвет - C3C3C3
-Action.c(498): Цвет - 545195
-Action.c(498): Цвет - DD3A5B
-Action.c(498): Цвет - 55CDD5
-Action.c(498): Цвет - FFFFFF
-Action.c(498): Цвет - FCC23D
-Action.c(501): Notify: Transaction "ChooseProduct" ended with a "Pass" status (Duration: 4,4188 Wasted Time: 0,0106).
-Action.c(509): Notify: Transaction "AddToCart" started.
-Action.c(511): web_reg_find started  	[MsgId: MMSG-26355]
-Action.c(511): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
-Action.c(513): web_add_cookie started  	[MsgId: MMSG-26355]
-Action.c(513): web_add_cookie was successful  	[MsgId: MMSG-26392]
-Action.c(514): web_add_header("Origin") started  	[MsgId: MMSG-26355]
-Action.c(514): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
-Action.c(515): web_add_header("Priority") started  	[MsgId: MMSG-26355]
-Action.c(515): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
-Action.c(516): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
-Action.c(516): Warning -26594: The header being added may cause unpredictable results if applied to ALL the URLs generated on behalf of the next script function. It will apply to the primary URL only.  	[MsgId: MWAR-26594]
-Action.c(516): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
-Action.c(517): web_add_header("Accept") started  	[MsgId: MMSG-26355]
-Action.c(517): web_add_header("Accept") was successful  	[MsgId: MMSG-26392]
-Action.c(518): web_submit_data("{rndColorId}") started  	[MsgId: MMSG-26355]
-Action.c(518): Registered web_reg_find successful for "Text="productId":12" (count=1)  	[MsgId: MMSG-26364]
-Action.c(518): web_submit_data("{rndColorId}") was successful, 301 body bytes, 492 header bytes  	[MsgId: MMSG-26386]
-Action.c(530): Notify: Transaction "AddToCart" ended with a "Pass" status (Duration: 1,9074 Wasted Time: 0,0027).
-Action.c(532): Notify: Transaction "UC4_AddToCart" ended with a "Pass" status (Duration: 34,2677 Wasted Time: 0,1484).
+Action.c(305): web_add_header("Content-Type") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(306): web_add_header("Accept") started  	[MsgId: MMSG-26355]
+Action.c(306): web_add_header("Accept") was successful  	[MsgId: MMSG-26392]
+Action.c(307): web_custom_request("{UserID}") started  	[MsgId: MMSG-26355]
+Action.c(307): web_custom_request("{UserID}") was successful, 100 body bytes, 492 header bytes  	[MsgId: MMSG-26386]
+Action.c(319): Notify: Transaction "Login" ended with a "Pass" status (Duration: 1,2306 Wasted Time: 0,0132).
+Action.c(327): Notify: Transaction "ChooseCategory" started.
+Action.c(328): web_reg_find started  	[MsgId: MMSG-26355]
+Action.c(328): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
+Action.c(329): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(329): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(335): web_add_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(335): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(336): web_url("products") started  	[MsgId: MMSG-26355]
+Action.c(336): Registered web_reg_find successful for "Text="categoryId":2,"" (count=94)  	[MsgId: MMSG-26364]
+Action.c(336): web_url("products") was successful, 3164 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(345): web_url("attributes") started  	[MsgId: MMSG-26355]
+Action.c(345): web_url("attributes") was successful, 552 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(354): web_url("category-page.html") started  	[MsgId: MMSG-26355]
+Action.c(354): web_url("category-page.html") was successful, 741 body bytes, 361 header bytes  	[MsgId: MMSG-26386]
+Action.c(363): web_add_cookie started  	[MsgId: MMSG-26355]
+Action.c(363): web_add_cookie was successful  	[MsgId: MMSG-26392]
+Action.c(364): web_add_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(364): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(365): web_concurrent_start started  	[MsgId: MMSG-26355]
+Action.c(365): web_concurrent_start was successful  	[MsgId: MMSG-26392]
+Action.c(366): web_url("Filter.png") started  	[MsgId: MMSG-26355]
+Action.c(366): Registering web_url("Filter.png") was successful  	[MsgId: MMSG-26390]
+Action.c(374): web_add_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(374): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(375): web_url("fetchImage_3") started  	[MsgId: MMSG-26355]
+Action.c(375): Registering web_url("fetchImage_3") was successful  	[MsgId: MMSG-26390]
+Action.c(383): web_add_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(383): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(384): web_url("fetchImage_4") started  	[MsgId: MMSG-26355]
+Action.c(384): Registering web_url("fetchImage_4") was successful  	[MsgId: MMSG-26390]
+Action.c(392): web_add_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(392): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(393): web_url("fetchImage_5") started  	[MsgId: MMSG-26355]
+Action.c(393): Registering web_url("fetchImage_5") was successful  	[MsgId: MMSG-26390]
+Action.c(401): web_add_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(401): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(402): web_url("fetchImage_6") started  	[MsgId: MMSG-26355]
+Action.c(402): Registering web_url("fetchImage_6") was successful  	[MsgId: MMSG-26390]
+Action.c(410): web_add_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(410): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(411): web_url("fetchImage_7") started  	[MsgId: MMSG-26355]
+Action.c(411): Registering web_url("fetchImage_7") was successful  	[MsgId: MMSG-26390]
+Action.c(419): web_concurrent_end started  	[MsgId: MMSG-26355]
+Action.c(419): web_concurrent_end was successful, 106354 body bytes, 2206 header bytes  	[MsgId: MMSG-26386]
+Action.c(420): Категории - 2
+Action.c(423): Количество продуктов в категории - 93
+Action.c(425): Рандомный индекс - 57
+Action.c(427): Рандомный продукт - 68
+Action.c(431): Продукт - 15
+Action.c(431): Продукт - 13
+Action.c(431): Продукт - 53
+Action.c(431): Продукт - 84
+Action.c(431): Продукт - 88
+Action.c(431): Продукт - 89
+Action.c(431): Продукт - 90
+Action.c(431): Продукт - 91
+Action.c(431): Продукт - 92
+Action.c(431): Продукт - 93
+Action.c(431): Продукт - 94
+Action.c(431): Продукт - 95
+Action.c(431): Продукт - 96
+Action.c(431): Продукт - 97
+Action.c(431): Продукт - 114
+Action.c(431): Продукт - 115
+Action.c(431): Продукт - 116
+Action.c(431): Продукт - 117
+Action.c(431): Продукт - 118
+Action.c(431): Продукт - 119
+Action.c(431): Продукт - 120
+Action.c(431): Продукт - 121
+Action.c(431): Продукт - 122
+Action.c(431): Продукт - 123
+Action.c(431): Продукт - 35
+Action.c(431): Продукт - 36
+Action.c(431): Продукт - 37
+Action.c(431): Продукт - 38
+Action.c(431): Продукт - 39
+Action.c(431): Продукт - 40
+Action.c(431): Продукт - 41
+Action.c(431): Продукт - 42
+Action.c(431): Продукт - 43
+Action.c(431): Продукт - 44
+Action.c(431): Продукт - 45
+Action.c(431): Продукт - 46
+Action.c(431): Продукт - 47
+Action.c(431): Продукт - 48
+Action.c(431): Продукт - 49
+Action.c(431): Продукт - 50
+Action.c(431): Продукт - 51
+Action.c(431): Продукт - 52
+Action.c(431): Продукт - 54
+Action.c(431): Продукт - 55
+Action.c(431): Продукт - 56
+Action.c(431): Продукт - 57
+Action.c(431): Продукт - 58
+Action.c(431): Продукт - 59
+Action.c(431): Продукт - 60
+Action.c(431): Продукт - 61
+Action.c(431): Продукт - 62
+Action.c(431): Продукт - 63
+Action.c(431): Продукт - 64
+Action.c(431): Продукт - 65
+Action.c(431): Продукт - 66
+Action.c(431): Продукт - 67
+Action.c(431): Продукт - 68
+Action.c(431): Продукт - 69
+Action.c(431): Продукт - 70
+Action.c(431): Продукт - 71
+Action.c(431): Продукт - 72
+Action.c(431): Продукт - 73
+Action.c(431): Продукт - 74
+Action.c(431): Продукт - 75
+Action.c(431): Продукт - 76
+Action.c(431): Продукт - 77
+Action.c(431): Продукт - 78
+Action.c(431): Продукт - 79
+Action.c(431): Продукт - 80
+Action.c(431): Продукт - 81
+Action.c(431): Продукт - 82
+Action.c(431): Продукт - 83
+Action.c(431): Продукт - 12
+Action.c(431): Продукт - 14
+Action.c(431): Продукт - 111
+Action.c(431): Продукт - 112
+Action.c(431): Продукт - 113
+Action.c(431): Продукт - 98
+Action.c(431): Продукт - 87
+Action.c(431): Продукт - 99
+Action.c(431): Продукт - 100
+Action.c(431): Продукт - 101
+Action.c(431): Продукт - 102
+Action.c(431): Продукт - 103
+Action.c(431): Продукт - 85
+Action.c(431): Продукт - 86
+Action.c(431): Продукт - 104
+Action.c(431): Продукт - 105
+Action.c(431): Продукт - 106
+Action.c(431): Продукт - 107
+Action.c(431): Продукт - 108
+Action.c(431): Продукт - 109
+Action.c(431): Продукт - 110
+Action.c(434): Notify: Transaction "ChooseCategory" ended with a "Pass" status (Duration: 6,7297 Wasted Time: 0,0114).
+Action.c(442): Notify: Transaction "ChooseProduct" started.
+Action.c(444): web_reg_find started  	[MsgId: MMSG-26355]
+Action.c(444): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
+Action.c(445): web_reg_save_param_json started  	[MsgId: MMSG-26355]
+Action.c(445): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
+Action.c(451): web_add_auto_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(451): web_add_auto_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(452): web_url("{rndProductId}") started  	[MsgId: MMSG-26355]
+Action.c(452): Registered web_reg_find successful for "Text="productId":68,"categoryId":2" (count=1)  	[MsgId: MMSG-26364]
+Action.c(452): web_url("{rndProductId}") was successful, 276 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(461): web_url("all_data") started  	[MsgId: MMSG-26355]
+Action.c(461): web_url("all_data") was successful, 12288 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(470): web_remove_auto_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(470): Previous automatically added web header for "Priority" removed  	[MsgId: MMSG-26587]
+Action.c(470): web_remove/revert_auto_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(471): web_url("products_2") started  	[MsgId: MMSG-26355]
+Action.c(471): web_url("products_2") was successful, 2386 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(480): web_url("product-page.html") started  	[MsgId: MMSG-26355]
+Action.c(480): Found resource "https://www.advantageonlineshopping.com/css/images/review_right.png" in HTML "https://www.advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
+Action.c(480): Found resource "https://www.advantageonlineshopping.com/css/images/reviewUser.png" in HTML "https://www.advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
+Action.c(480): Found resource "https://www.advantageonlineshopping.com/css/images/review_Left_disabled.png" in HTML "https://www.advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
+Action.c(480): web_url("product-page.html") was successful, 6064 body bytes, 1564 header bytes  	[MsgId: MMSG-26386]
+Action.c(489): Количество цветов у продукта - 2
+Action.c(491): Рандомный индекс - 2
+Action.c(493): Рандомный цвет - 545195
+Action.c(497): Цвет - 3683D1
+Action.c(497): Цвет - 545195
+Action.c(500): Notify: Transaction "ChooseProduct" ended with a "Pass" status (Duration: 2,6165 Wasted Time: 0,0112).
+Action.c(508): Notify: Transaction "AddToCart" started.
+Action.c(510): web_reg_find started  	[MsgId: MMSG-26355]
+Action.c(510): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
+Action.c(512): web_add_cookie started  	[MsgId: MMSG-26355]
+Action.c(512): web_add_cookie was successful  	[MsgId: MMSG-26392]
+Action.c(513): web_add_header("Origin") started  	[MsgId: MMSG-26355]
+Action.c(513): web_add_header("Origin") was successful  	[MsgId: MMSG-26392]
+Action.c(514): web_add_header("Priority") started  	[MsgId: MMSG-26355]
+Action.c(514): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
+Action.c(515): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
+Action.c(515): Warning -26594: The header being added may cause unpredictable results if applied to ALL the URLs generated on behalf of the next script function. It will apply to the primary URL only.  	[MsgId: MWAR-26594]
+Action.c(515): web_add_header("Authorization") highest severity level was "warning"  	[MsgId: MMSG-26391]
+Action.c(516): web_add_header("Accept") started  	[MsgId: MMSG-26355]
+Action.c(516): web_add_header("Accept") was successful  	[MsgId: MMSG-26392]
+Action.c(517): web_submit_data("{rndColorId}") started  	[MsgId: MMSG-26355]
+Action.c(517): Registered web_reg_find successful for "Text="productId":68" (count=1)  	[MsgId: MMSG-26364]
+Action.c(517): web_submit_data("{rndColorId}") was successful, 198 body bytes, 572 header bytes  	[MsgId: MMSG-26386]
+Action.c(529): Notify: Transaction "AddToCart" ended with a "Pass" status (Duration: 0,8199 Wasted Time: 0,0025).
+Action.c(531): Notify: Transaction "UC4_AddToCart" ended with a "Pass" status (Duration: 18,2662 Wasted Time: 0,1531).
 Ending action Action.
 Ending iteration 1.
 Ending Vuser...

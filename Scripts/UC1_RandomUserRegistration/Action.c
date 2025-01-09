@@ -43,6 +43,8 @@ Action()
 	sprintf(numberStr, "%d", randomNumber);								 //
 	strcat(userDatas[7], numberStr);
 	
+	lr_start_transaction("UC1_RandomUserRegistration");
+	
 	lr_save_string(userDatas[0], "userName");
 	lr_output_message("userName - %s", lr_eval_string("{userName}"));
 	lr_save_string(userDatas[1], "email");
@@ -364,6 +366,8 @@ Action()
 		LAST);
 	
 	lr_end_transaction("Logout",LR_AUTO);
-
+	
+	lr_end_transaction("UC1_RandomUserRegistration", LR_AUTO);
+	
 	return 0;
 }

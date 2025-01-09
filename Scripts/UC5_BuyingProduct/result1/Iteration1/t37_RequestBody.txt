@@ -1,4 +1,4 @@
 "{"seaddress":{"addressLine1":"Royal Palace","addressLine2":"","city":"Wakanda","country":"uz","
 ""postalCode":99999,"state":"WKD"},"secustomerName":"TChalla Panter","secustomerPhone":55555667"
-"78,"senumberOfProducts":7,"setransactionType":"SHIPPING_COST","sessionId":"8A3EE37CBFA9FA23767"
-"A8C4E929716D8"}"
+"78,"senumberOfProducts":93,"setransactionType":"SHIPPING_COST","sessionId":"E6293FA3D803FC3A7B"
+"343F7DB2BA5754"}"

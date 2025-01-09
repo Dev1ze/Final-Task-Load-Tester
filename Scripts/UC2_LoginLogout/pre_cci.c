@@ -2849,7 +2849,9 @@ Action()
 	lr_end_transaction("OpenLandingPage",2);
 
 	
+	
 	lr_think_time(5);
+	
 	
 	
 	lr_start_transaction("Login");
@@ -2964,7 +2966,109 @@ Action()
 	lr_end_transaction("Login",2);
 
 	
+	
 	lr_think_time(5);
+	
+	
+	
+	lr_start_transaction("ChooseCategory");
+	
+	web_reg_find("Text=\"categoryId\":{category},\"", "LAST");  
+	web_reg_save_param_json(
+		"ParamName=productId",
+		"QueryString=$..productId",
+		"SelectAll=Yes",
+	    "NotFound=Warning",
+	    "LAST");
+	web_add_header("Priority", "u=0");
+	web_url("products", 
+		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/{category}/products",  
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t62.inf", 
+		"Mode=HTML", 
+		"LAST");
+	web_url("attributes", 
+		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/attributes",  
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t63.inf", 
+		"Mode=HTML", 
+		"LAST");
+	web_url("category-page.html", 
+		"URL=https://www.advantageonlineshopping.com/app/views/category-page.html", 
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=text/html", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t64.inf", 
+		"Mode=HTML", 
+		"LAST");
+	web_add_header("Priority", "u=5, i");
+	web_url("Filter.png", 
+		"URL=https://www.advantageonlineshopping.com/css/images/Filter.png", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/png", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t65.inf", 
+		"LAST");
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_3", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5400", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t66.inf", 
+		"LAST");
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_4", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5100", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t67.inf", 
+		"LAST");
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_5", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5300", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t68.inf", 
+		"LAST");
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_6", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5900", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t69.inf", 
+		"LAST");
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_7", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5600", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t70.inf", 
+		"LAST");
+	
+	lr_end_transaction("ChooseCategory", 2);
+	
+	
+	
+	lr_think_time(5);
+	
 	
 	
 	lr_start_transaction("Logout");
@@ -2985,7 +3089,10 @@ Action()
 		"Snapshot=t26.inf",
 		"Mode=HTML",
 		"EncType=text/xml; charset=UTF-8",
-		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLogoutRequest xmlns=\"com.advantage.online.store.accountservice\"><loginUser>{loginUser}</loginUser><base64Token>Basic {CorrelationParameter}</base64Token></AccountLogoutRequest></soap:Body></soap:Envelope>",
+		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLogoutRequest xmlns=\"com.advantage.online.store.accountservice\">" 
+		"<loginUser>{loginUser}</loginUser>" 
+		"<base64Token>Basic {CorrelationParameter}</base64Token>" 
+		"</AccountLogoutRequest></soap:Body></soap:Envelope>",
 		"LAST");
 
 	lr_end_transaction("Logout",2);

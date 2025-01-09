@@ -1,0 +1,13 @@
+[t139]
+FileName1=t139.htm
+URL1=https://www.advantageonlineshopping.com/
+Total=2
+RequestHeaderFile=t139_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t139_ResponseHeader.txt
+ContentType=text/html
+SnapshotXmlFile=snapshot_134.xml
+FileName2=t139_main.min.css
+URL2=https://www.advantageonlineshopping.com/css/main.min.css
+[ProtocolInfo]
+ProtocolId=QTWeb

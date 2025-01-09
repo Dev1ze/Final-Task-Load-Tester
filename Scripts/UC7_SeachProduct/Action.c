@@ -5,7 +5,11 @@ Action()
 	char image[256];
 	char iteration[256];
 	char fetchImageName[50];
-	int productCount, i, rndIndex;
+	int productCount, i, rndIndex, j;
+	
+	char word[] = ""; // Слово, для которого нужно выполнить цикл
+    char newWord[50] = ""; // Переменная для хранения нового слова
+    strcpy(word, lr_eval_string("{keyWord}"));
 	
 	lr_start_transaction("UC7_SeachProduct");
 
@@ -213,189 +217,186 @@ Action()
 	
 	
 	
-	lr_think_time(5);
+	lr_think_time(10);
 	
 	
 
-	lr_start_transaction("Login");
+//	lr_start_transaction("Login");
 
-	web_add_header("Origin", "https://www.advantageonlineshopping.com");
-	web_add_header("Priority", "u=0");
-	web_add_header("SOAPAction", "com.advantage.online.store.accountserviceAccountLoginRequest");
-	web_add_header("X-Requested-With", "XMLHttpRequest");
+//	web_add_header("Origin", "https://www.advantageonlineshopping.com");
+//	web_add_header("Priority", "u=0");
+//	web_add_header("SOAPAction", "com.advantage.online.store.accountserviceAccountLoginRequest");
+//	web_add_header("X-Requested-With", "XMLHttpRequest");
+	
 	/*Correlation comment - Do not change!  Original value='121954944' Name ='UserID' Type ='Manual'*/
-	web_reg_save_param_xpath(
-		"ParamName=UserID",
-		"QueryString=/SOAP-ENV:Envelope/SOAP-ENV:Body/ns2:AccountLoginResponse/ns2:StatusMessage/ns2:userId/text()",
-		SEARCH_FILTERS,
-		"Scope=Body",
-		"IgnoreRedirections=No",
-		LAST);
-	/*Correlation comment - Do not change!  Original value='YXJ0ZW0xMjM0OkFBYWExMQ==' Name ='CorrelationParameter' Type ='Manual'*/
-	web_reg_save_param_xpath(
-		"ParamName=CorrelationParameter",
-		"QueryString=/SOAP-ENV:Envelope/SOAP-ENV:Body/ns2:AccountLoginResponse/ns2:StatusMessage/ns2:t_authorization/text()",
-		SEARCH_FILTERS,
-		"Scope=Body",
-		"IgnoreRedirections=No",
-		LAST);
+//	web_reg_save_param_xpath(
+//		"ParamName=UserID",
+//		"QueryString=/SOAP-ENV:Envelope/SOAP-ENV:Body/ns2:AccountLoginResponse/ns2:StatusMessage/ns2:userId/text()",
+//		SEARCH_FILTERS,
+//		"Scope=Body",
+//		"IgnoreRedirections=No",
+//		LAST);
+//	/*Correlation comment - Do not change!  Original value='YXJ0ZW0xMjM0OkFBYWExMQ==' Name ='CorrelationParameter' Type ='Manual'*/
+//	web_reg_save_param_xpath(
+//		"ParamName=CorrelationParameter",
+//		"QueryString=/SOAP-ENV:Envelope/SOAP-ENV:Body/ns2:AccountLoginResponse/ns2:StatusMessage/ns2:t_authorization/text()",
+//		SEARCH_FILTERS,
+//		"Scope=Body",
+//		"IgnoreRedirections=No",
+//		LAST);
 	
-	web_reg_find("Text=<ns2:reason>Login Successful</ns2:reason>", LAST); // Проверка на успешную авторизацию
+//	web_reg_find("Text=<ns2:reason>Login Successful</ns2:reason>", LAST); // Проверка на успешную авторизацию
+//	
+//	web_custom_request("AccountLoginRequest", 
+//		"URL=https://www.advantageonlineshopping.com/accountservice/ws/AccountLoginRequest", 
+//		"Method=POST", 
+//		"TargetFrame=", 
+//		"Resource=0", 
+//		"RecContentType=text/xml", 
+//		"Referer=https://www.advantageonlineshopping.com/", 
+//		"Snapshot=t130.inf", 
+//		"Mode=HTML", 
+//		"EncType=text/xml; charset=UTF-8", 
+//		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLoginRequest xmlns=\"com.advantage.online.store.accountservice\">" 
+//		"<email>{email}</email>" 
+//		"<loginPassword>{password}</loginPassword>" 
+//		"<loginUser>{userName}</loginUser>" 
+//		"</AccountLoginRequest></soap:Body></soap:Envelope>",
+//		LAST);
+//	web_set_sockets_option("INITIAL_AUTH", "BASIC");
+//	web_add_header("Authorization", "Basic {CorrelationParameter}");
+//	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736342291.16.1.1736342989.27.0.0; DOMAIN=www.advantageonlineshopping.com");
+//		web_reg_save_param_json(
+//	    "ParamName=productId",
+//	    "QueryString=$.productsInCart[*].productId",
+//	    "SelectAll=Yes",
+//	    "NotFound=Warning",
+//	    LAST);
+//	web_reg_save_param_json(
+//	    "ParamName=hexColor",
+//	    "QueryString=$.productsInCart[*].color.code",
+//	    "SelectAll=Yes",
+//	    "NotFound=Warning",
+//	    LAST);
+//	web_reg_save_param_json(
+//	    "ParamName=quantity",
+//	    "QueryString=$.productsInCart[*].quantity",
+//	    "SelectAll=Yes",
+//	    "NotFound=Warning",
+//	    LAST);
+//	web_url("{UserID}",
+//		"URL=https://www.advantageonlineshopping.com/order/api/v1/carts/{UserID}",
+//		"TargetFrame=",
+//		"Resource=0",
+//		"RecContentType=application/json",
+//		"Referer=https://www.advantageonlineshopping.com/",
+//		"Snapshot=t131.inf",
+//		"Mode=HTML",
+//		LAST);
+//	productCount = lr_paramarr_len("productId");
+//	
+//	for (i = 1; i <= productCount; i++) 
+//	{
+//		sprintf(temp, "{\"hexColor\":\"%s\",\"productId\":%s,\"quantity\":%s}",
+//            lr_paramarr_idx("hexColor", i),
+//            lr_paramarr_idx("productId", i),
+//            lr_paramarr_idx("quantity", i));
+//		
+//		if (i > 1) 
+//		{
+//        	strcat(body, ",");
+//    	}
+//		strcat(body, temp);
+//	}
+//	lr_output_message("Тело - %s", body);
+//	lr_save_string(body, "body");
+//	web_add_header("Origin", "https://www.advantageonlineshopping.com");
+//	web_add_header("Authorization", "Basic {CorrelationParameter}");
+//	web_add_header("Content-Type", "application/json;charset=utf-8");
+//	web_add_header("Accept", "application/json, text/plain, */*");
+//	web_custom_request("{UserID}",
+//		"URL=https://www.advantageonlineshopping.com/order/api/v1/carts/{UserID}",
+//		"Method=PUT",
+//		"TargetFrame=",
+//		"Resource=0",
+//		"RecContentType=application/json",
+//		"Referer=https://www.advantageonlineshopping.com/",
+//		"Snapshot=t152.inf",
+//		"Mode=HTML",
+//		"Body=[{body}]",
+//		LAST);
 	
-	web_custom_request("AccountLoginRequest", 
-		"URL=https://www.advantageonlineshopping.com/accountservice/ws/AccountLoginRequest", 
-		"Method=POST", 
-		"TargetFrame=", 
-		"Resource=0", 
-		"RecContentType=text/xml", 
-		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t130.inf", 
-		"Mode=HTML", 
-		"EncType=text/xml; charset=UTF-8", 
-		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLoginRequest xmlns=\"com.advantage.online.store.accountservice\">" 
-		"<email>{email}</email>" 
-		"<loginPassword>{password}</loginPassword>" 
-		"<loginUser>{userName}</loginUser>" 
-		"</AccountLoginRequest></soap:Body></soap:Envelope>",
-		LAST);
-	web_set_sockets_option("INITIAL_AUTH", "BASIC");
-	web_add_header("Authorization", "Basic {CorrelationParameter}");
-	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736342291.16.1.1736342989.27.0.0; DOMAIN=www.advantageonlineshopping.com");
-		web_reg_save_param_json(
-	    "ParamName=productId",
-	    "QueryString=$.productsInCart[*].productId",
-	    "SelectAll=Yes",
-	    "NotFound=Warning",
-	    LAST);
-	web_reg_save_param_json(
-	    "ParamName=hexColor",
-	    "QueryString=$.productsInCart[*].color.code",
-	    "SelectAll=Yes",
-	    "NotFound=Warning",
-	    LAST);
-	web_reg_save_param_json(
-	    "ParamName=quantity",
-	    "QueryString=$.productsInCart[*].quantity",
-	    "SelectAll=Yes",
-	    "NotFound=Warning",
-	    LAST);
-	web_url("{UserID}",
-		"URL=https://www.advantageonlineshopping.com/order/api/v1/carts/{UserID}",
-		"TargetFrame=",
-		"Resource=0",
-		"RecContentType=application/json",
-		"Referer=https://www.advantageonlineshopping.com/",
-		"Snapshot=t131.inf",
-		"Mode=HTML",
-		LAST);
-	productCount = lr_paramarr_len("productId");
+//	lr_end_transaction("Login",LR_AUTO);
 	
-	for (i = 1; i <= productCount; i++) 
+	
+	
+	//lr_think_time(5);
+	
+
+	
+	lr_start_transaction("SeachProduct");
+	
+	for (j = 0; j < strlen(word); j++) // ЦИКЛ ПОИСКА, ИМИТИРУЮЩИЙ ВВОД ИСКОМОГО СЛОВА ПО БУКВАМ
 	{
-		sprintf(temp, "{\"hexColor\":\"%s\",\"productId\":%s,\"quantity\":%s}",
-            lr_paramarr_idx("hexColor", i),
-            lr_paramarr_idx("productId", i),
-            lr_paramarr_idx("quantity", i));
+        newWord[j] = word[j];
+        newWord[j + 1] = '\0';
+        //lr_output_message("Итерация %d: %s", j + 1, newWord);
+        lr_save_string(newWord, "newWord");
+        
+	    web_reg_save_param_json(
+			"ParamName=imageUrl",
+			"QueryString=$..imageUrl",
+			"SelectAll=Yes",
+		    "NotFound=Warning",
+		    LAST);
+		web_add_auto_header("Priority", "u=0");
+		web_url("search_2", 
+			"URL=https://www.advantageonlineshopping.com/catalog/api/v1/products/search?name={newWord}&quantityPerEachCategory=10", 
+			"TargetFrame=", 
+			"Resource=0", 
+			"RecContentType=application/json", 
+			"Referer=https://www.advantageonlineshopping.com/", 
+			"Snapshot=t132.inf", 
+			"Mode=HTML", 
+			LAST);
 		
-		if (i > 1) 
+//		lr_output_message("Искомое слово - %s", lr_eval_string("{newWord}"));
+//		productCount = lr_paramarr_len("imageUrl");
+//		for(i = 1; i <= productCount; i++)
+//		{
+//			lr_output_message("imageUrl - %s", lr_paramarr_idx("imageUrl", i));
+//		}
+		
+		web_url("all_data", 
+			"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/all_data", 
+			"TargetFrame=", 
+			"Resource=0", 
+			"RecContentType=application/json", 
+			"Referer=https://www.advantageonlineshopping.com/", 
+			"Snapshot=t133.inf", 
+			"Mode=HTML", 
+			LAST);
+		
+		for(i = 1; i <= productCount; i++) // Загружаем все картинки продуктов найденные по ключевому слову
 		{
-        	strcat(body, ",");
-    	}
-		strcat(body, temp);
-	}
-	lr_output_message("Тело - %s", body);
-	lr_save_string(body, "body");
-	web_add_header("Origin", "https://www.advantageonlineshopping.com");
-	web_add_header("Authorization", "Basic {CorrelationParameter}");
-	web_add_header("Content-Type", "application/json;charset=utf-8");
-	web_add_header("Accept", "application/json, text/plain, */*");
-	web_custom_request("{UserID}",
-		"URL=https://www.advantageonlineshopping.com/order/api/v1/carts/{UserID}",
-		"Method=PUT",
-		"TargetFrame=",
-		"Resource=0",
-		"RecContentType=application/json",
-		"Referer=https://www.advantageonlineshopping.com/",
-		"Snapshot=t152.inf",
-		"Mode=HTML",
-		"Body=[{body}]",
-		LAST);
+			sprintf(fetchImageName, "fetchImage_%d", i); 
+			strcpy(image, lr_paramarr_idx("imageUrl", i));
+			//lr_output_message("Загружаем картинку - %s", lr_paramarr_idx("imageUrl", i));
+			//lr_output_message("Ссылка - https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=%s", image);
+			lr_save_string(image, "image");
 	
-	lr_end_transaction("Login",LR_AUTO);
+			web_reg_find("Text=Error", "Fail=Found", LAST); // Проверка на успешную загрузку картинки
+				
+			web_url(fetchImageName, 
+			"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id={image}", 
+			"TargetFrame=", 
+			"Resource=1", 
+			"RecContentType=image/jpeg", 
+			"Referer=https://www.advantageonlineshopping.com/", 
+			LAST);
+		}
+    }	
 	
-	
-	
-	lr_think_time(5);
-	
-	
-	
-	lr_start_transaction("EnterKeyWord");
-
-	web_reg_save_param_json(
-		"ParamName=imageUrl",
-		"QueryString=$..imageUrl",
-		"SelectAll=Yes",
-	    "NotFound=Warning",
-	    LAST);
-	web_add_auto_header("Priority", "u=0");
-	web_url("search_2", 
-		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/products/search?name={keyWord}&quantityPerEachCategory=10", 
-		"TargetFrame=", 
-		"Resource=0", 
-		"RecContentType=application/json", 
-		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t132.inf", 
-		"Mode=HTML", 
-		LAST);
-	
-	lr_output_message("Искомое слово - %s", lr_eval_string("{keyWord}"));
-	productCount = lr_paramarr_len("imageUrl");
-	for(i = 1; i <= productCount; i++)
-	{
-		lr_output_message("imageUrl - %s", lr_paramarr_idx("imageUrl", i));
-	}
-	
-	web_url("all_data", 
-		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/all_data", 
-		"TargetFrame=", 
-		"Resource=0", 
-		"RecContentType=application/json", 
-		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t133.inf", 
-		"Mode=HTML", 
-		LAST);
-	web_concurrent_start(NULL);
-	
-	for(i = 1; i <= productCount; i++) // Загружаем все картинки продуктов найденные по ключевому слову
-	{
-		sprintf(fetchImageName, "fetchImage_%d", i); 
-		strcpy(image, lr_paramarr_idx("imageUrl", i));
-		lr_output_message("Загружаем картинку - %s", lr_paramarr_idx("imageUrl", i));
-		lr_output_message("Ссылка - https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=%s", image);
-		lr_save_string(image, "image");
-		
-		web_reg_find("Text=Error", "Fail=Found", LAST); // Проверка на успешную загрузку картинки
-			
-		web_url(fetchImageName, 
-		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id={image}", 
-		"TargetFrame=", 
-		"Resource=1", 
-		"RecContentType=image/jpeg", 
-		"Referer=https://www.advantageonlineshopping.com/", 
-		LAST);
-	}
-	web_concurrent_end(NULL);
-	
-	lr_end_transaction("EnterKeyWord",LR_AUTO);
-	
-	
-	
-	lr_think_time(5);
-	
-	
-
-	lr_start_transaction("SeachPage");
-
 	web_add_header("Origin", "https://www.advantageonlineshopping.com");
 	web_add_header("SOAPAction", "com.advantage.online.store.accountserviceAccountLoginRequest");
 	web_add_header("X-Requested-With", "XMLHttpRequest");
@@ -419,21 +420,8 @@ Action()
 		"Snapshot=t137.inf", 
 		"Mode=HTML", 
 		LAST);
-	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736342291.16.1.1736343069.60.0.0; DOMAIN=www.advantageonlineshopping.com");
-	web_revert_auto_header("Priority");
-	web_add_header("Authorization", "Basic {CorrelationParameter}");
-	web_add_header("Accept", "application/json, text/plain, */*");
-	web_url("{UserID}",
-		"URL=https://www.advantageonlineshopping.com/order/api/v1/carts/{UserID}",
-		"TargetFrame=",
-		"Resource=0",
-		"RecContentType=application/json",
-		"Referer=https://www.advantageonlineshopping.com/",
-		"Snapshot=t138.inf",
-		"Mode=HTML",
-		LAST);
 
-	lr_end_transaction("SeachPage",LR_AUTO);
+	lr_end_transaction("SeachProduct",LR_AUTO);
 	
 	lr_end_transaction("UC7_SeachProduct", LR_AUTO);
 
