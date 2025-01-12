@@ -1,21 +1,13 @@
 HTTP/2.0 200
 Status: 200
 server: nginx/1.18.0 (Ubuntu)
-date: Thu, 09 Jan 2025 18:46:23 GMT
-content-type: text/xml;charset=utf-8
-x-content-type-options: nosniff
-x-xss-protection: 1; mode=block
-cache-control: no-store
-pragma: no-cache
-expires: 0
-x-frame-options: DENY
-access-control-request-method: POST, GET, OPTIONS, DELETE
-access-control-allow-methods: POST, GET, OPTIONS, DELETE
-access-control-max-age: 3600
-access-control-allow-headers: Origin, X-Requested-With, Content-Type, Accept, Key, soapaction
-access-control-allow-origin: *
-accept: text/xml, text/html, image/gif, image/jpeg, *; q=.2, */*; q=.2
-soapaction: ""
+date: Sun, 12 Jan 2025 14:23:43 GMT
+content-type: text/html
+accept-ranges: bytes
+etag: W/"2446-1723632370000"
+last-modified: Wed, 14 Aug 2024 10:46:10 GMT
+cache-control: max-age=0
+expires: Sun, 12 Jan 2025 14:23:43 GMT
 vary: accept-encoding
 content-encoding: gzip
 strict-transport-security: max-age=31536000; includeSubDomains; preload

@@ -217,7 +217,7 @@ Action()
 	
 	
 	
-	lr_think_time(10);
+	lr_think_time(5);
 	
 	
 

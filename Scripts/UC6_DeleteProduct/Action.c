@@ -2,9 +2,10 @@ Action()
 {
 	char body[1024] = "";
 	char temp[256];
+	char chrProductStatus[256];
 	char rndProductId[256];
 	char rndColorId[256];
-	int productCount, i, rndIndex;
+	int productCount, i, rndIndex, colorCount, productCountInCart;
 	srand(time(NULL)); // Инициализация генератора случайных чисел
 	
 	lr_start_transaction("UC6_DeleteProduct");
@@ -162,7 +163,7 @@ Action()
 	
 	
 	
-	lr_think_time(5);
+	lr_think_time(4);
 	
 	
 
@@ -210,6 +211,14 @@ Action()
 	web_set_sockets_option("INITIAL_AUTH", "BASIC");
 	web_add_header("Authorization", "Basic {CorrelationParameter}");
 	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736253081.15.1.1736253118.23.0.0; DOMAIN=www.advantageonlineshopping.com");
+	/*Correlation comment - Do not change!  Original value='005D9FE091A6779EAD527891ECD939A3' Name ='sessionId' Type ='Manual'*/
+	web_reg_save_param_regexp(
+		"ParamName=sessionId",
+		"RegExp=JSESSIONID=(.*?);",
+		SEARCH_FILTERS,
+		"Scope=Cookies",
+		"IgnoreRedirections=No",
+		LAST);
 	web_reg_save_param_json(
 	    "ParamName=productId",
 	    "QueryString=$.productsInCart[*].productId",
@@ -239,9 +248,9 @@ Action()
 		LAST);
 	lr_set_debug_message(LR_MSG_CLASS_EXTENDED_LOG | LR_MSG_CLASS_RESULT_DATA, LR_SWITCH_OFF);
 
-	productCount = lr_paramarr_len("productId");
+	productCountInCart = lr_paramarr_len("productId");
 	
-	for (i = 1; i <= productCount; i++) 
+	for (i = 1; i <= productCountInCart; i++) 
 	{
 		sprintf(temp, "{\"hexColor\":\"%s\",\"productId\":%s,\"quantity\":%s}",
             lr_paramarr_idx("hexColor", i),
@@ -276,27 +285,299 @@ Action()
 	
 	
 	
-	lr_think_time(5);
+	lr_think_time(4);
+	
+	
+	
+	lr_start_transaction("ChooseCategory");
+	web_reg_find("Text=\"categoryId\":{category},\"", LAST); // Проверка на соответствие сгенерированной id категории с переходом на категорию
+	web_reg_save_param_json(
+		"ParamName=productId",
+		"QueryString=$..productId",
+		"SelectAll=Yes",
+	    "NotFound=Warning",
+	    LAST);
+	web_add_header("Priority", "u=0");
+	web_url("products", 
+		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/{category}/products", //Продукты в категории X
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t62.inf", 
+		"Mode=HTML", 
+		LAST);
+	web_url("attributes", 
+		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/attributes", //Филтры для каждой категории
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t63.inf", 
+		"Mode=HTML", 
+		LAST);
+	web_url("category-page.html", 
+		"URL=https://www.advantageonlineshopping.com/app/views/category-page.html", 
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=text/html", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t64.inf", 
+		"Mode=HTML", 
+		LAST);
+	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736065316.10.1.1736065363.13.0.0; DOMAIN=www.advantageonlineshopping.com");
+	web_add_header("Priority", "u=5, i");
+	web_concurrent_start(NULL);
+	web_url("Filter.png", 
+		"URL=https://www.advantageonlineshopping.com/css/images/Filter.png", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/png", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t65.inf", 
+		LAST);
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_3", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5400", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t66.inf", 
+		LAST);
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_4", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5100", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t67.inf", 
+		LAST);
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_5", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5300", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t68.inf", 
+		LAST);
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_6", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5900", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t69.inf", 
+		LAST);
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_7", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5600", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t70.inf", 
+		LAST);
+	web_concurrent_end(NULL);
+	lr_output_message("Категории - %s", lr_eval_string("{category}"));
+	lr_save_string(rndProductId, "rndProductId");
+	productCount = lr_paramarr_len("productId");
+	lr_output_message("Количество продуктов в категории - %d", productCount);
+	rndIndex = (rand() % (productCount - 1 + 1)) + 1;
+	lr_output_message("Рандомный индекс - %d", rndIndex);
+	sprintf(rndProductId, lr_paramarr_idx("productId", rndIndex));
+	lr_output_message("Рандомный продукт - %s", rndProductId);
+	lr_save_string(rndProductId, "rndProductId");
+	for(i = 1; i <= productCount; i++)
+	{
+		lr_output_message("Продукт - %s", lr_paramarr_idx("productId",i));
+	}
+
+	lr_end_transaction("ChooseCategory",LR_AUTO);
+
+	
+	
+	lr_think_time(4);
+	
+	
+	
+	lr_start_transaction("ChooseProduct");
+	
+	web_reg_find("Text=\"productId\":{rndProductId},\"categoryId\":{category}", LAST); // Проверка на наличие рандомного продукта в ответе от сервера
+	web_reg_save_param_json(
+		"ParamName=colorCode",
+		"QueryString=$..code",
+		"SelectAll=Yes",
+	    "NotFound=Warning",
+	    LAST);
+	web_reg_save_param_json(
+		"ParamName=productStatus",
+		"QueryString=$..productStatus",
+		"SelectAll=No",
+	    "NotFound=Warning",
+	    LAST);
+	web_add_auto_header("Priority", "u=0");
+	web_url("{rndProductId}", 
+		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/products/{rndProductId}", //Конкретный продукт 
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t71.inf", 
+		"Mode=HTML", 
+		LAST);
+	
+	strcpy(chrProductStatus, lr_eval_string("{productStatus}"));
+	lr_output_message("Сохранённое слово: %s", chrProductStatus);
+	if((strcmp(chrProductStatus, "OutOfStock") == 0)) 
+	{
+		while ((strcmp(chrProductStatus, "OutOfStock") == 0)) // Добавление только тех продуктов которые есть в наличае
+		{
+			rndIndex = (rand() % (productCount - 1 + 1)) + 1;
+			lr_output_message("Рандомный индекс - %d", rndIndex);
+			sprintf(rndProductId, lr_paramarr_idx("productId", rndIndex));
+			lr_output_message("Рандомный продукт - %s", rndProductId);
+			lr_save_string(rndProductId, "rndProductId");
+			web_reg_save_param_json(
+				"ParamName=colorCode",
+				"QueryString=$..code",
+				"SelectAll=Yes",
+			    "NotFound=Warning",
+			    LAST);
+			web_reg_save_param_json(
+				"ParamName=productStatus_",
+				"QueryString=$..productStatus",
+				"SelectAll=Yes",
+			    "NotFound=Warning",
+			    LAST);
+			web_url("{rndProductId}", 
+				"URL=https://www.advantageonlineshopping.com/catalog/api/v1/products/{rndProductId}", //Конкретный продукт 
+				"TargetFrame=", 
+				"Resource=0", 
+				"RecContentType=application/json", 
+				"Referer=https://www.advantageonlineshopping.com/", 
+				"Snapshot=t71.inf", 
+				"Mode=HTML", 
+				LAST);
+			strcpy(chrProductStatus, lr_eval_string("{productStatus_}"));
+			lr_output_message("Сохранённое слово: %s", chrProductStatus);
+		}
+	}
+	
+	web_url("all_data", 
+		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/all_data", //Все продукты во всех категориях
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t72.inf", 
+		"Mode=HTML", 
+		LAST);
+	web_revert_auto_header("Priority");
+	web_url("products_2", 
+		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/{category}/products", //Все продукты в категории X
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t73.inf", 
+		"Mode=HTML", 
+		LAST);
+	web_url("product-page.html", 
+		"URL=https://www.advantageonlineshopping.com/app/views/product-page.html", 
+		"TargetFrame=", 
+		"Resource=0", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t74.inf", 
+		"Mode=HTML", 
+		LAST);
+	colorCount = lr_paramarr_len("colorCode");
+	lr_output_message("Количество цветов у продукта - %d", colorCount);
+	rndIndex = (rand() % (colorCount - 1 + 1)) + 1;
+	lr_output_message("Рандомный индекс - %d", rndIndex);
+	sprintf(rndColorId, lr_paramarr_idx("colorCode", rndIndex));
+	lr_output_message("Рандомный цвет - %s", rndColorId);
+	lr_save_string(rndColorId, "rndColorId");
+	for(i = 1; i <= colorCount; i++)
+	{
+		lr_output_message("Цвет - %s", lr_paramarr_idx("colorCode",i));
+	}
+	
+	lr_end_transaction("ChooseProduct",LR_AUTO);
+	
+	
+	
+	lr_think_time(4);
+	
+	
+
+	lr_start_transaction("AddToCart");
+	
+	web_reg_find("Text=\"productId\":{rndProductId}", LAST); // Проверка на наличие id продукта в ответе запроса добавление в корзину
+	
+	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736065316.10.1.1736065395.60.0.0; DOMAIN=www.advantageonlineshopping.com");
+	web_reg_save_param_json(
+		"ParamName=productIdInCart",
+		"QueryString=$..productId",
+		"SelectAll=Yes",
+	    "NotFound=Warning",
+	    LAST);
+	web_reg_save_param_json(
+		"ParamName=ColorProductInCart",
+		"QueryString=$..code",
+		"SelectAll=Yes",
+	    "NotFound=Warning",
+	    LAST);
+	web_add_header("Origin", "https://www.advantageonlineshopping.com");
+	web_add_header("Priority", "u=0");
+	web_add_header("Authorization", "Basic {CorrelationParameter}");
+	web_add_header("Accept", "application/json, text/plain, */*");
+	web_submit_data("{rndColorId}",
+		"Action=https://www.advantageonlineshopping.com/order/api/v1/carts/{UserID}/product/{rndProductId}/color/{rndColorId}?quantity=1",
+		"Method=POST",
+		"TargetFrame=",
+		"RecContentType=application/json",
+		"Referer=https://www.advantageonlineshopping.com/",
+		"Snapshot=t75.inf",
+		"Mode=HTML",
+		ITEMDATA,
+		"Name=sessionId", "Value={sessionId}", ENDITEM,
+		LAST);
+
+	lr_end_transaction("AddToCart",LR_AUTO);
+	
+	
+	
+	lr_think_time(4);
 	
 	
 	
 	lr_start_transaction("OpenCart");
 	
-	rndIndex = (rand() % (productCount - 1 + 1)) + 1;
+	productCountInCart = lr_paramarr_len("productIdInCart");
+	for(i = 1; i < productCountInCart; i++)
+	{
+		lr_output_message(lr_paramarr_idx("productIdInCart", i));
+		lr_output_message(lr_paramarr_idx("ColorProductInCart", i));
+	}
+	rndIndex = (rand() % (productCountInCart - 1 + 1)) + 1;
 	lr_output_message("Рандомный индекс - %d", rndIndex);
-	sprintf(rndProductId, lr_paramarr_idx("productId", rndIndex));
-	sprintf(rndColorId, lr_paramarr_idx("hexColor", rndIndex));
+	sprintf(rndProductId, lr_paramarr_idx("productIdInCart", rndIndex));
+	sprintf(rndColorId, lr_paramarr_idx("ColorProductInCart", rndIndex));
 	lr_save_string(rndProductId, "rndProductId");
 	lr_save_string(rndColorId, "rndColorId");
 	lr_output_message("Рандомный продукт - %s", rndProductId);
 	lr_output_message("Его цвет - %s", rndColorId);
 	
-	web_reg_save_param_json(
-	    "ParamName=hexColor",
-	    "QueryString=$.productsInCart[*].color.code",
-	    "SelectAll=Yes",
-	    "NotFound=Warning",
-	    LAST);
+//	web_reg_save_param_json(
+//	    "ParamName=hexColor",
+//	    "QueryString=$.productsInCart[*].color.code",
+//	    "SelectAll=Yes",
+//	    "NotFound=Warning",
+//	    LAST);
 	
 	web_reg_find("Text=productId\":{rndProductId}", LAST); // Проверка на существование продукта в корзине
 	
@@ -324,7 +605,7 @@ Action()
 	
 	
 	
-	lr_think_time(5);
+	lr_think_time(4);
 	
 	
 
@@ -353,30 +634,30 @@ Action()
 
 	
 	
-	lr_think_time(5);
+//	lr_think_time(5);
 	
 	
 	
-	lr_start_transaction("Logout");
-	
-	web_reg_find("Text=<ns2:reason>Logout Successful</ns2:reason>", LAST); // Проверка на успешный выход из аккаунта
-
-	web_add_header("SOAPAction", "com.advantage.online.store.accountserviceAccountLogoutRequest");
-	web_add_header("X-Requested-With", "XMLHttpRequest");
-	web_custom_request("AccountLogoutRequest",
-		"URL=https://www.advantageonlineshopping.com/accountservice/ws/AccountLogoutRequest",
-		"Method=POST",
-		"TargetFrame=",
-		"Resource=0",
-		"RecContentType=text/xml",
-		"Referer=https://www.advantageonlineshopping.com/",
-		"Snapshot=t156.inf",
-		"Mode=HTML",
-		"EncType=text/xml; charset=UTF-8",
-		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLogoutRequest xmlns=\"com.advantage.online.store.accountservice\"><loginUser>{UserID}</loginUser><base64Token>Basic {CorrelationParameter}</base64Token></AccountLogoutRequest></soap:Body></soap:Envelope>",
-		LAST);
-
-	lr_end_transaction("Logout",LR_AUTO);
+//	lr_start_transaction("Logout");
+//	
+//	web_reg_find("Text=<ns2:reason>Logout Successful</ns2:reason>", LAST); // Проверка на успешный выход из аккаунта
+//
+//	web_add_header("SOAPAction", "com.advantage.online.store.accountserviceAccountLogoutRequest");
+//	web_add_header("X-Requested-With", "XMLHttpRequest");
+//	web_custom_request("AccountLogoutRequest",
+//		"URL=https://www.advantageonlineshopping.com/accountservice/ws/AccountLogoutRequest",
+//		"Method=POST",
+//		"TargetFrame=",
+//		"Resource=0",
+//		"RecContentType=text/xml",
+//		"Referer=https://www.advantageonlineshopping.com/",
+//		"Snapshot=t156.inf",
+//		"Mode=HTML",
+//		"EncType=text/xml; charset=UTF-8",
+//		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountLogoutRequest xmlns=\"com.advantage.online.store.accountservice\"><loginUser>{UserID}</loginUser><base64Token>Basic {CorrelationParameter}</base64Token></AccountLogoutRequest></soap:Body></soap:Envelope>",
+//		LAST);
+//
+//	lr_end_transaction("Logout",LR_AUTO);
 	
 	lr_end_transaction("UC6_DeleteProduct", LR_AUTO);
 

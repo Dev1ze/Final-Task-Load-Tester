@@ -1,17 +1,14 @@
-HTTP/2.0 201
-Status: 201
+HTTP/2.0 200
+Status: 200
 server: nginx/1.18.0 (Ubuntu)
-date: Thu, 09 Jan 2025 18:50:01 GMT
-content-type: application/json
-access-control-allow-credentials: true
-access-control-allow-origin: https://www.advantageonlineshopping.com
-vary: origin,accept-encoding
-expires: 0
-cache-control: no-store
-set-cookie: JSESSIONID=CD3359B6EE33D1A2E7FF89EBC07C44BB; Path=/order; HttpOnly
-x-content-type-options: nosniff
-x-xss-protection: 1; mode=block
-x-frame-options: DENY
+date: Sun, 12 Jan 2025 14:16:56 GMT
+content-type: text/html
+accept-ranges: bytes
+etag: W/"8805-1723632370000"
+last-modified: Wed, 14 Aug 2024 10:46:10 GMT
+cache-control: max-age=0
+expires: Sun, 12 Jan 2025 14:16:56 GMT
+vary: accept-encoding
 content-encoding: gzip
 strict-transport-security: max-age=31536000; includeSubDomains; preload
 

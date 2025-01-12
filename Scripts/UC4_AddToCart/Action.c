@@ -3,6 +3,7 @@ Action()
 	int productCount, colorCount, i;
 	int rndIndex;
 	char rndProductId[256];
+	char chrProductStatus[256];
 	char rndColorId[256];
 	char categoryIdx[256];
 	char body[1024] = "";
@@ -448,6 +449,12 @@ Action()
 		"SelectAll=Yes",
 	    "NotFound=Warning",
 	    LAST);
+	web_reg_save_param_json(
+		"ParamName=productStatus",
+		"QueryString=$..productStatus",
+		"SelectAll=No",
+	    "NotFound=Warning",
+	    LAST);
 	web_add_auto_header("Priority", "u=0");
 	web_url("{rndProductId}", 
 		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/products/{rndProductId}", //Конкретный продукт 
@@ -458,6 +465,44 @@ Action()
 		"Snapshot=t71.inf", 
 		"Mode=HTML", 
 		LAST);
+	
+	strcpy(chrProductStatus, lr_eval_string("{productStatus}"));
+	lr_output_message("Сохранённое слово: %s", chrProductStatus);
+	if((strcmp(chrProductStatus, "OutOfStock") == 0)) 
+	{
+		while ((strcmp(chrProductStatus, "OutOfStock") == 0)) // Добавление только тех продуктов которые есть в наличае
+		{
+			rndIndex = (rand() % (productCount - 1 + 1)) + 1;
+			lr_output_message("Рандомный индекс - %d", rndIndex);
+			sprintf(rndProductId, lr_paramarr_idx("productId", rndIndex));
+			lr_output_message("Рандомный продукт - %s", rndProductId);
+			lr_save_string(rndProductId, "rndProductId");
+			web_reg_save_param_json(
+				"ParamName=colorCode",
+				"QueryString=$..code",
+				"SelectAll=Yes",
+			    "NotFound=Warning",
+			    LAST);
+			web_reg_save_param_json(
+				"ParamName=productStatus_",
+				"QueryString=$..productStatus",
+				"SelectAll=Yes",
+			    "NotFound=Warning",
+			    LAST);
+			web_url("{rndProductId}", 
+				"URL=https://www.advantageonlineshopping.com/catalog/api/v1/products/{rndProductId}", //Конкретный продукт 
+				"TargetFrame=", 
+				"Resource=0", 
+				"RecContentType=application/json", 
+				"Referer=https://www.advantageonlineshopping.com/", 
+				"Snapshot=t71.inf", 
+				"Mode=HTML", 
+				LAST);
+			strcpy(chrProductStatus, lr_eval_string("{productStatus_}"));
+			lr_output_message("Сохранённое слово: %s", chrProductStatus);
+		}
+	}
+	
 	web_url("all_data", 
 		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/all_data", //Все продукты во всех категориях
 		"TargetFrame=", 
@@ -469,7 +514,7 @@ Action()
 		LAST);
 	web_revert_auto_header("Priority");
 	web_url("products_2", 
-		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/5/products", //Все продукты в категории X
+		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/categories/{category}/products", //Все продукты в категории X
 		"TargetFrame=", 
 		"Resource=0", 
 		"RecContentType=application/json", 
