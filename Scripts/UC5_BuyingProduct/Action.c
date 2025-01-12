@@ -308,7 +308,7 @@ Action()
     	}
 		strcat(body, temp);
 	}
-	lr_output_message("Тело - %s", body);
+	//lr_output_message("Тело - %s", body);
 	lr_save_string(body, "body");
 	
 	web_add_header("Priority", "u=5, i");
@@ -437,21 +437,21 @@ Action()
 		"Snapshot=t70.inf", 
 		LAST);
 	web_concurrent_end(NULL);
-	lr_output_message("Категории - %s", lr_eval_string("{category}"));
+	//lr_output_message("Категории - %s", lr_eval_string("{category}"));
 	lr_save_string(rndProductId, "rndProductId");
 	productCount = lr_paramarr_len("productId");
 	sprintf(strProductCount, "%d", productCount);
 	lr_save_string(strProductCount, "strProductCount");
-	lr_output_message("Количество продуктов в категории - %d", productCount);
+	//lr_output_message("Количество продуктов в категории - %d", productCount);
 	rndIndex = (rand() % (productCount - 1 + 1)) + 1;
-	lr_output_message("Рандомный индекс - %d", rndIndex);
+	//lr_output_message("Рандомный индекс - %d", rndIndex);
 	sprintf(rndProductId, lr_paramarr_idx("productId", rndIndex));
-	lr_output_message("Рандомный продукт - %s", rndProductId);
+	//lr_output_message("Рандомный продукт - %s", rndProductId);
 	lr_save_string(rndProductId, "rndProductId");
-	for(i = 1; i <= productCount; i++)
-	{
-		lr_output_message("Продукт - %s", lr_paramarr_idx("productId",i));
-	}
+//	for(i = 1; i <= productCount; i++)
+//	{
+//		lr_output_message("Продукт - %s", lr_paramarr_idx("productId",i));
+//	}
 
 	lr_end_transaction("ChooseCategory",LR_AUTO);
 	
@@ -494,9 +494,9 @@ Action()
 		while ((strcmp(chrProductStatus, "OutOfStock") == 0)) // Добавление только тех продуктов которые есть в наличае
 		{
 			rndIndex = (rand() % (productCount - 1 + 1)) + 1;
-			lr_output_message("Рандомный индекс - %d", rndIndex);
+			//lr_output_message("Рандомный индекс - %d", rndIndex);
 			sprintf(rndProductId, lr_paramarr_idx("productId", rndIndex));
-			lr_output_message("Рандомный продукт - %s", rndProductId);
+			//lr_output_message("Рандомный продукт - %s", rndProductId);
 			lr_save_string(rndProductId, "rndProductId");
 			web_reg_save_param_json(
 				"ParamName=colorCode",
@@ -520,7 +520,7 @@ Action()
 				"Mode=HTML", 
 				LAST);
 			strcpy(chrProductStatus, lr_eval_string("{productStatus_}"));
-			lr_output_message("Сохранённое слово: %s", chrProductStatus);
+			//lr_output_message("Сохранённое слово: %s", chrProductStatus);
 		}
 	}
 	
@@ -552,16 +552,16 @@ Action()
 		"Mode=HTML", 
 		LAST);
 	colorCount = lr_paramarr_len("colorCode");
-	lr_output_message("Количество цветов у продукта - %d", colorCount);
+	//lr_output_message("Количество цветов у продукта - %d", colorCount);
 	rndIndex = (rand() % (colorCount - 1 + 1)) + 1;
-	lr_output_message("Рандомный индекс - %d", rndIndex);
+	//lr_output_message("Рандомный индекс - %d", rndIndex);
 	sprintf(rndColorId, lr_paramarr_idx("colorCode", rndIndex));
-	lr_output_message("Рандомный цвет - %s", rndColorId);
+	//lr_output_message("Рандомный цвет - %s", rndColorId);
 	lr_save_string(rndColorId, "rndColorId");
-	for(i = 1; i <= colorCount; i++)
-	{
-		lr_output_message("Цвет - %s", lr_paramarr_idx("colorCode",i));
-	}
+//	for(i = 1; i <= colorCount; i++)
+//	{
+//		lr_output_message("Цвет - %s", lr_paramarr_idx("colorCode",i));
+//	}
 	
 	lr_end_transaction("ChooseProduct",LR_AUTO);
 	
@@ -639,11 +639,11 @@ Action()
     	}
 		strcat(body, temp);
 	}
-	lr_output_message("Тело - %s", body);
+	//lr_output_message("Тело - %s", body);
 	lr_save_string(body, "body");
 	sprintf(strTotalPrice, "%d", totalPrice);
 	lr_save_string(strTotalPrice, "strTotalPrice");
-	lr_output_message("Итог - %s", strTotalPrice);
+	//lr_output_message("Итог - %s", strTotalPrice);
 
 	lr_end_transaction("AddToCart",LR_AUTO);
 	

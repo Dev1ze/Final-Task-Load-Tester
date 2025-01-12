@@ -1,4 +1,4 @@
-Virtual User Script started at: 12.01.2025 17:22:51
+Virtual User Script started at: 12.01.2025 17:44:28
 Starting action vuser_init.
 Web Turbo Replay of LoadRunner 2020.0.0 for Windows 10; build 793 (ноя 27 2019 19:51:20)  	[MsgId: MMSG-26983]
 Run mode: HTML  	[MsgId: MMSG-26993]
@@ -46,7 +46,7 @@ Action.c(45): Found resource "https://www.advantageonlineshopping.com/css/main.m
 Action.c(45): Found resource "https://www.googletagmanager.com/gtag/js?id=G-TBPYED8WSW" in HTML "https://www.advantageonlineshopping.com/"  	[MsgId: MMSG-26659]
 Action.c(45): Found resource "https://www.advantageonlineshopping.com/css/images/Down_arrow.svg" in HTML "https://www.advantageonlineshopping.com/"  	[MsgId: MMSG-26659]
 Action.c(45): Found resource "https://www.advantageonlineshopping.com/vendor/requirejs/require.js" in HTML "https://www.advantageonlineshopping.com/"  	[MsgId: MMSG-26659]
-Action.c(45): web_url("www.advantageonlineshopping.com") was successful, 164732 body bytes, 2619 header bytes  	[MsgId: MMSG-26386]
+Action.c(45): web_url("www.advantageonlineshopping.com") was successful, 164739 body bytes, 2619 header bytes  	[MsgId: MMSG-26386]
 Action.c(54): web_concurrent_start started  	[MsgId: MMSG-26355]
 Action.c(54): web_concurrent_start was successful  	[MsgId: MMSG-26392]
 Action.c(55): web_url("Roboto-Regular-webfont.woff") started  	[MsgId: MMSG-26355]
@@ -87,7 +87,7 @@ Action.c(125): web_reg_find started  	[MsgId: MMSG-26355]
 Action.c(125): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
 Action.c(127): web_url("categories") started  	[MsgId: MMSG-26355]
 Action.c(127): Registered web_reg_find successful for "Text="categoryId":1,"categoryName":"LAPTOPS"" (count=1)  	[MsgId: MMSG-26364]
-Action.c(127): web_url("categories") was successful, 5457 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(127): web_url("categories") was successful, 5465 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
 Action.c(136): web_url("search") started  	[MsgId: MMSG-26355]
 Action.c(136): web_url("search") was successful, 351 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
 Action.c(145): web_url("popularProducts.json") started  	[MsgId: MMSG-26355]
@@ -121,7 +121,7 @@ Action.c(198): web_url("Roboto-Thin-webfont.woff") started  	[MsgId: MMSG-26355]
 Action.c(198): Registering web_url("Roboto-Thin-webfont.woff") was successful  	[MsgId: MMSG-26390]
 Action.c(205): web_concurrent_end started  	[MsgId: MMSG-26355]
 Action.c(205): web_concurrent_end was successful, 343356 body bytes, 1877 header bytes  	[MsgId: MMSG-26386]
-Action.c(207): Notify: Transaction "OpenLandingPage" ended with a "Pass" status (Duration: 6,7210 Wasted Time: 0,1217).
+Action.c(207): Notify: Transaction "OpenLandingPage" ended with a "Pass" status (Duration: 6,6534 Wasted Time: 0,1263).
 Action.c(211): lr_think_time: 5,00 seconds.
 Action.c(215): Notify: Transaction "Login" started.
 Action.c(217): web_add_header("Origin") started  	[MsgId: MMSG-26355]
@@ -140,7 +140,7 @@ Action.c(238): web_reg_find started  	[MsgId: MMSG-26355]
 Action.c(238): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
 Action.c(240): web_custom_request("AccountLoginRequest") started  	[MsgId: MMSG-26355]
 Action.c(240): Registered web_reg_find successful for "Text=<ns2:reason>Login Successful</ns2:reason>" (count=1)  	[MsgId: MMSG-26364]
-Action.c(240): web_custom_request("AccountLoginRequest") was successful, 803 body bytes, 735 header bytes  	[MsgId: MMSG-26386]
+Action.c(240): web_custom_request("AccountLoginRequest") was successful, 804 body bytes, 735 header bytes  	[MsgId: MMSG-26386]
 Action.c(257): web_set_sockets_option started  	[MsgId: MMSG-26355]
 Action.c(257): web_set_sockets_option was successful  	[MsgId: MMSG-26392]
 Action.c(258): web_add_header("Authorization") started  	[MsgId: MMSG-26355]
@@ -157,8 +157,7 @@ Action.c(274): Registering web_reg_save_param_json was successful  	[MsgId: MMSG
 Action.c(280): web_reg_save_param_json started  	[MsgId: MMSG-26355]
 Action.c(280): Registering web_reg_save_param_json was successful  	[MsgId: MMSG-26390]
 Action.c(286): web_url("{UserID}") started  	[MsgId: MMSG-26355]
-Action.c(286): web_url("{UserID}") was successful, 246 body bytes, 455 header bytes  	[MsgId: MMSG-26386]
-Action.c(311): Тело - {"hexColor":"FCC23D","productId":3,"quantity":1}
+Action.c(286): web_url("{UserID}") was successful, 323 body bytes, 455 header bytes  	[MsgId: MMSG-26386]
 Action.c(314): web_add_header("Priority") started  	[MsgId: MMSG-26355]
 Action.c(314): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
 Action.c(315): web_url("fetchImage") started  	[MsgId: MMSG-26355]
@@ -175,7 +174,7 @@ Action.c(326): web_add_header("Accept") started  	[MsgId: MMSG-26355]
 Action.c(326): web_add_header("Accept") was successful  	[MsgId: MMSG-26392]
 Action.c(327): web_custom_request("{UserID}") started  	[MsgId: MMSG-26355]
 Action.c(327): web_custom_request("{UserID}") was successful, 100 body bytes, 492 header bytes  	[MsgId: MMSG-26386]
-Action.c(339): Notify: Transaction "Login" ended with a "Pass" status (Duration: 2,5423 Wasted Time: 0,0146).
+Action.c(339): Notify: Transaction "Login" ended with a "Pass" status (Duration: 4,6591 Wasted Time: 0,0149).
 Action.c(343): lr_think_time: 5,00 seconds.
 Action.c(347): Notify: Transaction "ChooseCategory" started.
 Action.c(348): web_reg_find started  	[MsgId: MMSG-26355]
@@ -185,8 +184,8 @@ Action.c(349): Registering web_reg_save_param_json was successful  	[MsgId: MMSG
 Action.c(355): web_add_header("Priority") started  	[MsgId: MMSG-26355]
 Action.c(355): web_add_header("Priority") was successful  	[MsgId: MMSG-26392]
 Action.c(356): web_url("products") started  	[MsgId: MMSG-26355]
-Action.c(356): Registered web_reg_find successful for "Text="categoryId":5,"" (count=10)  	[MsgId: MMSG-26364]
-Action.c(356): web_url("products") was successful, 2377 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(356): Registered web_reg_find successful for "Text="categoryId":1,"" (count=12)  	[MsgId: MMSG-26364]
+Action.c(356): web_url("products") was successful, 8242 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
 Action.c(365): web_url("attributes") started  	[MsgId: MMSG-26355]
 Action.c(365): web_url("attributes") was successful, 552 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
 Action.c(374): web_url("category-page.html") started  	[MsgId: MMSG-26355]
@@ -221,20 +220,7 @@ Action.c(431): web_url("fetchImage_7") started  	[MsgId: MMSG-26355]
 Action.c(431): Registering web_url("fetchImage_7") was successful  	[MsgId: MMSG-26390]
 Action.c(439): web_concurrent_end started  	[MsgId: MMSG-26355]
 Action.c(439): web_concurrent_end was successful, 106354 body bytes, 2206 header bytes  	[MsgId: MMSG-26386]
-Action.c(440): Категории - 5
-Action.c(445): Количество продуктов в категории - 9
-Action.c(447): Рандомный индекс - 4
-Action.c(449): Рандомный продукт - 30
-Action.c(453): Продукт - 29
-Action.c(453): Продукт - 28
-Action.c(453): Продукт - 27
-Action.c(453): Продукт - 30
-Action.c(453): Продукт - 33
-Action.c(453): Продукт - 32
-Action.c(453): Продукт - 26
-Action.c(453): Продукт - 31
-Action.c(453): Продукт - 34
-Action.c(456): Notify: Transaction "ChooseCategory" ended with a "Pass" status (Duration: 2,8302 Wasted Time: 0,0105).
+Action.c(456): Notify: Transaction "ChooseCategory" ended with a "Pass" status (Duration: 2,3444 Wasted Time: 0,0116).
 Action.c(460): lr_think_time: 5,00 seconds.
 Action.c(464): Notify: Transaction "ChooseProduct" started.
 Action.c(466): web_reg_find started  	[MsgId: MMSG-26355]
@@ -246,28 +232,22 @@ Action.c(473): Registering web_reg_save_param_json was successful  	[MsgId: MMSG
 Action.c(479): web_add_auto_header("Priority") started  	[MsgId: MMSG-26355]
 Action.c(479): web_add_auto_header("Priority") was successful  	[MsgId: MMSG-26392]
 Action.c(480): web_url("{rndProductId}") started  	[MsgId: MMSG-26355]
-Action.c(480): Registered web_reg_find successful for "Text="productId":30,"categoryId":5" (count=1)  	[MsgId: MMSG-26364]
-Action.c(480): web_url("{rndProductId}") was successful, 451 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(480): Registered web_reg_find successful for "Text="productId":5,"categoryId":1" (count=1)  	[MsgId: MMSG-26364]
+Action.c(480): web_url("{rndProductId}") was successful, 559 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
 Action.c(491): Сохранённое слово: Active
 Action.c(527): web_url("all_data") started  	[MsgId: MMSG-26355]
-Action.c(527): web_url("all_data") was successful, 17379 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(527): web_url("all_data") was successful, 17334 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
 Action.c(536): web_remove_auto_header("Priority") started  	[MsgId: MMSG-26355]
 Action.c(536): Previous automatically added web header for "Priority" removed  	[MsgId: MMSG-26587]
 Action.c(536): web_remove/revert_auto_header("Priority") was successful  	[MsgId: MMSG-26392]
 Action.c(537): web_url("products_2") started  	[MsgId: MMSG-26355]
-Action.c(537): web_url("products_2") was successful, 2380 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(537): web_url("products_2") was successful, 2388 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
 Action.c(546): web_url("product-page.html") started  	[MsgId: MMSG-26355]
 Action.c(546): Found resource "https://www.advantageonlineshopping.com/css/images/review_right.png" in HTML "https://www.advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
 Action.c(546): Found resource "https://www.advantageonlineshopping.com/css/images/reviewUser.png" in HTML "https://www.advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
 Action.c(546): Found resource "https://www.advantageonlineshopping.com/css/images/review_Left_disabled.png" in HTML "https://www.advantageonlineshopping.com/app/views/product-page.html"  	[MsgId: MMSG-26659]
 Action.c(546): web_url("product-page.html") was successful, 6064 body bytes, 1564 header bytes  	[MsgId: MMSG-26386]
-Action.c(555): Количество цветов у продукта - 3
-Action.c(557): Рандомный индекс - 3
-Action.c(559): Рандомный цвет - DD3A5B
-Action.c(563): Цвет - 3683D1
-Action.c(563): Цвет - 545195
-Action.c(563): Цвет - DD3A5B
-Action.c(566): Notify: Transaction "ChooseProduct" ended with a "Pass" status (Duration: 3,2118 Wasted Time: 0,0119).
+Action.c(566): Notify: Transaction "ChooseProduct" ended with a "Pass" status (Duration: 3,1467 Wasted Time: 0,0119).
 Action.c(570): lr_think_time: 5,00 seconds.
 Action.c(574): Notify: Transaction "AddToCart" started.
 Action.c(576): web_reg_find started  	[MsgId: MMSG-26355]
@@ -294,11 +274,9 @@ Action.c(610): web_add_header("Authorization") highest severity level was "warni
 Action.c(611): web_add_header("Accept") started  	[MsgId: MMSG-26355]
 Action.c(611): web_add_header("Accept") was successful  	[MsgId: MMSG-26392]
 Action.c(612): web_submit_data("{rndColorId}") started  	[MsgId: MMSG-26355]
-Action.c(612): Registered web_reg_find successful for "Text="productId":30" (count=1)  	[MsgId: MMSG-26364]
-Action.c(612): web_submit_data("{rndColorId}") was successful, 260 body bytes, 492 header bytes  	[MsgId: MMSG-26386]
-Action.c(642): Тело - {"hexColor":"DD3A5B","productId":30,"quantity":1,"hasWarranty":false},{"hexColor":"FCC23D","productId":3,"quantity":1,"hasWarranty":false}
-Action.c(646): Итог - 458
-Action.c(648): Notify: Transaction "AddToCart" ended with a "Pass" status (Duration: 2,1596 Wasted Time: 0,0065).
+Action.c(612): Registered web_reg_find successful for "Text="productId":5" (count=1)  	[MsgId: MMSG-26364]
+Action.c(612): web_submit_data("{rndColorId}") was successful, 333 body bytes, 492 header bytes  	[MsgId: MMSG-26386]
+Action.c(648): Notify: Transaction "AddToCart" ended with a "Pass" status (Duration: 3,4784 Wasted Time: 0,0065).
 Action.c(652): lr_think_time: 5,00 seconds.
 Action.c(656): Notify: Transaction "OpenCart" started.
 Action.c(658): web_reg_find started  	[MsgId: MMSG-26355]
@@ -311,13 +289,13 @@ Action.c(661): web_add_header("Authorization") highest severity level was "warni
 Action.c(662): web_add_header("Accept") started  	[MsgId: MMSG-26355]
 Action.c(662): web_add_header("Accept") was successful  	[MsgId: MMSG-26392]
 Action.c(663): web_url("{UserID}") started  	[MsgId: MMSG-26355]
-Action.c(663): Registered web_reg_find successful for "Text="productId":30" (count=1)  	[MsgId: MMSG-26364]
-Action.c(663): web_url("{UserID}") was successful, 293 body bytes, 375 header bytes  	[MsgId: MMSG-26386]
+Action.c(663): Registered web_reg_find successful for "Text="productId":5" (count=1)  	[MsgId: MMSG-26364]
+Action.c(663): web_url("{UserID}") was successful, 366 body bytes, 455 header bytes  	[MsgId: MMSG-26386]
 Action.c(672): web_url("shoppingCart.html") started  	[MsgId: MMSG-26355]
 Action.c(672): Found resource "https://www.advantageonlineshopping.com/css/images/Master_credit.png" in HTML "https://www.advantageonlineshopping.com/app/views/shoppingCart.html"  	[MsgId: MMSG-26659]
 Action.c(672): Found resource "https://www.advantageonlineshopping.com/css/images/SafePay.png" in HTML "https://www.advantageonlineshopping.com/app/views/shoppingCart.html"  	[MsgId: MMSG-26659]
 Action.c(672): web_url("shoppingCart.html") was successful, 7766 body bytes, 1178 header bytes  	[MsgId: MMSG-26386]
-Action.c(681): Notify: Transaction "OpenCart" ended with a "Pass" status (Duration: 1,5332 Wasted Time: 0,0046).
+Action.c(681): Notify: Transaction "OpenCart" ended with a "Pass" status (Duration: 2,4241 Wasted Time: 0,0047).
 Action.c(685): lr_think_time: 5,00 seconds.
 Action.c(689): Notify: Transaction "CheckoutUserData" started.
 Action.c(690): web_add_cookie started  	[MsgId: MMSG-26355]
@@ -351,7 +329,7 @@ Action.c(738): web_add_header("Authorization") highest severity level was "warni
 Action.c(739): web_add_header("Accept") started  	[MsgId: MMSG-26355]
 Action.c(739): web_add_header("Accept") was successful  	[MsgId: MMSG-26392]
 Action.c(740): web_url("{UserID}") started  	[MsgId: MMSG-26355]
-Action.c(740): web_url("{UserID}") was successful, 294 body bytes, 455 header bytes  	[MsgId: MMSG-26386]
+Action.c(740): web_url("{UserID}") was successful, 366 body bytes, 455 header bytes  	[MsgId: MMSG-26386]
 Action.c(749): web_add_auto_header("Origin") started  	[MsgId: MMSG-26355]
 Action.c(749): web_add_auto_header("Origin") was successful  	[MsgId: MMSG-26392]
 Action.c(750): web_custom_request("shippingcost") started  	[MsgId: MMSG-26355]
@@ -381,7 +359,7 @@ Action.c(798): web_add_auto_header("X-Requested-With") started  	[MsgId: MMSG-26
 Action.c(798): web_add_auto_header("X-Requested-With") was successful  	[MsgId: MMSG-26392]
 Action.c(799): web_custom_request("GetCountriesRequest") started  	[MsgId: MMSG-26355]
 Action.c(799): web_custom_request("GetCountriesRequest") was successful, 4184 body bytes, 761 header bytes  	[MsgId: MMSG-26386]
-Action.c(812): Notify: Transaction "CheckoutUserData" ended with a "Pass" status (Duration: 3,2025 Wasted Time: 0,0179).
+Action.c(812): Notify: Transaction "CheckoutUserData" ended with a "Pass" status (Duration: 4,1363 Wasted Time: 0,0186).
 Action.c(816): lr_think_time: 5,00 seconds.
 Action.c(820): Notify: Transaction "Payment" started.
 Action.c(821): web_add_auto_header("Priority") started  	[MsgId: MMSG-26355]
@@ -389,6 +367,8 @@ Action.c(821): web_add_auto_header("Priority") was successful  	[MsgId: MMSG-263
 Action.c(822): web_add_header("SOAPAction") started  	[MsgId: MMSG-26355]
 Action.c(822): web_add_header("SOAPAction") was successful  	[MsgId: MMSG-26392]
 Action.c(823): web_custom_request("UpdateSafePayMethodRequest") started  	[MsgId: MMSG-26355]
+Action.c(823): Connection to www.advantageonlineshopping.com:443 closed after being inactive for 61 seconds, exceeding the "HTTP Keep-Alive timeout" Runtime Setting (60 seconds). URL="[None]"  	[MsgId: MMSG-27647]
+Action.c(823): Connection to www.googletagmanager.com:443 closed after being inactive for 61 seconds, exceeding the "HTTP Keep-Alive timeout" Runtime Setting (60 seconds). URL="[None]"  	[MsgId: MMSG-27647]
 Action.c(823): web_custom_request("UpdateSafePayMethodRequest") was successful, 414 body bytes, 735 header bytes  	[MsgId: MMSG-26386]
 Action.c(836): web_reg_find started  	[MsgId: MMSG-26355]
 Action.c(836): Registering web_reg_find was successful  	[MsgId: MMSG-26390]
@@ -417,8 +397,8 @@ Action.c(858): web_add_header("Accept") started  	[MsgId: MMSG-26355]
 Action.c(858): web_add_header("Accept") was successful  	[MsgId: MMSG-26392]
 Action.c(859): web_custom_request("{UserID}") started  	[MsgId: MMSG-26355]
 Action.c(859): web_custom_request("{UserID}") was successful, 66 body bytes, 492 header bytes  	[MsgId: MMSG-26386]
-Action.c(869): Notify: Transaction "Payment" ended with a "Pass" status (Duration: 1,9713 Wasted Time: 0,0065).
-Action.c(871): Notify: Transaction "UC5_BuyingProduct" ended with a "Pass" status (Duration: 59,5153 Think Time: 35,0737 Wasted Time: 0,1941).
+Action.c(869): Notify: Transaction "Payment" ended with a "Pass" status (Duration: 3,2341 Wasted Time: 0,0064).
+Action.c(871): Notify: Transaction "UC5_BuyingProduct" ended with a "Pass" status (Duration: 65,3894 Think Time: 35,0422 Wasted Time: 0,2008).
 Ending action Action.
 Ending iteration 1.
 Ending Vuser...
