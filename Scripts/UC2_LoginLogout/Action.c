@@ -16,10 +16,10 @@ Action()
 	web_add_cookie("_gid=GA1.2.392134552.1735813298; DOMAIN=www.advantageonlineshopping.com");
 	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735909643.6.1.1735909660.43.0.0; DOMAIN=www.advantageonlineshopping.com");
 	web_add_cookie("userCart=%7B%22userId%22%3A-1%2C%22productsInCart%22%3A%5B%7B%22productId%22%3A27%2C%22imageUrl%22%3A%225200%22%2C%22productName%22%3A%22HP%20Z3600%20Wireless%20Mouse%22%2C%22color%22%3A%7B%22code%22%3A%22414141%22%2C%22name%22%3A%22BLACK%22%2C%22inStock%22%3A10%2C%22%24%24hashKey%22%3A%22object%3A1189%22%7D%2C%22quantity%22%3A1%2C%22price%22%3A15.99%2C%22hasWarranty%22%3Afalse%7D%5D%7D; DOMAIN=www.advantageonlineshopping.com");
-	web_add_auto_header("Sec-Fetch-Dest", "document");
-	web_add_auto_header("Sec-Fetch-Mode", "navigate");
-	web_add_auto_header("Sec-Fetch-Site", "none");
-	web_add_auto_header("Priority", "u=0, i");
+	web_add_header("Sec-Fetch-Dest", "document");
+	web_add_header("Sec-Fetch-Mode", "navigate");
+	web_add_header("Sec-Fetch-Site", "none");
+	web_add_header("Priority", "u=0, i");
 	web_add_header("Sec-Fetch-User", "?1");
 	web_add_header("Upgrade-Insecure-Requests", "1");
 	web_url("www.advantageonlineshopping.com", 

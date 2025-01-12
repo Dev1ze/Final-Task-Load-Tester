@@ -25,7 +25,12 @@ Action()
 		lr_output_message("Valuse %d - %s", j, lr_eval_string("{userData}"));
 	}
 	
-	for (i = 0; i < 3; i++) passwordPart[i] = (char)('a' + rand() % 26); // Генерация пароля
+	for (i = 0; i < 3; i++) 
+	{
+		userDatas[6][0] = '\0'; // Обнуляем строку перед генерацией нового пароля
+		passwordPart[i] = (char)('a' + rand() % 26); // Генерация пароля
+	}
+		
 	strcat(userDatas[6], passwordPart);									 //
 	for (i = 0; i < 3; i++) passwordPart[i] = (char)('A' + rand() % 26); //
 	strcat(userDatas[6], passwordPart);									 //
@@ -68,13 +73,13 @@ Action()
 
 	lr_start_transaction("OpenLandingPage");
 
-	//web_add_cookie("_ga_TBPYED8WSW=GS1.1.1735831776.3.1.1735831936.0.0.0; DOMAIN=www.advantageonlineshopping.com");
-	//web_add_cookie("_ga=GA1.2.2102063955.1735813296; DOMAIN=www.advantageonlineshopping.com");
-	//web_add_cookie("_gid=GA1.2.392134552.1735813298; DOMAIN=www.advantageonlineshopping.com");
-	//web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735831932.3.1.1735831934.58.0.0; DOMAIN=www.advantageonlineshopping.com");
-	//web_add_cookie("userCart=%7B%22userId%22%3A-1%2C%22productsInCart%22%3A%5B%5D%7D; DOMAIN=www.advantageonlineshopping.com");
-	//web_add_cookie("_gat=1; DOMAIN=www.advantageonlineshopping.com");
-	web_add_header("Sec-Fetch-Dest", "document");
+	web_set_sockets_option("SSL_VERSION", "AUTO");
+//	web_add_cookie("_ga_TBPYED8WSW=GS1.1.1735831776.3.1.1735831986.0.0.0; DOMAIN=www.advantageonlineshopping.com");
+//	web_add_cookie("_ga=GA1.2.2102063955.1735813296; DOMAIN=www.advantageonlineshopping.com");
+//	web_add_cookie("_gid=GA1.2.392134552.1735813298; DOMAIN=www.advantageonlineshopping.com");
+//	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735909643.6.1.1735909660.43.0.0; DOMAIN=www.advantageonlineshopping.com");
+//	web_add_cookie("userCart=%7B%22userId%22%3A-1%2C%22productsInCart%22%3A%5B%7B%22productId%22%3A27%2C%22imageUrl%22%3A%225200%22%2C%22productName%22%3A%22HP%20Z3600%20Wireless%20Mouse%22%2C%22color%22%3A%7B%22code%22%3A%22414141%22%2C%22name%22%3A%22BLACK%22%2C%22inStock%22%3A10%2C%22%24%24hashKey%22%3A%22object%3A1189%22%7D%2C%22quantity%22%3A1%2C%22price%22%3A15.99%2C%22hasWarranty%22%3Afalse%7D%5D%7D; DOMAIN=www.advantageonlineshopping.com");
+//	web_add_header("Sec-Fetch-Dest", "document");
 	web_add_header("Sec-Fetch-Mode", "navigate");
 	web_add_header("Sec-Fetch-Site", "none");
 	web_add_header("Priority", "u=0, i");
@@ -84,54 +89,45 @@ Action()
 		"URL=https://www.advantageonlineshopping.com/", 
 		"TargetFrame=", 
 		"Resource=0", 
+		"RecContentType=text/html", 
 		"Referer=", 
-		"Snapshot=t78.inf", 
+		"Snapshot=t1.inf", 
 		"Mode=HTML", 
 		LAST);
-	//web_add_cookie("userCart={userCart}; DOMAIN=www.advantageonlineshopping.com");
-	web_add_header("Sec-Fetch-Dest", "font");
-	web_add_header("Sec-Fetch-Mode", "cors");
-	web_add_header("Sec-Fetch-Site", "same-origin");
+	web_revert_auto_header("Priority");
 	web_concurrent_start(NULL);
 	web_url("Roboto-Regular-webfont.woff", 
 		"URL=https://www.advantageonlineshopping.com/css/fonts/roboto_regular_macroman/Roboto-Regular-webfont.woff", 
 		"TargetFrame=", 
 		"Resource=1", 
+		"RecContentType=font/woff", 
 		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-		"Snapshot=t79.inf", 
+		"Snapshot=t2.inf", 
 		LAST);
-	
-	web_add_header("Sec-Fetch-Dest", "empty");
-	web_add_header("Sec-Fetch-Mode", "cors");
-	web_add_header("Sec-Fetch-Site", "same-origin");
+	web_url("main.min.js", 
+		"URL=https://www.advantageonlineshopping.com/main.min.js", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t3.inf", 
+		LAST);
 	web_url("services.properties", 
 		"URL=https://www.advantageonlineshopping.com/services.properties", 
 		"TargetFrame=", 
 		"Resource=1", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t80.inf", 
+		"Snapshot=t4.inf", 
 		LAST);
-	web_add_header("Sec-Fetch-Dest", "font");
-	web_add_header("Sec-Fetch-Mode", "cors");
-	web_add_header("Sec-Fetch-Site", "same-origin");
 	web_url("Roboto-Light-webfont.woff", 
 		"URL=https://www.advantageonlineshopping.com/css/fonts/roboto_light_macroman/Roboto-Light-webfont.woff", 
 		"TargetFrame=", 
 		"Resource=1", 
+		"RecContentType=font/woff", 
 		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-		"Snapshot=t81.inf", 
-		LAST);
-	web_add_header("Sec-Fetch-Dest", "font");
-	web_add_header("Sec-Fetch-Mode", "cors");
-	web_add_header("Sec-Fetch-Site", "same-origin");
-	web_url("Roboto-Medium-webfont.woff", 
-		"URL=https://www.advantageonlineshopping.com/css/fonts/roboto_medium_macroman/Roboto-Medium-webfont.woff", 
-		"TargetFrame=", 
-		"Resource=1", 
-		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-		"Snapshot=t82.inf", 
+		"Snapshot=t5.inf", 
 		LAST);
 	web_concurrent_end(NULL);
+	web_add_cookie("_gat=1; DOMAIN=www.advantageonlineshopping.com");
 	web_add_auto_header("Sec-Fetch-Dest", "empty");
 	web_add_auto_header("Sec-Fetch-Mode", "cors");
 	web_add_auto_header("Sec-Fetch-Site", "same-origin");
@@ -141,10 +137,17 @@ Action()
 		"Resource=0", 
 		"RecContentType=application/json", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t83.inf", 
+		"Snapshot=t6.inf", 
 		"Mode=HTML", 
 		LAST);
-	//web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735831932.3.1.1735831987.5.0.0; DOMAIN=www.advantageonlineshopping.com");
+	web_url("Roboto-Medium-webfont.woff", 
+		"URL=https://www.advantageonlineshopping.com/css/fonts/roboto_medium_macroman/Roboto-Medium-webfont.woff", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=font/woff", 
+		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
+		"Snapshot=t7.inf", 
+		LAST);
 	web_add_header("Origin", "https://www.advantageonlineshopping.com");
 	web_add_header("SOAPAction", "com.advantage.online.store.accountserviceGetAccountConfigurationRequest");
 	web_add_header("X-Requested-With", "XMLHttpRequest");
@@ -155,11 +158,30 @@ Action()
 		"Resource=0", 
 		"RecContentType=text/xml", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t84.inf", 
+		"Snapshot=t8.inf", 
 		"Mode=HTML", 
 		"EncType=text/xml; charset=UTF-8", 
 		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><GetAccountConfigurationRequest xmlns=\"com.advantage.online.store.accountservice\"></GetAccountConfigurationRequest></soap:Body></soap:Envelope>", 
 		LAST);
+	web_url("27", 
+		"URL=https://www.advantageonlineshopping.com/catalog/api/v1/products/27", 
+		"TargetFrame=", 
+		"Resource=0", 
+		"RecContentType=application/json", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t9.inf", 
+		"Mode=HTML", 
+		LAST);
+	web_add_header("Priority", "u=5, i");
+	web_url("fetchImage", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=5200", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t10.inf", 
+		LAST);
+	//web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735909643.6.1.1735910416.60.0.0; DOMAIN=www.advantageonlineshopping.com");
 	
 	web_reg_find("Text=\"categoryId\":1,\"categoryName\":\"LAPTOPS\"", LAST); // Проверка на успешный вход на страницу
 	
@@ -169,7 +191,7 @@ Action()
 		"Resource=0", 
 		"RecContentType=application/json", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t85.inf", 
+		"Snapshot=t11.inf", 
 		"Mode=HTML", 
 		LAST);
 	web_url("search", 
@@ -178,39 +200,98 @@ Action()
 		"Resource=0", 
 		"RecContentType=application/json", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t86.inf", 
+		"Snapshot=t12.inf", 
 		"Mode=HTML", 
 		LAST);
 	web_url("popularProducts.json", 
 		"URL=https://www.advantageonlineshopping.com/app/tempFiles/popularProducts.json", 
 		"TargetFrame=", 
-		"Resource=1", 
+		"Resource=0", 
+		"RecContentType=application/json", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t87.inf", 
+		"Snapshot=t13.inf", 
+		"Mode=HTML", 
 		LAST);
 	web_url("home-page.html", 
 		"URL=https://www.advantageonlineshopping.com/app/views/home-page.html", 
 		"TargetFrame=", 
 		"Resource=0", 
+		"RecContentType=text/html", 
 		"Referer=https://www.advantageonlineshopping.com/", 
-		"Snapshot=t88.inf", 
+		"Snapshot=t14.inf", 
 		"Mode=HTML", 
 		LAST);
-	//web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735831932.3.1.1735831989.3.0.0; DOMAIN=www.advantageonlineshopping.com");
+	//web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735909643.6.1.1735910418.58.0.0; DOMAIN=www.advantageonlineshopping.com");
+	web_add_header("Priority", "u=4, i");
 	web_concurrent_start(NULL);
+	web_url("arrow_right.png", 
+		"URL=https://www.advantageonlineshopping.com/css/images/arrow_right.png", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/png", 
+		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
+		"Snapshot=t15.inf", 
+		LAST);
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_2", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=speakers", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/png", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t16.inf", 
+		LAST);
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_3", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=laptops", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t17.inf", 
+		LAST);
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_4", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=tablets", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/jpeg", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t18.inf", 
+		LAST);
+	web_add_header("Priority", "u=4, i");
+	web_url("fetchImage_5", 
+		"URL=https://www.advantageonlineshopping.com/catalog/fetchImage?image_id=mice", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/png", 
+		"Referer=https://www.advantageonlineshopping.com/", 
+		"Snapshot=t19.inf", 
+		LAST);
 	web_url("Roboto-Bold-webfont.woff", 
 		"URL=https://www.advantageonlineshopping.com/css/fonts/roboto_bold_macroman/Roboto-Bold-webfont.woff", 
 		"TargetFrame=", 
 		"Resource=1", 
+		"RecContentType=font/woff", 
 		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-		"Snapshot=t89.inf", 
+		"Snapshot=t20.inf", 
 		LAST);
 	web_url("Roboto-Thin-webfont.woff", 
 		"URL=https://www.advantageonlineshopping.com/css/fonts/roboto_thin_macroman/Roboto-Thin-webfont.woff", 
 		"TargetFrame=", 
 		"Resource=1", 
+		"RecContentType=font/woff", 
 		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
-		"Snapshot=t90.inf", 
+		"Snapshot=t21.inf", 
+		LAST);
+	web_add_header("Priority", "u=4, i");
+	web_url("FacebookLogo.png", 
+		"URL=https://www.advantageonlineshopping.com/css/images/FacebookLogo.png", 
+		"TargetFrame=", 
+		"Resource=1", 
+		"RecContentType=image/png", 
+		"Referer=https://www.advantageonlineshopping.com/css/main.min.css", 
+		"Snapshot=t22.inf", 
 		LAST);
 	web_concurrent_end(NULL);
 
@@ -274,7 +355,11 @@ Action()
 		"IgnoreRedirections=No",
 		LAST);
 	
-	web_reg_find("Text=<ns2:reason>New user created successfully.</ns2:reason>", LAST); // Проверка на успешную регистрацию
+	lr_output_message("Регистриую пользователя - %s", lr_eval_string("{userName}"));
+	
+	web_reg_save_param("ServerResponse", "LB=<ns2:success", "RB=", "Search=Body", LAST);
+	
+	//web_reg_find("Text=<ns2:reason>New user created successfully.</ns2:reason>", LAST); // Проверка на успешную регистрацию
 
 	web_custom_request("AccountCreateRequest", 
 		"URL=https://www.advantageonlineshopping.com/accountservice/ws/AccountCreateRequest", 
@@ -296,6 +381,11 @@ Action()
 		"<zipcode>{Code}</zipcode>" 
 		"</AccountCreateRequest></soap:Body></soap:Envelope>",
 		LAST);
+	
+	lr_output_message("Ответ сервера: %s", lr_eval_string("{ServerResponse}"));
+	lr_output_message("Юзернайм: %s", lr_eval_string("{userName}"));
+	lr_output_message("Пароль: %s", lr_eval_string("{password}"));
+	
 	//web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735831932.3.1.1735832114.60.0.0; DOMAIN=www.advantageonlineshopping.com");
 	web_add_header("SOAPAction", "com.advantage.online.store.accountserviceAccountLoginRequest");
 	/*Correlation comment - Do not change!  Original value='YXJ0ZW0xMjM0OkFBYWExMQ==' Name ='CorrelationParameter' Type ='Manual'*/
