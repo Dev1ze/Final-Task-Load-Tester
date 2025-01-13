@@ -2,12 +2,12 @@ Action()
 {
 	int productCount, colorCount, i;
 	int rndIndex;
-	char rndProductId[256];
-	char chrProductStatus[256];
-	char rndColorId[256];
-	char categoryIdx[256];
-	char body[1024] = "";
-	char temp[256];
+	char rndProductId[1024];
+	char chrProductStatus[1024];
+	char rndColorId[1024];
+	char categoryIdx[1024];
+	char body[2048] = "";
+	char temp[1024];
     srand(time(NULL)); // »нициализаци€ генератора случайных чисел
     
     lr_start_transaction("UC4_AddToCart");

@@ -1,4 +1,4 @@
-"{"seaddress":{"addressLine1":"Royal Palace","addressLine2":"","city":"Wakanda","country":"uz","
-""postalCode":99999,"state":"WKD"},"secustomerName":"TChalla Panter","secustomerPhone":55555667"
-"78,"senumberOfProducts":11,"setransactionType":"SHIPPING_COST","sessionId":"35640373C6D33B77FA"
-"B9EE6CA7B55899"}"
+"{"seaddress":{"addressLine1":"Stark Tower","addressLine2":"","city":"New York","country":"uz","
+""postalCode":468742,"state":"NY"},"secustomerName":"Bruce Banner","secustomerPhone":5553344556"
+","senumberOfProducts":9,"setransactionType":"SHIPPING_COST","sessionId":"DDAE3D0DC4D2D51F194AA"
+"3B4C3AD332E"}"

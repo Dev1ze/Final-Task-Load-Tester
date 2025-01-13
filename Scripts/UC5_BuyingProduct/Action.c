@@ -1,15 +1,15 @@
 Action()
 {
 	int productCount, colorCount, i, totalPrice;
-	char strProductCount[256];
+	char strProductCount[1024];
 	int rndIndex;
-	char rndProductId[256];
-	char chrProductStatus[256];
-	char rndColorId[256];
-	char categoryIdx[256];
-	char body[1024] = "";
-	char temp[256];
-	char strTotalPrice[256];
+	char rndProductId[1024];
+	char chrProductStatus[1024];
+	char rndColorId[1024];
+	char categoryIdx[1024];
+	char body[2048] = "";
+	char temp[1024];
+	char strTotalPrice[1024];
     srand(time(NULL)); // Инициализация генератора случайных чисел
 	
 	lr_start_transaction("UC5_BuyingProduct");
@@ -604,7 +604,10 @@ Action()
 	    "SelectAll=Yes",
 	    "NotFound=Warning",
 	    LAST);
-	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736065316.10.1.1736065395.60.0.0; DOMAIN=www.advantageonlineshopping.com");
+	
+	//web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736065316.10.1.1736065395.60.0.0; DOMAIN=www.advantageonlineshopping.com");
+	lr_output_message("Цвет: %s", lr_eval_string("{rndColorId}"));
+	lr_output_message("Продукт: %s", lr_eval_string("{rndProductId}"));
 	web_add_header("Origin", "https://www.advantageonlineshopping.com");
 	web_add_header("Priority", "u=0");
 	web_add_header("Authorization", "Basic {CorrelationParameter}");

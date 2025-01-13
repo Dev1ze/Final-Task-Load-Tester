@@ -40,10 +40,12 @@ Action()
 	
 	strcat(userDatas[1], "@mail.ru");									 // Mail
 	
+	userDatas[5][0] = '\0';
 	randomNumber = rand() % 1000;										 // Number
 	sprintf(numberStr, "%d", randomNumber);								 //
 	strcat(userDatas[5], numberStr);									 //
 	
+	userDatas[7][0] = '\0';
 	randomNumber = rand() % 1000;										 // Code
 	sprintf(numberStr, "%d", randomNumber);								 //
 	strcat(userDatas[7], numberStr);
@@ -354,13 +356,15 @@ Action()
 		"Scope=Body",
 		"IgnoreRedirections=No",
 		LAST);
-	
-	lr_output_message("Регистриую пользователя - %s", lr_eval_string("{userName}"));
-	
-	web_reg_save_param("ServerResponse", "LB=<ns2:success", "RB=", "Search=Body", LAST);
-	
-	//web_reg_find("Text=<ns2:reason>New user created successfully.</ns2:reason>", LAST); // Проверка на успешную регистрацию
+	lr_output_message("Юзернайм: %s", lr_eval_string("{userName}"));
+	lr_output_message("Пароль: %s", lr_eval_string("{password}"));
+	lr_output_message("firstName - %s", lr_eval_string("{firstName}"));
+	lr_output_message("lastName - %s", lr_eval_string("{lastName}"));
+	lr_output_message("email - %s", lr_eval_string("{email}"));
+	lr_output_message("number - %s", lr_eval_string("{number}"));
 
+	web_reg_save_param("ServerResponse", "LB=<ns2:success", "RB=", "Search=Body", LAST);
+	web_reg_find("Text=<ns2:reason>New user created successfully.</ns2:reason>", LAST); // Проверка на успешную регистрацию
 	web_custom_request("AccountCreateRequest", 
 		"URL=https://www.advantageonlineshopping.com/accountservice/ws/AccountCreateRequest", 
 		"Method=POST", 
@@ -371,7 +375,12 @@ Action()
 		"Snapshot=t93.inf", 
 		"Mode=HTML", 
 		"EncType=text/xml; charset=UTF-8", 
-		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountCreateRequest xmlns=\"com.advantage.online.store.accountservice\"><accountType>USER</accountType><address>Rahman</address><allowOffersPromotion>true</allowOffersPromotion><cityName>Penza</cityName><countryId>Russia,ru</countryId><email>swdqedq@mail.ru</email>"
+		"Body=<?xml version=\"1.0\" encoding=\"UTF-8\"?><soap:Envelope xmlns:soap=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\"><soap:Body><AccountCreateRequest xmlns=\"com.advantage.online.store.accountservice\"><accountType>USER</accountType>" 
+		"<address>Rahman</address>" 
+		"<allowOffersPromotion>true</allowOffersPromotion>" 
+		"<cityName>Penza</cityName>" 
+		"<countryId>Russia,ru</countryId>" 
+		"<email>swdqedq@mail.ru</email>"
 		"<firstName>{firstName}</firstName>" 
 		"<lastName>{lastName}</lastName>" 
 		"<loginName>{userName}</loginName>" 
@@ -381,11 +390,8 @@ Action()
 		"<zipcode>{Code}</zipcode>" 
 		"</AccountCreateRequest></soap:Body></soap:Envelope>",
 		LAST);
-	
 	lr_output_message("Ответ сервера: %s", lr_eval_string("{ServerResponse}"));
-	lr_output_message("Юзернайм: %s", lr_eval_string("{userName}"));
-	lr_output_message("Пароль: %s", lr_eval_string("{password}"));
-	
+
 	//web_add_cookie("_ga_56EMNRF2S2=GS1.2.1735831932.3.1.1735832114.60.0.0; DOMAIN=www.advantageonlineshopping.com");
 	web_add_header("SOAPAction", "com.advantage.online.store.accountserviceAccountLoginRequest");
 	/*Correlation comment - Do not change!  Original value='YXJ0ZW0xMjM0OkFBYWExMQ==' Name ='CorrelationParameter' Type ='Manual'*/

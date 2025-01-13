@@ -1,7 +1,7 @@
 Action()
 {
-	char body[1024] = "";
-	char temp[256];
+	char body[2048] = "";
+	char temp[1024];
 	int i, productCount;
 	
 	lr_start_transaction("UC2_LoginLogout");
