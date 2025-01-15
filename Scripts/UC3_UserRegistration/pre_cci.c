@@ -2848,20 +2848,20 @@ vuser_init()
 # 1 "Action.c" 1
 Action()
 {
-	char userNameBuffer[100];
-	char passwordBuffer[100];
-	char firtNameBuffer[100];
-	char lastNameBuffer[100];
-	char address1Buffer[100];
-	char address2Buffer[100];
-	char codeBuffer[100];
-	char numberBuffer[100];
-	char emailBuffer[100];
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 	
 	char *filename = "../../data/Users.dat";
 	int countLines = 0;
 	int iteration = 1;
-	char buffer[1024];
+	char buffer[2048];
 	FILE *file = fopen(filename, "r");
 	if (!file) 
 	{
@@ -2875,24 +2875,26 @@ Action()
 	
 	while(iteration < countLines) 
 	{
-		strcpy(userNameBuffer, lr_eval_string(""));
-		lr_save_string(userNameBuffer, "userNameBuffer");
-		strcpy(passwordBuffer, lr_eval_string(""));
-		lr_save_string(passwordBuffer, "passwordBuffer");
-		strcpy(firtNameBuffer, lr_eval_string(""));
-		lr_save_string(firtNameBuffer, "firtNameBuffer");
-		strcpy(lastNameBuffer, lr_eval_string(""));
-		lr_save_string(lastNameBuffer, "lastNameBuffer");
-		strcpy(address1Buffer, lr_eval_string(""));
-		lr_save_string(address1Buffer, "address1Buffer");
-		strcpy(address2Buffer, lr_eval_string(""));
-		lr_save_string(address2Buffer, "address2Buffer");
-		strcpy(codeBuffer, lr_eval_string(""));
-		lr_save_string(codeBuffer, "codeBuffer");
-		strcpy(numberBuffer, lr_eval_string(""));
-		lr_save_string(numberBuffer, "numberBuffer");
-		strcpy(emailBuffer, lr_eval_string(""));
-		lr_save_string(emailBuffer, "emailBuffer");
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+		
+ 
 		
 		web_websocket_send("ID=0", 
 		"Buffer={\"messageType\":\"hello\",\"broadcasts\":{\"remote-settings/monitor_changes\":\"\\\"1735931141663\\\"\"},\"use_webpush\":true}", 
@@ -3119,6 +3121,7 @@ Action()
 	
 		lr_start_transaction("UserRegistered");
 		
+		web_reg_find("Text=<ns2:reason>New user created successfully.</ns2:reason>", "LAST");  
 		web_add_header("SOAPAction", "com.advantage.online.store.accountserviceAccountCreateRequest");
 		web_add_header("Priority", "u=0");
 		 

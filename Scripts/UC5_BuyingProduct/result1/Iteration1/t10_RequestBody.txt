@@ -1,5 +1,5 @@
 "<?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/so"
 "ap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.o"
 "rg/2001/XMLSchema"><soap:Body><AccountLoginRequest xmlns="com.advantage.online.store.accountse"
-"rvice"><email>bruce@hulk.org</email><loginPassword>BANner2024</loginPassword><loginUser>hulkSm"
-"ash</loginUser></AccountLoginRequest></soap:Body></soap:Envelope>"
+"rvice"><email>tonrom@example.com</email><loginPassword>NATnat2024</loginPassword><loginUser>na"
+"tpar</loginUser></AccountLoginRequest></soap:Body></soap:Envelope>"

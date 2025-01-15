@@ -1,5 +1,1 @@
-"<?xml version="1.0" encoding="UTF-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/so"
-"ap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.o"
-"rg/2001/XMLSchema"><soap:Body><GetAccountByIdRequest xmlns="com.advantage.online.store.account"
-"service"><accountId>480216037</accountId><base64Token>Basic aHVsa1NtYXNoOkJBTm5lcjIwMjQ=</base"
-"64Token></GetAccountByIdRequest></soap:Body></soap:Envelope>"
+"sessionId=7B144A8A97DB50AAFECF83A979E40200"

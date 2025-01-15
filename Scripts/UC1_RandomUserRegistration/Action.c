@@ -386,7 +386,7 @@ Action()
 		"<loginName>{userName}</loginName>" 
 		"<password>{password}</password>" 
 		"<phoneNumber>{number}</phoneNumber>" 
-		"<stateProvince>{address2}</stateProvince>" 
+		"<stateProvince>{address1}</stateProvince>" 
 		"<zipcode>{Code}</zipcode>" 
 		"</AccountCreateRequest></soap:Body></soap:Envelope>",
 		LAST);
