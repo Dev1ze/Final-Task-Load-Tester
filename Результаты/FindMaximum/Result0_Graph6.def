@@ -1,13 +1,13 @@
 ﻿[BasicInfo]
-Title=Average Transaction Response Time
-TemplateName=ResponseTime
+Title=Windows Resources % Processor Time (CPU)
+TemplateName=WindowsResources
 ChartType=Simple
-Description=Displays the average time taken to perform transactions during each second of the load test. This graph helps you determine whether the performance of the server is within acceptable minimum and maximum transaction performance time ranges defined for your system.
-HelpContext=506
-EventType=Transaction
+Description=Displays a summary of the System Resources usage for each Windows based host.
+HelpContext=513
+EventType=Server Resources
 EventName=
-ChartGroup=Transactions
-PerformanceClass=General
+ChartGroup=System Resources
+PerformanceClass=Resources
 CustomData=
 
 [TabSheet]
@@ -29,18 +29,18 @@ ActionClearFilterEnabled=1
 ChartFile=P:\Programs\Itogovoe\Результаты\FindMaximum\Result0_Graph6.cfg
 View3D=0
 IntLegendVisible=0
-Chart3dPercent=10
+Chart3dPercent=1
 Pen_Style=0
 Pen_SmallDots=0
 Pen_Visible=1
 Pen_Width=1
 Pen_Color=0
-MainFactTableName=Event_meter
+MainFactTableName=Monitor_meter
 DefaultDisplayType=Line
 UserGranularity=1
 RoundBarValues=0
 GraphDataCol1=
-TableName=T409994197T
+TableName=T419597649T
 BasicTableName=
 AbsoluteTime=0
 DisableFilter=0
@@ -52,35 +52,35 @@ CompleteMissingValuesWithZeroes=0
 CompleteMissingValues=0
 ForceCompleteValsOnArea=1
 IdsToStrs=1
-StdMonitor=0
+StdMonitor=1
 HiddenFunctions=
 NumBasicFilters=1
-NumAdditionalFilters=2
+NumAdditionalFilters=1
 NumRawDataFilters=0
 HiddenDimensions=
-BasicGroupBy=Transaction Name
+BasicGroupBy=System Resource Name, Host Name
 AdditionalGroupBy=
 HasGranularity=1
-YLeftAxisTitle=Average Response Time (seconds)
+YLeftAxisTitle=Resource usage
 YRightAxisTitle=
 TimeBasedXAxis=1
 XBottomAxisTitle=Elapsed scenario time hh:mm
 XTopAxisTitle=
 DisplayAsStairs=0
 RawDataDimension=Scenario Elapsed Time
-Scaling=0
+Scaling=1
 ZeroValue=0
 CompleteValFromLast=0
 Stacked=0
 BreakdownTree=0
-TransactionBreakdownGraph=1
+TransactionBreakdownGraph=0
 
 [SelectString0]
-Dimension=!([Value]-[Think Time])!
+Dimension=![Value]!
 CountField=![Acount]!
 AggregateFunction=Avg
 ResultSetAggregateFunction=Y Value
-Title=Response_Time
+Title=
 ActiveState=1
 
 [BasicFilter0]
@@ -92,59 +92,30 @@ DimensionTableName=Event_Map
 NumValues=1
 UseEscapeSequence=1
 DimCount=1
-Dim_0=Transaction
+Dim_0=Server Resources
 LikeMode=0
 
 [AdditionalFilter0]
 DimensionType=Discrete
 InternalDimName=Event Name
-Dimension=Transaction Name
+Dimension=System Resource Name
 EqualFlag=1
 DimensionTableName=Event_map
-NumValues=13
-UseEscapeSequence=1
-DimCount=13
-Dim_0=AddToCart
-Dim_1=CheckoutUserData
-Dim_2=ChooseCategory
-Dim_3=ChooseProduct
-Dim_4=DeleteProduct
-Dim_5=Login
-Dim_6=Logout
-Dim_7=OpenCart
-Dim_8=OpenLandingPage
-Dim_9=OpenRegistrationPage
-Dim_10=Payment
-Dim_11=SeachProduct
-Dim_12=UserRegistered
-LikeMode=0
-
-[AdditionalFilter1]
-DimensionType=Discrete
-InternalDimName=Transaction End Status
-Dimension=Transaction End Status
-EqualFlag=1
-DimensionTableName=TransactionEndStatus
 NumValues=1
 UseEscapeSequence=1
 DimCount=1
-Dim_0=Pass
+Dim_0=% Processor Time (Processor _Total)
 LikeMode=0
 
 [DimensionFunctions]
-DimeFuncCount=1
-DimeFuncType0=FuncFragment
-FunctionName_UI0=Think Time
-DimensionName_UI0=Transaction Response Time,Aminimum,Amaximum
-FunctionFragmentValues_UI0=-Include Think Time
-DimensionFragmentValues_UI0=
+DimeFuncCount=0
 
 [Granularity]
 Dimension=Scenario Elapsed Time
 TimeScaleType=2
 Granularity=64
 BaseGranularityUIName=
-MinimumDefaultGranularity=30
+MinimumDefaultGranularity=1
 
 [Alerts]
 Number Of Alerts=0

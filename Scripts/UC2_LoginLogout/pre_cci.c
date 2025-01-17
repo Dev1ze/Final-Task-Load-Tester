@@ -2614,8 +2614,8 @@ vuser_init()
 # 1 "Action.c" 1
 Action()
 {
-	char body[1024] = "";
-	char temp[256];
+	char body[2048] = "";
+	char temp[1024];
 	int i, productCount;
 	
 	lr_start_transaction("UC2_LoginLogout");
@@ -2944,7 +2944,7 @@ Action()
     	}
 		strcat(body, temp);
 	}
-	lr_output_message("userName - %s", body);
+	 
 	lr_save_string(body, "body");
 		
 	web_add_auto_header("Origin", "https://www.advantageonlineshopping.com");

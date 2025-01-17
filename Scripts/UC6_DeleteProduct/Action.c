@@ -189,7 +189,9 @@ Action()
 		"Scope=Body",
 		"IgnoreRedirections=No",
 		LAST);
+	//lr_output_message("Ответ сервера: %s %s", lr_eval_string("{userName}"), lr_eval_string("{password}"));
 	
+	//web_reg_save_param("ServerResponse", "LB=<ns2:success", "RB=", "Search=Body", LAST);
 	web_reg_find("Text=<ns2:reason>Login Successful</ns2:reason>", LAST); // Проверка на успешную авторизацию
 	
 	web_custom_request("AccountLoginRequest", 
@@ -208,6 +210,7 @@ Action()
 		"<loginUser>{userName}</loginUser>" 
 		"</AccountLoginRequest></soap:Body></soap:Envelope>",
 		LAST);
+	//lr_output_message("Ответ сервера: %s", lr_eval_string("{ServerResponse}"));
 	web_set_sockets_option("INITIAL_AUTH", "BASIC");
 	web_add_header("Authorization", "Basic {CorrelationParameter}");
 	web_add_cookie("_ga_56EMNRF2S2=GS1.2.1736253081.15.1.1736253118.23.0.0; DOMAIN=www.advantageonlineshopping.com");

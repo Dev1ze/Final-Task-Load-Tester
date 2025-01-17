@@ -1,13 +1,13 @@
 ﻿[BasicInfo]
-Title=Throughput
-TemplateName=Throughput
+Title=Transactions per Second
+TemplateName=TransactionsPerSecond
 ChartType=Simple
-Description=Displays the amount of throughput (in bytes) on the Web server during the load test. Throughput represents the amount of data that the Vusers received from the server at any given second. This graph helps you to evaluate the amount of load Vusers generate, in terms of server throughput.
-HelpContext=517
-EventType=Web
-EventName=Throughput,JMeter Sent,JMeter Received
-ChartGroup=Web Server Resources
-PerformanceClass=Network
+Description=Displays the number of completed transactions (both successful and unsuccessful) performed during each second of a load test. This graph helps you determine the actual transaction load on your system at any given moment.
+HelpContext=505
+EventType=Transaction
+EventName=
+ChartGroup=Transactions
+PerformanceClass=General
 CustomData=
 
 [TabSheet]
@@ -35,12 +35,12 @@ Pen_SmallDots=0
 Pen_Visible=1
 Pen_Width=1
 Pen_Color=0
-MainFactTableName=WebEvent_meter
+MainFactTableName=Event_meter
 DefaultDisplayType=Line
 UserGranularity=1
 RoundBarValues=0
 GraphDataCol1=
-TableName=T403089503T
+TableName=T409352417T
 BasicTableName=
 AbsoluteTime=0
 DisableFilter=0
@@ -53,15 +53,15 @@ CompleteMissingValues=0
 ForceCompleteValsOnArea=1
 IdsToStrs=1
 StdMonitor=0
-HiddenFunctions=
-NumBasicFilters=2
+HiddenFunctions=Think Time
+NumBasicFilters=1
 NumAdditionalFilters=0
 NumRawDataFilters=0
 HiddenDimensions=
-BasicGroupBy=
-AdditionalGroupBy=
+BasicGroupBy=Transaction Name
+AdditionalGroupBy=Transaction End Status
 HasGranularity=1
-YLeftAxisTitle=Bytes per Second
+YLeftAxisTitle=Number of Transactions
 YRightAxisTitle=
 TimeBasedXAxis=1
 XBottomAxisTitle=Elapsed scenario time hh:mm
@@ -76,11 +76,11 @@ BreakdownTree=0
 TransactionBreakdownGraph=0
 
 [SelectString0]
-Dimension=![Value]!
-CountField=![Acount]!
+Dimension=Acount
+CountField=
 AggregateFunction=SumG
 ResultSetAggregateFunction=Y Value
-Title=Throughput
+Title=
 ActiveState=1
 
 [BasicFilter0]
@@ -92,28 +92,16 @@ DimensionTableName=Event_Map
 NumValues=1
 UseEscapeSequence=1
 DimCount=1
-Dim_0=Web
+Dim_0=Transaction
 LikeMode=0
-
-[BasicFilter1]
-DimensionType=Discrete
-InternalDimName=
-Dimension=Event Name
-EqualFlag=1
-DimensionTableName=Event_Map
-NumValues=3
-UseEscapeSequence=1
-DimCount=3
-Dim_0=Throughput
-Dim_1=JMeter Sent
-Dim_2=JMeter Received
-LikeMode=0
-
-[Filter Data]
-SingleValue=Throughput
 
 [DimensionFunctions]
-DimeFuncCount=0
+DimeFuncCount=1
+DimeFuncType0=FuncFragment
+FunctionName_UI0=Think Time
+DimensionName_UI0=Transaction Response Time,Aminimum,Amaximum
+FunctionFragmentValues_UI0=-Include Think Time
+DimensionFragmentValues_UI0=
 
 [Granularity]
 Dimension=Scenario Elapsed Time

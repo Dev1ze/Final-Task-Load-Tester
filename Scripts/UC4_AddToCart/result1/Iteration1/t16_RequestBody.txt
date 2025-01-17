@@ -1,2 +1,4 @@
-"[{"hexColor":"414141","productId":8,"quantity":1},{"hexColor":"C3C3C3","productId":17,"quantit"
-"y":1}]"
+"[{"hexColor":"414141","productId":21,"quantity":1},{"hexColor":"C3C3C3","productId":16,"quanti"
+"ty":1},{"hexColor":"FCC23D","productId":14,"quantity":1},{"hexColor":"C3C3C3","productId":6,"q"
+"uantity":1},{"hexColor":"545195","productId":21,"quantity":1},{"hexColor":"DD3A5B","productId""
+":12,"quantity":2}]"
