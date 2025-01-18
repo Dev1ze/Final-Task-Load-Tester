@@ -12,7 +12,7 @@ CustomData=
 
 [TabSheet]
 Visible=1
-ActivePage=1
+ActivePage=0
 
 [MultiUIInfos]
 Count=1
@@ -20,37 +20,37 @@ Count=1
 [UIInfo0]
 Title0=% Disk Time (PhysicalDisk _Total):localhost
 Color0=8559404
-Active0=-1
+Active0=0
 Scale0=1
 ScaleState0=User
 UITitle0=
 Title1=% Idle Time (PhysicalDisk _Total):localhost
 Color1=4276695
-Active1=-1
+Active1=0
 Scale1=1
 ScaleState1=User
 UITitle1=
 Title2=Avg. Disk Bytes/Transfer (PhysicalDisk _Total):localhost
 Color2=50677
-Active2=-1
+Active2=0
 Scale2=1
 ScaleState2=User
 UITitle2=
 Title3=Avg. Disk Queue Length (PhysicalDisk _Total):localhost
 Color3=13207328
-Active3=-1
+Active3=0
 Scale3=1
 ScaleState3=User
 UITitle3=
 Title4=Disk Transfers/sec (PhysicalDisk _Total):localhost
 Color4=13419110
-Active4=-1
+Active4=0
 Scale4=1
 ScaleState4=User
 UITitle4=
 Title5=Free Megabytes (LogicalDisk _Total):localhost
 Color5=7162788
-Active5=0
+Active5=-1
 Scale5=1
 ScaleState5=User
 UITitle5=

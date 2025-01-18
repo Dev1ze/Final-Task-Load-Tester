@@ -1,5 +1,5 @@
 ﻿[BasicInfo]
-Title=Windows Resources % Processor Time
+Title=Windows Resources % Processor Time (CPU)
 TemplateName=WindowsResources
 ChartType=Simple
 Description=Displays a summary of the System Resources usage for each Windows based host.
@@ -35,7 +35,7 @@ ActionClearFilterEnabled=1
 ChartFile=P:\Programs\Itogovoe\Результаты\StabilityTest\Result0_Graph6.cfg
 View3D=0
 IntLegendVisible=0
-Chart3dPercent=10
+Chart3dPercent=1
 Pen_Style=0
 Pen_SmallDots=0
 Pen_Visible=1

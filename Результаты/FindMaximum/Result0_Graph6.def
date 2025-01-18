@@ -18,6 +18,12 @@ ActivePage=0
 Count=1
 
 [UIInfo0]
+Title0=% Processor Time (Processor _Total):localhost
+Color0=8559404
+Active0=-1
+Scale0=1
+ScaleState0=User
+UITitle0=
 
 [MoreUiInfos]
 ShowPieMarks=1
@@ -40,7 +46,7 @@ DefaultDisplayType=Line
 UserGranularity=1
 RoundBarValues=0
 GraphDataCol1=
-TableName=T419597649T
+TableName=T39900014T
 BasicTableName=
 AbsoluteTime=0
 DisableFilter=0
@@ -55,7 +61,7 @@ IdsToStrs=1
 StdMonitor=1
 HiddenFunctions=
 NumBasicFilters=1
-NumAdditionalFilters=1
+NumAdditionalFilters=2
 NumRawDataFilters=0
 HiddenDimensions=
 BasicGroupBy=System Resource Name, Host Name
@@ -107,13 +113,24 @@ DimCount=1
 Dim_0=% Processor Time (Processor _Total)
 LikeMode=0
 
+[AdditionalFilter1]
+DimensionType=Continuous
+InternalDimName=End Time
+Dimension=Scenario Elapsed Time
+EqualFlag=1
+DimensionTableName=Monitor_meter
+NumValues=1
+DimCount=2
+Dim_0=0.000000
+Dim_1=6600.000000
+
 [DimensionFunctions]
 DimeFuncCount=0
 
 [Granularity]
 Dimension=Scenario Elapsed Time
 TimeScaleType=2
-Granularity=64
+Granularity=32
 BaseGranularityUIName=
 MinimumDefaultGranularity=1
 

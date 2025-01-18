@@ -1,5 +1,5 @@
 ﻿[BasicInfo]
-Title=Windows Resources Committed Bytes (Memory)
+Title=Windows Resources Committed Bytes (RAM)
 TemplateName=WindowsResources
 ChartType=Simple
 Description=Displays a summary of the System Resources usage for each Windows based host.

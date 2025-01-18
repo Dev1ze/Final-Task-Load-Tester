@@ -7,9 +7,9 @@ InternalDimName=Event Name
 Dimension=Transaction Name
 EqualFlag=1
 DimensionTableName=Event_map
-NumValues=19
+NumValues=13
 UseEscapeSequence=1
-DimCount=19
+DimCount=13
 Dim_0=AddToCart
 Dim_1=CheckoutUserData
 Dim_2=ChooseCategory
@@ -22,13 +22,7 @@ Dim_8=OpenLandingPage
 Dim_9=OpenRegistrationPage
 Dim_10=Payment
 Dim_11=SeachProduct
-Dim_12=UC1_RandomUserRegistration
-Dim_13=UC2_LoginLogout
-Dim_14=UC4_AddToCart
-Dim_15=UC5_BuyingProduct
-Dim_16=UC6_DeleteProduct
-Dim_17=UC7_SeachProduct
-Dim_18=UserRegistered
+Dim_12=UserRegistered
 LikeMode=0
 
 [AdditionalFilter1]
@@ -39,8 +33,8 @@ EqualFlag=1
 DimensionTableName=Event_meter
 NumValues=1
 DimCount=2
-Dim_0=1320.000000
-Dim_1=2520.000000
+Dim_0=2640.000000
+Dim_1=3840.000000
 
 [DimensionFunctions]
 DimeFuncCount=1
