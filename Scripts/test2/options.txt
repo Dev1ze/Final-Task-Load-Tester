@@ -1,9 +1,0 @@
--+
--DCCI
--D_IDA_XL
--DWINNT
--IP:\Programs\Itogovoe\Scripts\test2
--IP:\Programs\LoadRunner\include
--ep:\programs\itogovoe\scripts\test2\\logfile.log
-p:\programs\itogovoe\scripts\test2\\combined_test2.c
-p:\programs\itogovoe\scripts\test2\\pre_cci.c
